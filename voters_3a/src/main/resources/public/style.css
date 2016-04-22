@@ -1,0 +1,21 @@
+body {
+	background: #eee;
+	padding: 15px;
+}
+
+@media (min-width : 768px) {
+	body {
+		padding: 55px;
+	}
+}
+
+#main {
+	background: #fff;
+	border-radius: 3px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, .1);
+	padding: 25px;
+}
+
+.pure-form legend {
+	font-size: 125%;
+}

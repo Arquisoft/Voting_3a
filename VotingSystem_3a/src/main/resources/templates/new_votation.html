@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header_time :: head">
+</head>
+<body>
+	<center>
+	<h3>Añadir nuevas elecciones</h3>
+	<div th:if="${error != null}">
+    	<p><font th:text="${error}" color="red" size="2"></font></p>
+	</div>
+	<form action="#" th:action="@{/new_votation}" th:object="${eleccion}" method="post">
+		<h5>Nombre de las elecciones</h5>
+		<input type="text" class="form-control" placeholder="Nombre" th:field="*{nombre}"/>
+		<h5>Inicio de las elecciones:</h5>
+		<div id="datetimepicker" class="input-append date">
+      		<input type="datetime" th:field="*{fechaInicio}"></input>
+     		<span class="add-on">
+       			<i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+     		</span>
+    	</div>
+    	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> 
+    	<script type="text/javascript" src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js"></script>
+ 		<script type="text/javascript" src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js"></script>
+    	<script type="text/javascript" src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.pt-BR.js"></script>
+    	<script type="text/javascript">
+      		$('#datetimepicker').datetimepicker({
+        	format: 'yyyy/MM/dd hh:mm:ss',
+        	language: 'es-ES'
+      		});
+    	</script>
+    	<h5>Finalización de las elecciones:</h5>
+     	<div id="datetimepicker2" class="input-append date">
+      		<input type="datetime" th:field="*{fechaFin}"></input>
+      		<span class="add-on">
+        		<i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+      		</span>
+    	</div>
+    	<script type="text/javascript">
+      		$('#datetimepicker2').datetimepicker({
+        	format: 'yyyy/MM/dd hh:mm:ss',
+        	language: 'es-ES'
+      	});
+    	</script>
+    	<h5>Selección de opciones/candidaturas</h5>
+  		<br></br>
+  		<input type="hidden" th:field="*{numeroOpciones}" />
+  		<tr th:each="i,stat : ${#numbers.sequence( 1,  __*{numeroOpciones}__ ) }">
+  			<span class="label label-danger" th:text="'Opción ' + ${i}"></span>
+   			<input type="text" class="form-control" th:field="*{opciones[__${stat.index}__].nombre}"/>
+   			<br></br>
+		</tr>
+		<span class="label label-danger" th:text="'Opción ' + __*{numeroOpciones+1}__"></span>
+   		<input type="text" th:value="'Voto en blanco'" class="uneditable-input" disabled="true"/>
+   		<br></br>
+    	<input type="submit" name="login" class="btn btn-success" value="Salvar elección"/>
+    </form>
+	</center>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="fragments/header :: head">
+</head>
+<body>
+<div class="page-header">
+   <div class="jumbotron">
+   <h2 class="text-center">Configuración de candidaturas<small> Sistema de votación</small></h2>
+   <form class="navbar-form" action="#" th:action="@{/conf_options}" th:object="${eleccion}" method="post">
+   <h4 th:text="'Configuración de candidaturas para las elecciones: ' + *{nombre}"></h4>
+   <div th:if="${error != null}">
+    	<p><font th:text="${error}" color="red" size="2"></font></p>
+   </div>
+   <table class="table table-striped">
+      <tr>
+        <th>Nombre</th>
+        <th>Descripcion</th>
+        <th>Programa electoral</th>
+      </tr>
+      <tr th:each="c,stat : ${eleccion.opciones}">
+      		<td th:text="${c.nombre}"></td>
+	        <td><textarea class="form-control" rows="3" placeholder="Descripcion" th:field="*{opciones[__${stat.index}__].descripcion}"></textarea></td>
+	    	<td><input type="text" class="form-control" placeholder="Programa (enlace)" th:field="*{opciones[__${stat.index}__].programaElectoral}" /></td>
+	  </tr>
+    </table>
+    <center>
+    	<button type="submit" class="btn btn-primary but"  name="save_conf" th:value="*{id}">Guardar configuración</button>
+    </center>
+    </form>
+    </div>
+</div>
+</body>
+</html>

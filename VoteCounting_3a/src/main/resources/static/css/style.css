@@ -1,0 +1,97 @@
+body {
+	background: #fff;
+	padding-top: 70px;
+	margin: 0;
+}
+
+@media ( min-width : 768px) {
+	body {
+		
+	}
+}
+
+#main {
+	
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background-color: #f3f3f3;
+	border-top: 1px solid #E7E7E7;
+}
+
+.footer .container .text-muted {
+	margin: 15px 0;
+	text-align: center;
+	text-shadow: 1px 1px 0 #FFF;
+}
+
+#main .page {
+	display: none;
+}
+
+#main .page.active {
+	display: block;
+}
+
+.center-form {
+	max-width: 330px;
+	padding: 15px;
+	margin: 0 auto;
+}
+
+.form-signin .form-signin-heading, .form-signin .checkbox {
+	margin-bottom: 10px;
+}
+
+.form-signin .checkbox {
+	font-weight: normal;
+}
+
+.form-signin .form-control {
+	position: relative;
+	height: auto;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 10px;
+	font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+	z-index: 2;
+}
+
+.form-signin input[type="email"] {
+	margin-bottom: -1px;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+	margin-bottom: 10px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+/* d3js */
+.axis path, .axis line {
+	fill: none;
+	stroke: #777;
+	shape-rendering: crispEdges;
+}
+
+.axis text {
+	font-family: 'Arial';
+	font-size: 13px;
+}
+
+.tick {
+	stroke-dasharray: 1, 2;
+}
+
+.bar {
+	fill: FireBrick;
+}

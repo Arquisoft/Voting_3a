@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="fragments/header :: head">
+</head>
+<meta charset="utf-8"/>
+<body>
+    <div class="page-header jumbotron col-lg-10 col-lg-offset-1 text-center">
+	<div class="row">
+		<div class="col-md-12">
+			<h3 class="text-center">
+				Opciones de voto
+			</h3>
+			<div th:if="${error != null}">
+				<p><font th:text="${error}" color="red" size="2"></font></p>
+			</div>
+			<br/>
+			<br/>
+			<form name = "formulario" class="navbar-form" action="#" th:action="@{/show_options}" th:object ="${opciones}" method="post">
+			<table name="opciones" class="table table-striped">
+			<tr>
+		        <th>Nombre</th>
+		        <th>Descripcion</th>
+		        <th>Programa electoral</th>
+		        <th>Votar a</th>
+		     </tr>
+			<tr th:each="o : ${session.opciones}">
+			
+				<td th:text="${o.nombre}"></td>
+				<td th:text="${o.descripcion}"></td>
+				<td th:text="${o.programaElectoral}"></td>
+				<td><input type="radio" name = "decision"  th:value ="${o.id}"></input></td>
+				
+				</tr>
+			</table> 
+			<button type="submit" name="enviar" class="btn btn-primary">Votar</button>
+			</form>
+		</div>
+	</div>
+	</div>
+  </body>
+ </html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="fragments/header :: head">
+</head>
+<body>
+<div class="page-header jumbotron col-lg-10 col-lg-offset-1 text-center">
+   <h3 class="text-center">Página de configuración de parámetros de Colegios electorales<small> Sistema de votación</small></h3>
+   <div th:if="${error != null}">
+    	<p><font th:text="${error}" color="red" size="2"></font></p>
+	</div>
+   <form class="navbar-form" action="#" th:action="@{/conf_polling}" th:object="${colegio}" method="post">
+	 
+	    <label for="nombre">Nombre</label>
+	    <br></br>
+	    <input type="text" class="form-control" id="nombre" placeholder="Nombre" th:field="*{nombre}"/>
+	 	<br></br>
+	  
+	    <label for="poblacion">Poblacion</label>
+	    <br></br>
+	    <input type="text" class="form-control" id="poblacion" placeholder="Población" th:field="*{poblacion}"/>
+	    <br></br>
+	    <input type="hidden" id="ide" th:field="*{id}"/>
+	
+	  
+	    <label>Circunscripcion</label>
+	    <br></br>
+	    <select id="country" class="form-control" required="required" th:field="*{circunscripcion}">
+			<option th:each="c : ${circunscripciones}" th:value="${c.id}"
+					th:text="${c.nombre}" th:field="*{circunscripcion}"></option>
+		</select>
+		<br></br>
+		<br></br>
+		<button type="submit" class="btn btn-primary">Guardar configuración</button>
+	</form>
+</div>
+</body>
+</html>

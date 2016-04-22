@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="fragments/header :: head">
+</head>
+<body>
+    <div class="page-header jumbotron col-lg-10 col-lg-offset-1 text-center">
+	<div class="row">
+		<p align="right"><a href="#" th:href="@{/}">Cerrar sesión</a></p>
+		<div class="col-md-12">
+			<h3 class="text-center">
+				Sistema de votación
+				<br/>
+				<small>Usted se ha identificado como: <p th:text = "${session.voter.nombre}"/></small>
+			</h3>
+			<div th:if="${error != null}">
+				<p><font th:text="${error}" color="red" size="2"></font></p>
+			</div>
+			<br/>
+			<br/>
+			<table class="table table-stripped">
+			<tr>
+		        <th>Nombre</th>
+		        <th>Fecha comienzo</th>
+		        <th>Fecha finalización</th>
+		        <th>Hora de inicio</th>
+		        <th>Hora de finalización</th>
+		        <th>Votar</th>
+		     </tr>
+				<tr th:each="e : ${session.eleccionesHaVotado}">
+				<form class="navbar-form" action="#" th:action="@{/voter_index}" method="post">
+					<td><center><b><p th:text="${e.nombre}"></p></b></center></td>
+				    <td th:text="${#dates.format(e.fechaInicio, 'dd/MM/yyyy')}"></td>
+				    <td th:text="${#dates.format(e.fechaFin, 'dd/MM/yyyy')}"></td>
+				    <td th:text="${e.horaInicio}"></td>
+				    <td th:text="${e.horaFin}"></td>
+					<td><button type="submit" class="btn btn-primary" name = "vote" th:value="${e.id}">Votar</button></td>
+				</form>
+			</tr>
+			</table> 
+		</div>
+	</div>
+	</div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+ </html>

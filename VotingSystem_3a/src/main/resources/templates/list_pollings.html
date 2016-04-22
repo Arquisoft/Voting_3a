@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="fragments/header :: head">
+</head>
+<body>
+<div class="page-header jumbotron col-lg-10 col-lg-offset-1 text-center">
+   <h3 class="text-center">Página de configuración de colegios electorales<small> Sistema de votación</small></h3>
+   <table class="table table-striped">
+      <tr>
+        <th>Número de colegio electoral</th>
+        <th>Configurar parámetros</th>
+      </tr>
+      <tr th:each="c : ${colegios}">
+	      <form class="navbar-form" action="#" th:action="@{/list_pollings}" method="post">
+		        <td th:text="${c.id}"></td>
+		        <th><button type="submit" class="btn btn-link"  
+		        name="p_params" th:value="${c.id}" >Configurar</button></th>
+	      </form>
+      </tr>
+    </table>
+</div>
+</body>
+</html>

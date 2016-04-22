@@ -1,0 +1,5 @@
+Nombre	Email	NIF	Colegio
+Juan Torres Pardo	jtp@hotmail.com	90500084Y	234
+Luis Lopez Fernando	llp@gmail.com	19160962F	345
+Ana Torres Pardo	atpyahoo.com	09940449X	456
+Ana Torres Pardo	atp@yahoocom	09940449X	456

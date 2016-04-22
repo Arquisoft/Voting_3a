@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Bootstrap Core CSS -->
+    <link href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+    <link href="../static/css/simple-sidebar.css" th:href="@{/css/simple-sidebar.css}" rel="stylesheet" />
+</head>
+<body>
+       <div id="wrapper">
+       		<p align="right"><a href="#" th:href="@{/}">Cerrar sesión</a></p>
+       <form class="navbar-form" role="search" action="#" th:action="@{/admin_index}" th:object="${eleccion}" method="post">
+       <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a>
+                        Panel de administración
+                    </a>
+                </li>
+                <li>
+                	<div th:if="${error != null}">
+    					<p><font th:text="${error}" color="red" size="2"></font></p>
+					</div>
+    				<input type="number" class="form-control" th:field="*{numeroOpciones}" placeholder="Nº de candidaturas"/>
+    				<button type="submit" class="btn btn-default col-md-12">Añadir elecciones</button>
+                </li>
+                <li><br></br><br></br></li>
+                <li>
+                    <button type="submit" class="btn btn-default" name="pollingStation" th:value="pollingStation">Configurar colegio electoral</button>
+                </li>
+            </ul>
+        </div>
+        </form>
+        <div class="col-md-8">
+        	<center><h4><small>Elecciones disponibles</small></h4></center>
+			<table class="table table-striped table-bordered">
+		      <tr>
+		        <th>Nombre</th>
+		        <th>Fecha comienzo</th>
+		        <th>Fecha finalización</th>
+		        <th>Hora de inicio</th>
+		        <th>Hora de finalización</th>
+		        <th>Activación</th>
+		        <th>Activar/Desactivar</th>
+		        <th>Configurar opc./candid.</th>
+		      </tr>
+		      <tr th:each="e : ${elecciones}">
+			      <form class="navbar-form" action="#" th:action="@{/admin_index}" method="post">
+				        <td><center><b><p th:text="${e.nombre}"></p></b></center></td>
+				        <td th:text="${#dates.format(e.fechaInicio, 'dd/MM/yyyy')}"></td>
+				        <td th:text="${#dates.format(e.fechaFin, 'dd/MM/yyyy')}"></td>
+				        <td th:text="${e.horaInicio}"></td>
+				        <td th:text="${e.horaFin}"></td>
+				        <td th:if="${e.activa == true}" th:text="SI"></td>
+				        <td th:if="${e.activa == false}" th:text="NO"></td>
+				        <td th:if="${e.activa == true}"><center><button type="submit" class="btn btn-danger"  name="action" th:value="${e.id}">Desactivar</button></center></td>
+				        <td th:if="${e.activa == false}"><center><button type="submit" class="btn btn-success"  name="action" th:value="${e.id}">Activar</button></center></td>
+				        <th><button type="submit" class="btn btn-link"  name="conf" th:value="${e.id}">Configurar</button></th>
+			      </form>
+		      </tr>
+		    </table>
+       </div>
+    </div>
+    <script src="../static/js/jquery.js" th:src="@{/js/jquery.js}"></script>
+    <script src="../static/js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+    
+</body>
+</html>

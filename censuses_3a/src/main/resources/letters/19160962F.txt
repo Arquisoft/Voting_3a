@@ -1,0 +1,11 @@
+DATOS DE CENSO ELECTORAL PARA VOTO ELECTRÓNICO
+-----------------------------------------------
+Estimado Luis L�pez Fernando con NIF: 19160962F, a continuación se le comunican los datos que le permitirán emitir su voto de manera electrónica:
+
+USUARIO: llp@gmail.com
+ CONTRASEÑA: vGhj5MQx
+
+DATOS DEL CENSO:
+COLEGIO ELECTORAL: 456
+NOTA: Los datos mostrados arriba son personales. Por seguridad no se los comunique a terceras personas
+-----------------------------------------------
