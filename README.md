@@ -1,5 +1,7 @@
 # Voting System
 
+[![Join the chat at https://gitter.im/Arquisoft/Voting_3a](https://badges.gitter.im/Arquisoft/Voting_3a.svg)](https://gitter.im/Arquisoft/Voting_3a?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Voting System
 
 [![Build Status](https://travis-ci.org/Arquisoft/Voting_3a.svg?branch=master)](https://travis-ci.org/Arquisoft/Voting_3a)
