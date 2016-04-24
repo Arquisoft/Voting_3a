@@ -8,6 +8,38 @@
 	<packaging>pom</packaging>
 	<name>Voting_3a</name>
 	<version>0.0.1</version>
+	
+	<developers>
+		<developer>
+			<name>David González García</name>
+			<email>uo212486@uniovi.es</email>
+		</developer>
+		<developer>
+			<name>Raul Barba Tamargo</name>
+			<email>uo209692@uniovi.es</email>
+		</developer>
+		<developer>
+			<name>Amir Housein Tofigh Halati</name>
+			<email>uo240753@uniovi.es</email>
+		</developer>
+		<developer>
+			<name>Carlos</name>
+			<email>uozzzzzz1@uniovi.es</email>
+		</developer>
+		<developer>
+			<name>Dario</name>
+			<email>uozzzzzz2@uniovi.es</email>
+		</developer>
+		<developer>
+			<name>Héctor</name>
+			<email>uozzzzzz3@uniovi.es</email>
+		</developer>
+		<developer>
+			<name>Jorge</name>
+			<email>uozzzzzz4@uniovi.es</email>
+		</developer>		
+	</developers>
+
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
