@@ -1,4 +1,4 @@
-package es.uniovi.asw.types;
+package es.uniovi.asw.Voters.types;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;

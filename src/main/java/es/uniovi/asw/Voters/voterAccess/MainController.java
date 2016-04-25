@@ -1,4 +1,4 @@
-package es.uniovi.asw.voterAccess;
+package es.uniovi.asw.Voters.voterAccess;
 
 import javax.validation.Valid;
 
@@ -11,20 +11,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import es.uniovi.asw.dbManagement.DBManagement;
-import es.uniovi.asw.dbManagement.DBManagementVirtualImpl;
+import es.uniovi.asw.Voters.types.ChangePass;
+import es.uniovi.asw.Voters.types.UserInfo;
+import es.uniovi.asw.Voters.types.UserPass;
+import es.uniovi.asw.dbManagement.Persistence;
 import es.uniovi.asw.model.Voter;
-import es.uniovi.asw.types.ChangePass;
-import es.uniovi.asw.types.UserInfo;
-import es.uniovi.asw.types.UserPass;
 
 @Controller
 @RestController
 public class MainController {
 	
-	//@Autowired
-	//private VoterRepository voterRepository;
-
 	@RequestMapping(
 			value = "/user",
 			method = RequestMethod.POST, produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE },
@@ -37,8 +33,7 @@ public class MainController {
 			return new ResponseEntity<UserInfo>(HttpStatus.BAD_REQUEST);
 		}
 		
-		DBManagement db = new DBManagementVirtualImpl();
-		Voter voter = db.getVoter(userPass);
+		Voter voter = Persistence.voter.findByEmailAndPassword(userPass.getLogin(), userPass.getPassword());
 		
 		if (voter == null) {
 			// throw new UserNotFoundException(userPass);
@@ -61,8 +56,7 @@ public class MainController {
 			return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
 		}
 		
-		DBManagement db = new DBManagementVirtualImpl();
-		Voter voter = db.getVoter(changePass.getLogin()); //changePass.getOldPassword()
+		Voter voter = Persistence.voter.findOneByEmail(changePass.getLogin());
 		
 		if (voter == null) {
 			// throw new UserNotFoundException(userPass);
@@ -70,7 +64,7 @@ public class MainController {
 		}
 		
 		voter.setPassword(changePass.getNewPassword());
-		db.save(voter);
+		Persistence.voter.save(voter);
 		
 		return new ResponseEntity<String>("{}",HttpStatus.OK);
 	}

@@ -1,13 +1,13 @@
-package es.uniovi.asw.business.login;
+package es.uniovi.asw.VotingSystem.business.login;
 
+import es.uniovi.asw.dbManagement.Persistence;
+import es.uniovi.asw.dbManagement.VoterRepository;
 import es.uniovi.asw.model.Voter;
-import es.uniovi.asw.persistence.dbManagement.repository.VoterRepository;
-import es.uniovi.asw.persistence.dbManagement.votingDBManagement.impl.PersistenceFactory;
 
 public class Authenticate {
 
 	public static Object[] authenticate(String user, String password, VoterRepository vtRep, Voter voter) {
-		Voter votante = PersistenceFactory.newGetVoters().findByEmail(user, vtRep);
+		Voter votante = Persistence.voter.findOneByEmail(user);
 		if (votante != null) {
 			if (votante.getPassword().equals(password)) {
 				voter = votante;

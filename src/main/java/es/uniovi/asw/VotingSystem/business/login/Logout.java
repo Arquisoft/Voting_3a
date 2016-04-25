@@ -1,4 +1,4 @@
-package es.uniovi.asw.business.login;
+package es.uniovi.asw.VotingSystem.business.login;
 
 public class Logout {
 	

@@ -1,4 +1,4 @@
-package es.uniovi.asw.types;
+package es.uniovi.asw.Voters.types;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -15,15 +15,15 @@ public class UserInfo {
 	private String name;
 	private String nif;
 	private String email;
-	private Long pollingStationCode;
+	private String pollingStation;
 
 	public UserInfo() {	}
 
-	public UserInfo(String name, String nif, String email, Long pollingStationCode) {
+	public UserInfo(String name, String nif, String email, String pollingStation) {
 		this.name = name;
 		this.nif = nif;
 		this.email = email;
-		this.pollingStationCode = pollingStationCode;
+		this.pollingStation = pollingStation;
 		log.info(this.toString());
 	}
 
@@ -31,7 +31,7 @@ public class UserInfo {
 		this.name = voter.getNombre();
 		this.nif = voter.getNif();
 		this.email = voter.getEmail();
-		this.pollingStationCode = voter.getPollingStationCode();
+		this.pollingStation = voter.getColegio().getNombre() + " en " + voter.getColegio().getPoblacion();
 	}
 
 	@XmlElement
@@ -50,8 +50,8 @@ public class UserInfo {
 	}
 
 	@XmlElement
-	public Long getPollingStationCode() {
-		return pollingStationCode;	
+	public String getPollingStationCode() {
+		return pollingStation;	
 	}
 
 	@Override
@@ -61,7 +61,7 @@ public class UserInfo {
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((nif == null) ? 0 : nif.hashCode());
-		result = prime * result + ((pollingStationCode == null) ? 0 : pollingStationCode.hashCode());
+		result = prime * result + ((pollingStation == null) ? 0 : pollingStation.hashCode());
 		return result;
 	}
 
@@ -89,10 +89,10 @@ public class UserInfo {
 				return false;
 		} else if (!nif.equals(other.nif))
 			return false;
-		if (pollingStationCode == null) {
-			if (other.pollingStationCode != null)
+		if (pollingStation == null) {
+			if (other.pollingStation != null)
 				return false;
-		} else if (!pollingStationCode.equals(other.pollingStationCode))
+		} else if (!pollingStation.equals(other.pollingStation))
 			return false;
 		return true;
 	}
@@ -100,7 +100,7 @@ public class UserInfo {
 	@Override
 	public String toString() {
 		return "UserInfo [name=" + name + ", nif=" + nif + ", email=" + email + ", pollingStationCode="
-				+ pollingStationCode + "]";
+				+ pollingStation + "]";
 	}
 
 }

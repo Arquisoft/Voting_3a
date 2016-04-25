@@ -9,65 +9,66 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Voter {
-	
-	@Id @GeneratedValue(strategy = GenerationType.AUTO)
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
+
+	@NotNull
 	private String nombre;
+	@NotNull
 	private String email;
+	@NotNull
 	private String nif;
+	@NotNull
 	private String password;
 	@ManyToOne
 	private ColegioElectoral colegio;
-	
+
 	@OneToMany(mappedBy = "votante")
 	private Set<VotoConfirmado> elecciones = new HashSet<>();
-	
-	public Voter(){}
-	
-	public Voter(ColegioElectoral colegio){
+
+	public Voter() {
+	}
+
+	public Voter(ColegioElectoral colegio) {
 		Asociacion.ColegioVotante.link(colegio, this);
 	}
-	
+
 	public Voter(String nombre, String email, String password, String nif) {
 		this.nombre = nombre;
 		this.email = email;
 		this.password = password;
 		this.nif = nif;
 	}
-	
+
 	public String getEmail() {
 		return email;
 	}
-
 
 	public void setEmail(String email) {
 		this.email = email;
 	}
 
-
 	public String getPassword() {
 		return password;
 	}
-
 
 	public void setPassword(String password) {
 		this.password = password;
 	}
 
-
 	public String getNombre() {
 		return nombre;
 	}
 
-
 	public String getNif() {
 		return nif;
 	}
-
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
@@ -95,7 +96,7 @@ public class Voter {
 
 	@Override
 	public String toString() {
-		return "Voter [nombre=" + nombre + ", email=" + email + ", nif=" + nif + ", password=" + password+ "]";
+		return "Voter [nombre=" + nombre + ", email=" + email + ", nif=" + nif + ", password=" + password + "]";
 	}
 
 	@Override
@@ -122,6 +123,5 @@ public class Voter {
 			return false;
 		return true;
 	}
-	
-	
+
 }

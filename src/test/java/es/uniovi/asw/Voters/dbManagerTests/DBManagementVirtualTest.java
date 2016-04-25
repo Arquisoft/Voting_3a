@@ -14,9 +14,9 @@ import org.springframework.test.context.web.WebAppConfiguration;
 
 import es.uniovi.asw.Application;
 import es.uniovi.asw.dbManagement.DBManagement;
-import es.uniovi.asw.dbManagement.DBManagementImpl;
-import es.uniovi.asw.dbManagement.DBManagementVirtualImpl;
 import es.uniovi.asw.dbManagement.VoterRepository;
+import es.uniovi.asw.dbManagement.impl.DBManagementImpl;
+import es.uniovi.asw.dbManagement.impl.DBManagementVirtualImpl;
 import es.uniovi.asw.model.Voter;
 import es.uniovi.asw.types.ChangePass;;
 

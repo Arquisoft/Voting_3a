@@ -1,4 +1,4 @@
-package es.uniovi.asw.view.pollingStationPresidentManagement;
+package es.uniovi.asw.VotingSystem.view.pollingStationPresidentManagement;
 
 import es.uniovi.asw.business.registerVote.storePhisicalVoteManagement.AddPhisicalVote;
 import es.uniovi.asw.business.registerVote.storePhisicalVoteManagement.impl.AddPhisicalVoteImpl;

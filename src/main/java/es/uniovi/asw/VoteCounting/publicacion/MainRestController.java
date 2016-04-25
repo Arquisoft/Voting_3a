@@ -1,4 +1,4 @@
-package es.uniovi.asw.publicacion;
+package es.uniovi.asw.VoteCounting.publicacion;
 
 import java.util.ArrayList;
 
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import es.uniovi.asw.dbManagement.Persistence;
 import es.uniovi.asw.model.Eleccion;
-import es.uniovi.asw.persistence.Repository;
 
 @RestController
 public class MainRestController {
@@ -21,7 +21,7 @@ public class MainRestController {
 			produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
 	public ResponseEntity<Eleccion[]> GetListOfElecciones() throws Exception {
 		
-		Iterable<Eleccion> elecciones = Repository.eleccionRep.findAll();
+		Iterable<Eleccion> elecciones = Persistence.voting.findAll();
 		ArrayList<Eleccion> array = new ArrayList<Eleccion>();
 		for (Eleccion eleccion : elecciones) {
 			array.add(eleccion);
@@ -52,7 +52,7 @@ public class MainRestController {
 			consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
 	public ResponseEntity<?> GetResultsOf(@PathVariable("id") long id) throws Exception {
 
-		Eleccion eleccion = Repository.eleccionRep.findById(id);
+		Eleccion eleccion = Persistence.voting.findOne(id);
 		
 		if (eleccion == null) {
 			//new ResponseEntity<String>("{}", HttpStatus.NOT_FOUND);

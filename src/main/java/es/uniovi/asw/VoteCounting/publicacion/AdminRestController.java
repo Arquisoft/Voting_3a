@@ -1,4 +1,4 @@
-package es.uniovi.asw.publicacion;
+package es.uniovi.asw.VoteCounting.publicacion;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import es.uniovi.asw.recuento.CountSystem;
-import es.uniovi.asw.recuento.CountSystemFactory;
-import es.uniovi.asw.recuento.CountingExecutor;
+import es.uniovi.asw.VoteCounting.recuento.CountSystem;
+import es.uniovi.asw.VoteCounting.recuento.CountSystemFactory;
+import es.uniovi.asw.VoteCounting.recuento.CountingExecutor;
 
 @Controller
 public class AdminRestController {

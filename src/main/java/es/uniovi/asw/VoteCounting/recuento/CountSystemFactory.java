@@ -1,4 +1,4 @@
-package es.uniovi.asw.recuento;
+package es.uniovi.asw.VoteCounting.recuento;
 
 public class CountSystemFactory {
 

@@ -12,8 +12,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 import es.uniovi.asw.Application;
-import es.uniovi.asw.dbManagement.DBManagementImpl;
 import es.uniovi.asw.dbManagement.VoterRepository;
+import es.uniovi.asw.dbManagement.impl.DBManagementImpl;
 import es.uniovi.asw.model.Voter;
 
 @RunWith(SpringJUnit4ClassRunner.class)

@@ -1,15 +1,15 @@
-package es.uniovi.asw.recuento;
+package es.uniovi.asw.VoteCounting.recuento;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import es.uniovi.asw.dbManagement.Persistence;
 import es.uniovi.asw.model.Candidatura;
 import es.uniovi.asw.model.ColegioElectoral;
 import es.uniovi.asw.model.ComunidadAutonoma;
 import es.uniovi.asw.model.Eleccion;
 import es.uniovi.asw.model.Voto;
-import es.uniovi.asw.persistence.Repository;
 
 public class StdCountSystem implements CountSystem {
 
@@ -22,9 +22,9 @@ public class StdCountSystem implements CountSystem {
 	public StdCountSystem(long id) {
 		this.id = id;
 
-		List<ColegioElectoral> coles = (List<ColegioElectoral>) Repository.colegioRep.findAll();
+		List<ColegioElectoral> coles = (List<ColegioElectoral>) Persistence.pollingStation.findAll();
 
-		List<ComunidadAutonoma> comunis = (List<ComunidadAutonoma>) Repository.comunidadRep.findAll();
+		List<ComunidadAutonoma> comunis = (List<ComunidadAutonoma>) Persistence.comunidad.findAll();
 
 		votos = new HashMap<String, Long>();
 
@@ -72,7 +72,7 @@ public class StdCountSystem implements CountSystem {
 
 	@Override
 	public void calcular() {
-		Eleccion e = Repository.eleccionRep.findById(id);
+		Eleccion e = Persistence.voting.findOne(id);
 
 		if (e == null)
 		{

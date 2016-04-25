@@ -1,4 +1,4 @@
-package es.uniovi.asw.business.registerVote.storePhisicalVoteManagement;
+package es.uniovi.asw.VotingSystem.business.registerVote.storePhisicalVoteManagement;
 
 public interface GetActiveVotings {
 

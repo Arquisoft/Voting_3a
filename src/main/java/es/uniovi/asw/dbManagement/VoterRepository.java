@@ -1,26 +1,22 @@
 package es.uniovi.asw.dbManagement;
 
+import java.util.List;
+
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
 
 import es.uniovi.asw.model.Voter;
 
-/**
- * Interfaz que soporta las operaciones CRUD para los objetos Voter
- * 
- * @author Dario Rodríguez García (@dariorg)
- * @author David González García (@davidglezz)
- */
-
-@Repository
 public interface VoterRepository extends CrudRepository<Voter, Long> {
 
-	public Voter findByEmail(String email);
+	public Voter findById(Long id);
+	
+	Voter findOneByEmail(String email);
+	
+	List<Voter> findByEmail(String email);
+	
+	Voter findOneByNif(String dniVoter);
 
 	public Voter findByEmailAndPassword(String email, String password);
-
-	@SuppressWarnings("unchecked")
-	public Voter save(Voter voter);
 
 	// public Voter findOne(Long primaryKey);
 
@@ -31,5 +27,7 @@ public interface VoterRepository extends CrudRepository<Voter, Long> {
 	// public void delete(Voter entity);
 
 	// public boolean exists(Long primaryKey);
+	
+	// http://docs.spring.io/spring-data/commons/docs/current/api/org/springframework/data/repository/CrudRepository.html
 
 }
