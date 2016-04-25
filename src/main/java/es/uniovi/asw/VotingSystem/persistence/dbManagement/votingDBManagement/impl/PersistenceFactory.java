@@ -1,10 +1,10 @@
 package es.uniovi.asw.VotingSystem.persistence.dbManagement.votingDBManagement.impl;
 
-import es.uniovi.asw.persistence.dbManagement.votingDBManagement.AddVote;
-import es.uniovi.asw.persistence.dbManagement.votingDBManagement.GetActiveVotings;
-import es.uniovi.asw.persistence.dbManagement.votingDBManagement.GetVOptions;
-import es.uniovi.asw.persistence.dbManagement.votingDBManagement.GetVoters;
-import es.uniovi.asw.persistence.dbManagement.votingDBManagement.HasVoted;
+import es.uniovi.asw.VotingSystem.persistence.dbManagement.votingDBManagement.AddVote;
+import es.uniovi.asw.VotingSystem.persistence.dbManagement.votingDBManagement.GetActiveVotings;
+import es.uniovi.asw.VotingSystem.persistence.dbManagement.votingDBManagement.GetVOptions;
+import es.uniovi.asw.VotingSystem.persistence.dbManagement.votingDBManagement.GetVoters;
+import es.uniovi.asw.VotingSystem.persistence.dbManagement.votingDBManagement.HasVoted;
 
 public class PersistenceFactory {
 

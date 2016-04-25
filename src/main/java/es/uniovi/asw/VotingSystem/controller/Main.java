@@ -1,4 +1,4 @@
-package es.uniovi.asw.controller;
+package es.uniovi.asw.VotingSystem.controller;
 
 import java.util.List;
 
@@ -17,52 +17,27 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-import es.uniovi.asw.business.login.Authenticate;
+import es.uniovi.asw.VotingSystem.business.login.Authenticate;
 import es.uniovi.asw.model.Candidatura;
 import es.uniovi.asw.model.ColegioElectoral;
 import es.uniovi.asw.model.Eleccion;
 import es.uniovi.asw.model.Voter;
-import es.uniovi.asw.persistence.dbManagement.repository.CandidacyRepository;
-import es.uniovi.asw.persistence.dbManagement.repository.CircunscripcionRepository;
-import es.uniovi.asw.persistence.dbManagement.repository.ConfirmedVoteRepository;
-import es.uniovi.asw.persistence.dbManagement.repository.EleccionRepository;
-import es.uniovi.asw.persistence.dbManagement.repository.PollingStationRepository;
-import es.uniovi.asw.persistence.dbManagement.repository.VoteRepository;
-import es.uniovi.asw.persistence.dbManagement.repository.VoterRepository;
-import es.uniovi.asw.persistence.dbManagement.repository.VotingRepository;
-import es.uniovi.asw.view.pollingStationPresidentManagement.AddPV;
-import es.uniovi.asw.view.votingSystem.voterManagement.AlreadyV;
-import es.uniovi.asw.view.votingSystem.voterManagement.GetAV;
-import es.uniovi.asw.view.votingSystem.voterManagement.GetVO;
-import es.uniovi.asw.view.votingSystem.voterManagement.VoteV;
-import es.uniovi.asw.view.systemConfiguration.administratorManagement.ConfCand;
-import es.uniovi.asw.view.systemConfiguration.administratorManagement.ConfPS;
-import es.uniovi.asw.view.systemConfiguration.administratorManagement.ConfVT;
-import es.uniovi.asw.view.systemConfiguration.administratorManagement.GetCand;
-import es.uniovi.asw.view.systemConfiguration.administratorManagement.GetPS;
-import es.uniovi.asw.view.systemConfiguration.administratorManagement.GetVT;
+import es.uniovi.asw.VotingSystem.view.pollingStationPresidentManagement.AddPV;
+import es.uniovi.asw.VotingSystem.view.votingSystem.voterManagement.AlreadyV;
+import es.uniovi.asw.VotingSystem.view.votingSystem.voterManagement.GetAV;
+import es.uniovi.asw.VotingSystem.view.votingSystem.voterManagement.GetVO;
+import es.uniovi.asw.VotingSystem.view.votingSystem.voterManagement.VoteV;
+import es.uniovi.asw.VotingSystem.view.systemConfiguration.administratorManagement.ConfCand;
+import es.uniovi.asw.VotingSystem.view.systemConfiguration.administratorManagement.ConfPS;
+import es.uniovi.asw.VotingSystem.view.systemConfiguration.administratorManagement.ConfVT;
+import es.uniovi.asw.VotingSystem.view.systemConfiguration.administratorManagement.GetCand;
+import es.uniovi.asw.VotingSystem.view.systemConfiguration.administratorManagement.GetPS;
+import es.uniovi.asw.VotingSystem.view.systemConfiguration.administratorManagement.GetVT;
 
 @RestController
 public class Main {
 
 	private static final Logger LOG = LoggerFactory.getLogger(Main.class);
-
-	@Autowired
-	private VotingRepository vRep;
-	@Autowired
-	private CandidacyRepository cRep;
-	@Autowired
-	private PollingStationRepository pRep;
-	@Autowired
-	private CircunscripcionRepository ciRep;
-	@Autowired
-	private VoterRepository vtRep;
-	@Autowired
-	private EleccionRepository eRep;
-	@Autowired
-	private ConfirmedVoteRepository cvRep;
-	@Autowired
-	private VoteRepository voRep;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView index(Model model) {

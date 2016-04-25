@@ -1,7 +1,7 @@
-package es.uniovi.asw.persistence.dbManagement.adminDBManagement;
+package es.uniovi.asw.VotingSystem.persistence.dbManagement.adminDBManagement;
 
+import es.uniovi.asw.dbManagement.PollingStationRepository;
 import es.uniovi.asw.model.ColegioElectoral;
-import es.uniovi.asw.persistence.dbManagement.repository.PollingStationRepository;
 
 public interface AddPollingStation {
 	

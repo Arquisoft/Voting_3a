@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import es.uniovi.asw.model.types.UserPassInitStop;
+import es.uniovi.asw.VoteCounting.publicacion.dto.UserPassInitStop;
 
 /**
  * @author Amir
@@ -21,7 +21,7 @@ public class UserPassInitStopTest {
 
 	private UserPassInitStop ups;
 	/**
-	 * Test method for {@link es.uniovi.asw.model.types.UserPassInitStop#UserPassInitStop(java.lang.String, java.lang.String, java.lang.Long)}.
+	 * Test method for {@link es.uniovi.asw.VoteCounting.publicacion.dto.UserPassInitStop#UserPassInitStop(java.lang.String, java.lang.String, java.lang.Long)}.
 	 */
 	@Test
 	public final void testUserPassInitStop() {

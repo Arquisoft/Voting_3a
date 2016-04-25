@@ -2,9 +2,9 @@ package es.uniovi.asw.VotingSystem.persistence.dbManagement.votingDBManagement.i
 
 import java.util.List;
 
+import es.uniovi.asw.VotingSystem.persistence.dbManagement.votingDBManagement.HasVoted;
+import es.uniovi.asw.dbManagement.ConfirmedVoteRepository;
 import es.uniovi.asw.model.VotoConfirmado;
-import es.uniovi.asw.persistence.dbManagement.repository.ConfirmedVoteRepository;
-import es.uniovi.asw.persistence.dbManagement.votingDBManagement.HasVoted;
 
 class HasVotedImpl implements HasVoted {
 

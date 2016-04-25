@@ -1,7 +1,7 @@
-package es.uniovi.asw.business.votingSystem.votingManagement;
+package es.uniovi.asw.VotingSystem.business.votingSystem.votingManagement;
 
+import es.uniovi.asw.dbManagement.ConfirmedVoteRepository;
 import es.uniovi.asw.model.Voter;
-import es.uniovi.asw.persistence.dbManagement.repository.ConfirmedVoteRepository;
 
 public interface AlreadyVoted {
 

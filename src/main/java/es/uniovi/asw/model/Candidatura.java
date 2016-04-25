@@ -26,6 +26,13 @@ public class Candidatura {
 		return id;
 	}
 	
+	public Candidatura(String nombre, Eleccion e){
+		this.nombre = nombre;
+		this.descripcion = "";
+		this.programaElectoral = "";
+		Asociacion.EleccionOpcion.link(e, this);
+	}
+	
 	public Candidatura(String nombre,String descripcion,String programaElectoral, Eleccion e){
 		this.nombre = nombre;
 		this.descripcion = descripcion;

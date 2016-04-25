@@ -17,7 +17,7 @@ public class Voto {
 	@ManyToOne
 	private Candidatura opcion;
 	
-	Voto() {}
+	public Voto() {}
 
 	public Voto(ColegioElectoral colegio){
 		Asociacion.ColegioVoto.link(colegio, this);

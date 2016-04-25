@@ -2,14 +2,14 @@ package es.uniovi.asw.VotingSystem.persistence.dbManagement.votingDBManagement.i
 
 import java.util.List;
 
+import es.uniovi.asw.VotingSystem.persistence.dbManagement.votingDBManagement.GetVoters;
+import es.uniovi.asw.dbManagement.VoterRepository;
 import es.uniovi.asw.model.Voter;
-import es.uniovi.asw.persistence.dbManagement.repository.VoterRepository;
-import es.uniovi.asw.persistence.dbManagement.votingDBManagement.GetVoters;
 
 class GetVotersImpl implements GetVoters{
 	
 	public Voter findByEmail(String email, VoterRepository vtRep){
-		List<Voter> votantes = vtRep.findAll();
+		List<Voter> votantes = (List<Voter>) vtRep.findAll();
 		for(Voter v : votantes){
 			if(v.getEmail().equals(email))
 				return v;
@@ -18,7 +18,7 @@ class GetVotersImpl implements GetVoters{
 	}
 	
 	public List<Voter> findAll(VoterRepository vtRep){
-		return vtRep.findAll();
+		return (List<Voter>) vtRep.findAll();
 	}
 
 }

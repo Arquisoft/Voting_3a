@@ -1,13 +1,13 @@
-package es.uniovi.asw.persistence.dbManagement.adminDBManagement.impl;
+package es.uniovi.asw.VotingSystem.persistence.dbManagement.adminDBManagement.impl;
 
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
+import es.uniovi.asw.VotingSystem.persistence.dbManagement.adminDBManagement.GetVotings;
+import es.uniovi.asw.dbManagement.CandidacyRepository;
+import es.uniovi.asw.dbManagement.VotingRepository;
 import es.uniovi.asw.model.Eleccion;
-import es.uniovi.asw.persistence.dbManagement.adminDBManagement.GetVotings;
-import es.uniovi.asw.persistence.dbManagement.repository.CandidacyRepository;
-import es.uniovi.asw.persistence.dbManagement.repository.VotingRepository;
 
 class GetVotingsImpl implements GetVotings{
 
@@ -24,7 +24,7 @@ class GetVotingsImpl implements GetVotings{
 
 	@Override
 	public Eleccion getEleccionById(VotingRepository vr, CandidacyRepository cRep, Long id) {
-		List<Eleccion> elecciones = vr.findAll();
+		List<Eleccion> elecciones = (List<Eleccion>) vr.findAll();
 		for(Eleccion e : elecciones){
 			if(e.getId() == id){
 				e.getOpciones().size();

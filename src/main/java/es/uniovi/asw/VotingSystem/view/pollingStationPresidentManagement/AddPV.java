@@ -1,19 +1,19 @@
 package es.uniovi.asw.VotingSystem.view.pollingStationPresidentManagement;
 
-import es.uniovi.asw.business.registerVote.storePhisicalVoteManagement.AddPhisicalVote;
-import es.uniovi.asw.business.registerVote.storePhisicalVoteManagement.impl.AddPhisicalVoteImpl;
-import es.uniovi.asw.persistence.dbManagement.repository.ConfirmedVoteRepository;
-import es.uniovi.asw.persistence.dbManagement.repository.EleccionRepository;
-import es.uniovi.asw.persistence.dbManagement.repository.VoterRepository;
+import es.uniovi.asw.VotingSystem.business.registerVote.storePhisicalVoteManagement.AddPhisicalVote;
+import es.uniovi.asw.VotingSystem.business.registerVote.storePhisicalVoteManagement.impl.AddPhisicalVoteImpl;
+import es.uniovi.asw.dbManagement.ConfirmedVoteRepository;
+import es.uniovi.asw.dbManagement.VoterRepository;
+import es.uniovi.asw.dbManagement.VotingRepository;
 
 public class AddPV {
 	
 	private ConfirmedVoteRepository cvRep;
 	private VoterRepository vRep;
-	private EleccionRepository eRep;
+	private VotingRepository eRep;
 
 	public AddPV(ConfirmedVoteRepository cvRep, VoterRepository vRep,
-			EleccionRepository eRep) {
+			VotingRepository eRep) {
 		super();
 		this.cvRep = cvRep;
 		this.vRep = vRep;

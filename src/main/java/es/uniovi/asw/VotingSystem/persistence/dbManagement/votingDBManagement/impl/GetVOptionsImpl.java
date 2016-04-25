@@ -2,10 +2,10 @@ package es.uniovi.asw.VotingSystem.persistence.dbManagement.votingDBManagement.i
 
 import java.util.List;
 
+import es.uniovi.asw.VotingSystem.persistence.dbManagement.votingDBManagement.GetVOptions;
+import es.uniovi.asw.dbManagement.CandidacyRepository;
 import es.uniovi.asw.model.Candidatura;
 import es.uniovi.asw.model.Eleccion;
-import es.uniovi.asw.persistence.dbManagement.repository.CandidacyRepository;
-import es.uniovi.asw.persistence.dbManagement.votingDBManagement.GetVOptions;
 
 class GetVOptionsImpl implements GetVOptions {
 
@@ -14,7 +14,7 @@ class GetVOptionsImpl implements GetVOptions {
 	}
 	
 	public List<Candidatura> findAll(CandidacyRepository cRep){
-		return cRep.findAll();
+		return (List<Candidatura>) cRep.findAll();
 	}
 	
 }

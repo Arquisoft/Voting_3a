@@ -45,6 +45,10 @@ public class Voter {
 		this.password = password;
 		this.nif = nif;
 	}
+	
+	public Long getId() {
+		return id;
+	}
 
 	public String getEmail() {
 		return email;

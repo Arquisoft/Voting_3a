@@ -1,10 +1,10 @@
-package es.uniovi.asw.persistence.dbManagement.votingDBManagement;
+package es.uniovi.asw.VotingSystem.persistence.dbManagement.votingDBManagement;
 
 import java.util.List;
 
+import es.uniovi.asw.dbManagement.CandidacyRepository;
 import es.uniovi.asw.model.Candidatura;
 import es.uniovi.asw.model.Eleccion;
-import es.uniovi.asw.persistence.dbManagement.repository.CandidacyRepository;
 
 public interface GetVOptions {
 

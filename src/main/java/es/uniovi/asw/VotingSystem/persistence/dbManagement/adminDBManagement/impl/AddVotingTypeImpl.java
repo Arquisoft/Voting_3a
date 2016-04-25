@@ -1,12 +1,12 @@
-package es.uniovi.asw.persistence.dbManagement.adminDBManagement.impl;
+package es.uniovi.asw.VotingSystem.persistence.dbManagement.adminDBManagement.impl;
 
 import java.util.List;
 
+import es.uniovi.asw.VotingSystem.persistence.dbManagement.adminDBManagement.AddVotingType;
+import es.uniovi.asw.dbManagement.CandidacyRepository;
+import es.uniovi.asw.dbManagement.VotingRepository;
 import es.uniovi.asw.model.Candidatura;
 import es.uniovi.asw.model.Eleccion;
-import es.uniovi.asw.persistence.dbManagement.adminDBManagement.AddVotingType;
-import es.uniovi.asw.persistence.dbManagement.repository.CandidacyRepository;
-import es.uniovi.asw.persistence.dbManagement.repository.VotingRepository;
 
 class AddVotingTypeImpl implements AddVotingType{
 

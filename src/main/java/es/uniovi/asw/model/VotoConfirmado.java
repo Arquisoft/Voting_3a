@@ -18,9 +18,11 @@ public class VotoConfirmado {
 	
 	@Id @ManyToOne private Voter votante;
 	@Id @ManyToOne private Eleccion eleccion;
+	
+	// Esto es inutil completamente
 	private boolean haVotado;
 	
-	VotoConfirmado() {}
+	public VotoConfirmado() {}
 	
 	public VotoConfirmado(Voter voter, Eleccion eleccion){
 		Asociacion.EleccionVotoConfirmado.link(eleccion, this);
@@ -51,9 +53,6 @@ public class VotoConfirmado {
 		return "VotoConfirmado [votante=" + votante + ", eleccion=" + eleccion + ", haVotado=" + haVotado + "]";
 	}
 
-	/* (non-Javadoc)
-	 * @see java.lang.Object#hashCode()
-	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -63,9 +62,6 @@ public class VotoConfirmado {
 		return result;
 	}
 
-	/* (non-Javadoc)
-	 * @see java.lang.Object#equals(java.lang.Object)
-	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

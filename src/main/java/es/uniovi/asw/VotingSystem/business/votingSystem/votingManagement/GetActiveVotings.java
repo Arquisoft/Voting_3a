@@ -1,9 +1,9 @@
-package es.uniovi.asw.business.votingSystem.votingManagement;
+package es.uniovi.asw.VotingSystem.business.votingSystem.votingManagement;
 
 import java.util.List;
 
+import es.uniovi.asw.dbManagement.VotingRepository;
 import es.uniovi.asw.model.Eleccion;
-import es.uniovi.asw.persistence.dbManagement.repository.VotingRepository;
 
 public interface GetActiveVotings {
 

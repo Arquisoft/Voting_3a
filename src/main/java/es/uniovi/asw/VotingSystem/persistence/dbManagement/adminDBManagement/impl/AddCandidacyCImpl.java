@@ -4,8 +4,8 @@ import java.util.List;
 
 import es.uniovi.asw.VotingSystem.persistence.dbManagement.adminDBManagement.AddCandidacyC;
 import es.uniovi.asw.VotingSystem.persistence.dbManagement.adminDBManagement.GetCandidacyS;
-import es.uniovi.asw.VotingSystem.persistence.dbManagement.repository.CandidacyRepository;
-import es.uniovi.asw.VotingSystem.persistence.dbManagement.repository.VotingRepository;
+import es.uniovi.asw.dbManagement.CandidacyRepository;
+import es.uniovi.asw.dbManagement.VotingRepository;
 import es.uniovi.asw.model.Candidatura;
 
 class AddCandidacyCImpl implements AddCandidacyC{

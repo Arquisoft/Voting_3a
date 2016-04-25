@@ -1,16 +1,16 @@
-package es.uniovi.asw.business.votingSystem.votingManagement.impl;
+package es.uniovi.asw.VotingSystem.business.votingSystem.votingManagement.impl;
 
-import es.uniovi.asw.business.votingSystem.votingManagement.Vote;
+import es.uniovi.asw.VotingSystem.business.votingSystem.votingManagement.Vote;
+import es.uniovi.asw.VotingSystem.persistence.dbManagement.votingDBManagement.impl.PersistenceFactory;
+import es.uniovi.asw.dbManagement.ConfirmedVoteRepository;
+import es.uniovi.asw.dbManagement.VoteRepository;
+import es.uniovi.asw.dbManagement.VoterRepository;
+import es.uniovi.asw.dbManagement.VotingRepository;
 import es.uniovi.asw.model.Candidatura;
 import es.uniovi.asw.model.Eleccion;
 import es.uniovi.asw.model.Voter;
 import es.uniovi.asw.model.Voto;
 import es.uniovi.asw.model.VotoConfirmado;
-import es.uniovi.asw.persistence.dbManagement.repository.ConfirmedVoteRepository;
-import es.uniovi.asw.persistence.dbManagement.repository.VoteRepository;
-import es.uniovi.asw.persistence.dbManagement.repository.VoterRepository;
-import es.uniovi.asw.persistence.dbManagement.repository.VotingRepository;
-import es.uniovi.asw.persistence.dbManagement.votingDBManagement.impl.PersistenceFactory;
 
 class VoteImpl implements Vote{
 	

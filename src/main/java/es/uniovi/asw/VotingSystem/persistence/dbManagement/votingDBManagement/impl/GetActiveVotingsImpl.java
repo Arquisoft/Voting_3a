@@ -1,12 +1,10 @@
 package es.uniovi.asw.VotingSystem.persistence.dbManagement.votingDBManagement.impl;
+import java.util.ArrayList;
 import java.util.List;
 
+import es.uniovi.asw.VotingSystem.persistence.dbManagement.votingDBManagement.GetActiveVotings;
+import es.uniovi.asw.dbManagement.VotingRepository;
 import es.uniovi.asw.model.Eleccion;
-import es.uniovi.asw.persistence.dbManagement.repository.VotingRepository;
-
-import java.util.ArrayList;
-
-import es.uniovi.asw.persistence.dbManagement.votingDBManagement.GetActiveVotings;
 
 class GetActiveVotingsImpl implements GetActiveVotings {
 

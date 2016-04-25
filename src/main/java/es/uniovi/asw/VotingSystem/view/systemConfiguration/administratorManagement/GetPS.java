@@ -1,24 +1,24 @@
-package es.uniovi.asw.view.systemConfiguration.administratorManagement;
+package es.uniovi.asw.VotingSystem.view.systemConfiguration.administratorManagement;
 
 import java.util.List;
 
-import es.uniovi.asw.business.systemConfiguration.votingParamsManagement.SysConfigServiceFactory;
-import es.uniovi.asw.business.systemConfiguration.votingParamsManagement.pollingStationManagement.PollingStationService;
+import es.uniovi.asw.VotingSystem.business.systemConfiguration.votingParamsManagement.SysConfigServiceFactory;
+import es.uniovi.asw.VotingSystem.business.systemConfiguration.votingParamsManagement.pollingStationManagement.PollingStationService;
+import es.uniovi.asw.dbManagement.CircumscriptionRepository;
+import es.uniovi.asw.dbManagement.PollingStationRepository;
 import es.uniovi.asw.model.Circunscripcion;
 import es.uniovi.asw.model.ColegioElectoral;
-import es.uniovi.asw.persistence.dbManagement.repository.CircunscripcionRepository;
-import es.uniovi.asw.persistence.dbManagement.repository.PollingStationRepository;
 
 public class GetPS {
 	
 	private PollingStationRepository pRep;
-	private CircunscripcionRepository cRep;
+	private CircumscriptionRepository cRep;
 	
 	public GetPS(PollingStationRepository pRep){
 		this.pRep = pRep;
 	}
 	
-	public GetPS(CircunscripcionRepository cRep){
+	public GetPS(CircumscriptionRepository cRep){
 		this.cRep = cRep;
 	}
 	
