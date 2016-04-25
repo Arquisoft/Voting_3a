@@ -57,3 +57,7 @@ local.properties
 
 # Code Recommenders
 .recommenders/
+
+# Base de datos
+data/db.lck
+data/db.log
