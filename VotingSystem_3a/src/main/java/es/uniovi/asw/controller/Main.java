@@ -250,6 +250,7 @@ public class Main {
 			if(c.getId().equals(Long.parseLong(id)))
 				new VoteV(vRep,vtRep, voRep, cvRep).meterVoto(c, (Voter) sesion.getAttribute("voter"));
 		}
+		model.addAttribute("votado", "Su voto se ha realizado con éxito");
 		return new ModelAndView("voter_index");
 		
 	}
