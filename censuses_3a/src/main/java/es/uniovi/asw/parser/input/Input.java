@@ -23,6 +23,9 @@ public class Input {
 	public void getDataInput(String...args) throws ParseException{
 		Options options = fileOptions();
 		CommandLineParser p = new DefaultParser();
+		if(args.length != 3){
+			throw new IllegalArgumentException("Error: número de parámetros de entrada incorrectos");
+		}
 		try {
 			CommandLine cmd = p.parse( options, args );
 			if(cmd.hasOption("x")){

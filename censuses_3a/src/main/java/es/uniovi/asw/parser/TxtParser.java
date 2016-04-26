@@ -22,4 +22,5 @@ public class TxtParser implements Parser{
 		return txt.loadUsers( fichero );
 	
 	}
+
 }
