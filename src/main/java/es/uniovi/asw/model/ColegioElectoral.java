@@ -29,6 +29,11 @@ public class ColegioElectoral {
 	
 	ColegioElectoral() {}
 	
+	public ColegioElectoral(String nombre, String poblacion){
+		this.nombre = nombre;
+		this.poblacion = poblacion;
+	}
+	
 	public ColegioElectoral(String nombre, String poblacion, Circunscripcion c){
 		this.nombre = nombre;
 		this.poblacion = poblacion;
@@ -114,6 +119,4 @@ public class ColegioElectoral {
 				+ ", nombre=" + nombre + ", poblacion=" + poblacion + "]";
 	}
 	
-	
-
 }

@@ -37,7 +37,7 @@ public class Eleccion {
 	@OneToMany(mappedBy = "eleccion", cascade=CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<Candidatura> opciones = new ArrayList<Candidatura>();
 	
-	@OneToMany(mappedBy = "eleccion")
+	@OneToMany(mappedBy = "eleccion") // , targetEntity= VotoConfirmado.class)
 	//private Set<VotoConfirmado> votantes;
 	private Set<VotoConfirmado> votantes = new HashSet<VotoConfirmado>();
 	

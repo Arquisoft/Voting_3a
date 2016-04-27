@@ -6,14 +6,14 @@ import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.ManyToOne;
 
-import es.uniovi.asw.model.types.VotoConfirmadokey;
+import es.uniovi.asw.model.types.VotoConfirmadoKey;
 
-
-@IdClass(VotoConfirmadokey.class)
 @Entity
+@IdClass(VotoConfirmadoKey.class)
 public class VotoConfirmado {
 	
-	@Id @GeneratedValue
+	@Id
+	@GeneratedValue
 	private Long id;
 	
 	@Id @ManyToOne private Voter votante;
@@ -48,6 +48,10 @@ public class VotoConfirmado {
 		this.haVotado = haVotado;
 	}
 	
+	public Long getId() {
+		return this.id;
+	}
+
 	@Override
 	public String toString() {
 		return "VotoConfirmado [votante=" + votante + ", eleccion=" + eleccion + ", haVotado=" + haVotado + "]";

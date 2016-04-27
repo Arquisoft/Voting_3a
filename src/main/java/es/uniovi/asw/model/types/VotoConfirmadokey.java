@@ -2,13 +2,21 @@ package es.uniovi.asw.model.types;
 
 import java.io.Serializable;
 
-public class VotoConfirmadokey implements Serializable{
+import es.uniovi.asw.model.Eleccion;
+import es.uniovi.asw.model.Voter;
+
+public class VotoConfirmadoKey implements Serializable{
 
 	private static final long serialVersionUID = 1L;
-	Long votante;
-	Long eleccion;
+
+	private Long votante;
+	private Long eleccion;
 	
-	public VotoConfirmadokey  () {}
+	 public VotoConfirmadoKey(){}
+	    public VotoConfirmadoKey(Voter v, Eleccion e){
+	        votante = v.getId();
+	        eleccion = e.getId();
+	    }
 	
 
 	public Long getVotante() {
@@ -43,7 +51,7 @@ public class VotoConfirmadokey implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		VotoConfirmadokey other = (VotoConfirmadokey) obj;
+		VotoConfirmadoKey other = (VotoConfirmadoKey) obj;
 		if (eleccion == null) {
 			if (other.eleccion != null)
 				return false;

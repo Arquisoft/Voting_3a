@@ -2,13 +2,14 @@ package es.uniovi.asw.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
 public class Voto {
 	
-	@Id @GeneratedValue
+	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
 	@ManyToOne
@@ -43,7 +44,9 @@ public class Voto {
 		this.opcion = opcion;
 	}
 	
-	
+	public Long getId() {
+		return this.id;
+	}
 
 	@Override
 	public int hashCode() {

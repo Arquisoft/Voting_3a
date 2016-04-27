@@ -34,6 +34,10 @@ public class ComunidadAutonoma {
 	public void setCircunscripciones(Set<Circunscripcion> circunscripciones) {
 		this.circunscripciones = circunscripciones;
 	}
+	
+	public Long getId() {
+		return this.id;
+	}
 
 	@Override
 	public int hashCode() {

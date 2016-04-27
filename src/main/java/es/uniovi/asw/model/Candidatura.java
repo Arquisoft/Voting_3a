@@ -25,6 +25,8 @@ public class Candidatura {
 	public Long getId() {
 		return id;
 	}
+
+	public Candidatura() {}
 	
 	public Candidatura(String nombre, Eleccion e){
 		this.nombre = nombre;
@@ -40,7 +42,6 @@ public class Candidatura {
 		Asociacion.EleccionOpcion.link(e, this);
 	}
 
-	public Candidatura() {}
 	
 	public String getNombre() {
 		return nombre;
