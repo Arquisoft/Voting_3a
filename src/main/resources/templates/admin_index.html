@@ -1,37 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-<!-- Bootstrap Core CSS -->
     <link href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
-    <link href="../static/css/simple-sidebar.css" th:href="@{/css/simple-sidebar.css}" rel="stylesheet" />
+    <link href="../static/css/sidebar.css" th:href="@{/css/sidebar.css}" rel="stylesheet" />
 </head>
 <body>
        <div id="wrapper">
-       		<p align="right"><a href="#" th:href="@{/}">Cerrar sesión</a></p>
+       		<p align="right"><a href="#" th:href="@{/}">Cerrar sesión   </a></p>
        <form class="navbar-form" role="search" action="#" th:action="@{/admin_index}" th:object="${eleccion}" method="post">
-       <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a>
-                        Panel de administración
-                    </a>
-                </li>
-                <li>
-                	<div th:if="${error != null}">
-    					<p><font th:text="${error}" color="red" size="2"></font></p>
-					</div>
-    				<input type="number" class="form-control" th:field="*{numeroOpciones}" placeholder="Nº de candidaturas"/>
-    				<button type="submit" class="btn btn-default col-md-12">Añadir elecciones</button>
-                </li>
-                <li><br></br><br></br></li>
-                <li>
-                    <button type="submit" class="btn btn-default" name="pollingStation" th:value="pollingStation">Configurar colegio electoral</button>
-                </li>
-            </ul>
-        </div>
+	   <div class="col-sm-3">
+			<nav class="nav-sidebar">
+				<ul class="nav tabs">
+					<center>
+          			<li class="active"><h2> Panel de administración</h2>
+          				<br></br><br></br>
+          			</li>
+          			<li class="table-striped table-bordered">
+          				<input type="number" class="form-control" th:field="*{numeroOpciones}" placeholder="Nº cand."></input>
+          				<br></br>
+    					<button type="submit" class="btn btn-link">Añadir elecciones</button>
+    					<br></br>
+    				</li>
+          			<li class="table-striped table-bordered">
+          				<button type="submit" class="btn btn-link" name="pollingStation" th:value="pollingStation">Configurar colegios electorales</button>
+          			</li>
+          			</center>                              
+				</ul>
+			</nav>
+		</div>
         </form>
         <div class="col-md-8">
-        	<center><h4><small>Elecciones disponibles</small></h4></center>
+        	<center><h4><small>Elecciones disponibles</small></h4>
+        	<div th:if="${error != null}">
+    			<p><font th:text="${error}" color="red" size="2"></font></p>
+			</div>
+        	</center>
 			<table class="table table-striped table-bordered">
 		      <tr>
 		        <th>Nombre</th>

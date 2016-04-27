@@ -15,7 +15,7 @@ class GetVotingsImpl implements GetVotings{
 	public List<Eleccion> getVotings(VotingRepository vr) {
 		List<Eleccion> elecciones = new ArrayList<>();
 		for(Eleccion e : vr.findAll()){
-			if(e.getFechaInicio().after(new Date(System.currentTimeMillis()))){
+			if(e.getFechaFin().after(new Date(System.currentTimeMillis()))){
 				elecciones.add(e);
 			}
 		}

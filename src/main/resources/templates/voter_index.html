@@ -15,6 +15,9 @@
 			<div th:if="${error != null}">
 				<p><font th:text="${error}" color="red" size="2"></font></p>
 			</div>
+			<div th:if="${votado != null}">
+				<p><font th:text="${votado}" color="green" size="2"></font></p>
+			</div>
 			<br/>
 			<br/>
 			<table class="table table-stripped">

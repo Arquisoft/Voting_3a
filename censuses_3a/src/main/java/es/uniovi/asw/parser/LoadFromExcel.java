@@ -14,6 +14,7 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import es.uniovi.asw.model.ColegioElectoral;
 import es.uniovi.asw.model.Voter;
 import es.uniovi.asw.reportWriter.WreportR;
 
@@ -66,13 +67,17 @@ public class LoadFromExcel {
 		String nombre= null, dni, email = null;
 		int pollingStationCode;
 		Voter voter = null;
+		ColegioElectoral colegio= null;
 		try{
 			nombre = columnas.next().getStringCellValue();
 			email = columnas.next().getStringCellValue();
 			dni = columnas.next().getStringCellValue();
 			pollingStationCode = (int) columnas.next().getNumericCellValue();
-			voter = new Voter(nombre, email, null, dni, pollingStationCode);
+			voter = new Voter(nombre, email, null, dni);//, pollingStationCode);
+			colegio = new ColegioElectoral( (long) pollingStationCode);
+			voter.setColegio(colegio);
 			voters.add(voter);
+			
 		}catch(NoSuchElementException ne){
 			WreportR.getInstance()
 			.writeReport(file, 

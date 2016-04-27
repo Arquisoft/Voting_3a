@@ -38,7 +38,7 @@ public class InsertP implements Insert{
 	}
 	
 	@Bean
-	public CommandLineRunner load(VoterRepository repository) {
+	public CommandLineRunner load(VoterRepository repository, PollingStationRepository pRep) {
 		return (args) -> {
 			Voter v = null;
 			Validation validation = new Validation();

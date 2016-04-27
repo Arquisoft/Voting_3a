@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:fragment="head">
-<meta charset="UTF-8" />
-<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet" />
-<link rel="stylesheet" type="text/css" media="screen"
-     href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css" />
+	<meta charset="UTF-8" />
+	<link href="../static/css/bootstrap-combined.min.css" rel="stylesheet" th:href="@{/css/bootstrap-combined.min.css}"/>
+	<link rel="stylesheet" media="screen" href="../static/css/bootstrap-datetimepicker.min.css" th:href="@{/css/bootstrap-datetimepicker.min.css}"/>
 </head>
 <body>
-<div class="header" th:fragment="cabecera">
-    <h1> Hola mundo </h1>
-</div>
 </body>
 </html>
