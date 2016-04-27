@@ -31,7 +31,7 @@ import es.uniovi.asw.model.VotoConfirmado;
 @Configuration
 @EnableAutoConfiguration
 @EntityScan(basePackages = { "es.uniovi.asw.model" })
-@EnableJpaRepositories(basePackages = { "es.uniovi.asw.persistence" })
+@EnableJpaRepositories(basePackages = { "es.uniovi.asw.dbManagement" })
 @EnableTransactionManagement
 public class RepositoryConfiguration {
 

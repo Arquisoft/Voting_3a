@@ -8,6 +8,7 @@ import javax.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -41,7 +42,7 @@ import es.uniovi.asw.model.ColegioElectoral;
 import es.uniovi.asw.model.Eleccion;
 import es.uniovi.asw.model.Voter;
 
-@RestController
+@Controller
 public class Main {
 
 	private static final Logger LOG = LoggerFactory.getLogger(Main.class);
