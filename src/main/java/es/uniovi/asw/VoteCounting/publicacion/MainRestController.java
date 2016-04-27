@@ -1,5 +1,6 @@
 package es.uniovi.asw.VoteCounting.publicacion;
 
+import java.io.File;
 import java.util.ArrayList;
 
 import org.springframework.http.HttpStatus;
@@ -69,6 +70,12 @@ public class MainRestController {
 			method = RequestMethod.GET)
 	public ResponseEntity<String> test() throws Exception {
 		System.out.println("/test");
+		
+		File file = new File("classpath:/templates/");
+		String absolutePath = file.getAbsolutePath();
+		System.out.println(absolutePath);
+		
+		
 		return  new ResponseEntity<String>("{}", HttpStatus.OK);
 	}
 }
