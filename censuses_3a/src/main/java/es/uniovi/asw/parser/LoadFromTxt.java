@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import es.uniovi.asw.model.ColegioElectoral;
 import es.uniovi.asw.model.Voter;
 import es.uniovi.asw.reportWriter.WreportR;
 
@@ -19,6 +20,7 @@ import es.uniovi.asw.reportWriter.WreportR;
  */
 public class LoadFromTxt {
 	
+	
 	public List<Voter> loadUsers( String fichero ) throws IOException{
 		
 		assertFileExtension(fichero);
@@ -28,14 +30,16 @@ public class LoadFromTxt {
 		List<Voter> voters = new ArrayList<Voter>();
 		String line;
 		String [] campos;
+		ColegioElectoral colegio = null;
 		int i = 0;
 		Voter voter = null;
 		while((line = in.readLine()) != null){
 			if(i > 0){
 				campos = line.split("\t");
 				try{
-					voter = new Voter(campos[0], campos[1], null, campos[2], 
-							new Integer(campos[3]));
+					voter = new Voter(campos[0], campos[1], null, campos[2]);
+					colegio = new ColegioElectoral((long)new Integer(campos[3]));
+					voter.setColegio(colegio);
 					voters.add(voter);
 				}catch(ArrayIndexOutOfBoundsException ai){
 					WreportR.getInstance().writeReport(fichero, 
@@ -67,7 +71,5 @@ public class LoadFromTxt {
 			throw new IllegalArgumentException("El fichero especificado no es un fichero de texto (txt)");
 		}
 	}
-	
-	
 
 }

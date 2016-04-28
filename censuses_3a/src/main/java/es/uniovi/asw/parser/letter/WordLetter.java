@@ -33,7 +33,7 @@ public class WordLetter {
 		letter.getMainDocumentPart().addParagraphOfText("CONTRASEÑA: " + voter.getPassword()).setPPr(paragraphFormat());
 		letter.getMainDocumentPart().addStyledParagraphOfText("Subtitle", "DATOS DEL CENSO");
 		letter.getMainDocumentPart().addParagraphOfText("COLEGIO ELECTORAL: " 
-				+ voter.getPollingStationCode()).setPPr(paragraphFormat());
+				+ voter.getColegio().getId()).setPPr(paragraphFormat());
 		letter.getMainDocumentPart().addStyledParagraphOfText("Subtitle", 
 				"NOTA: Los datos mostrados arriba son personales. Por seguridad no"
 				+ " se los comunique a terceras personas");
