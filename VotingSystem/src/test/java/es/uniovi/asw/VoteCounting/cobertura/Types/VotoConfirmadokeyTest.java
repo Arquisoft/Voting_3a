@@ -1,13 +1,15 @@
 /**
  * 
  */
-package es.uniovi.asw.cobertura.Types;
+package es.uniovi.asw.VoteCounting.cobertura.Types;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import es.uniovi.asw.model.types.VotoConfirmadokey;
+import es.uniovi.asw.model.types.VotoConfirmadoKey;
 
 /**
  * @author Amir
@@ -15,14 +17,14 @@ import es.uniovi.asw.model.types.VotoConfirmadokey;
  */
 public class VotoConfirmadokeyTest {
 	
-	private VotoConfirmadokey vc; 
+	private VotoConfirmadoKey vc; 
 
 	/**
 	 * Test method for {@link es.uniovi.asw.model.types.VotoConfirmadokey#hashCode()}.
 	 */
 	@Test
 	public final void testHashCode() {
-		vc = new VotoConfirmadokey();
+		vc = new VotoConfirmadoKey();
 		assertEquals(961, vc.hashCode());
 		vc.setEleccion(1L);
 		vc.setVotante(2L);
@@ -31,7 +33,7 @@ public class VotoConfirmadokeyTest {
 	
 	@Test
 	public final void testSets() {
-		vc = new VotoConfirmadokey();
+		vc = new VotoConfirmadoKey();
 	
 		Long l1=1L;
 		Long l2=2L;
@@ -48,11 +50,11 @@ public class VotoConfirmadokeyTest {
 	 */
 	@Test
 	public final void testEqualsObject() {
-		vc = new VotoConfirmadokey();
+		vc = new VotoConfirmadoKey();
 		vc.setEleccion(1L);
 		vc.setVotante(2L);
-		VotoConfirmadokey vc1 = new VotoConfirmadokey();
-		VotoConfirmadokey vc2 = new VotoConfirmadokey();
+		VotoConfirmadoKey vc1 = new VotoConfirmadoKey();
+		VotoConfirmadoKey vc2 = new VotoConfirmadoKey();
 		
 		assertTrue(vc1.equals(vc2));
 		assertTrue(vc.equals(vc));

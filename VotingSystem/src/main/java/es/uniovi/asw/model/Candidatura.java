@@ -43,6 +43,10 @@ public class Candidatura {
 	}
 
 	
+	public Candidatura(String nombre) {
+		this.nombre = nombre;
+	}
+
 	public String getNombre() {
 		return nombre;
 	}

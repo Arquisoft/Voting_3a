@@ -1,6 +1,6 @@
-package exceptionsTest;
+package es.uniovi.asw.Voters.exceptionsTest;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,8 +10,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 import es.uniovi.asw.Application;
-import es.uniovi.asw.exceptions.UserNotFoundException;
-import es.uniovi.asw.types.UserPass;
+import es.uniovi.asw.Voters.exceptions.UserNotFoundException;
+import es.uniovi.asw.Voters.types.UserPass;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)

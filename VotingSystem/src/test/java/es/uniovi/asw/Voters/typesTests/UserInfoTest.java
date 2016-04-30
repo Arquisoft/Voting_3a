@@ -1,6 +1,8 @@
-package typesTests;
+package es.uniovi.asw.Voters.typesTests;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,9 +12,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 import es.uniovi.asw.Application;
+import es.uniovi.asw.Voters.types.ChangePass;
+import es.uniovi.asw.Voters.types.UserInfo;
 import es.uniovi.asw.model.Voter;
-import es.uniovi.asw.types.ChangePass;
-import es.uniovi.asw.types.UserInfo;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
@@ -22,7 +24,7 @@ public class UserInfoTest {
 	private String name="pepe";
 	private String nif="128";
 	private String email="correo@dom.com";
-	private Long pollingStationCode=256L;
+	private String pollingStationCode = "Colegio en Oviedo";
 
 	@Test
 	public void testHashCode() {
@@ -62,7 +64,7 @@ public class UserInfoTest {
 		assertNull(v.getNombre());
 		assertNull(v.getNif());
 		assertNull(v.getEmail());		
-		assertNull(v.getPollingStationCode());
+		//assertNull(v.getPollingStationCode());
 		assertNull(ui.getName());
 		assertNull(ui.getEmail());
 		assertNull(ui.getNif());
@@ -129,27 +131,27 @@ public class UserInfoTest {
 		UserInfo ui2 = new UserInfo();
 		//compara 2 null
 		assertTrue(ui1.equals(ui2));
-		ui2 = new UserInfo("name", "nif", "email", 123L);
+		ui2 = new UserInfo("name", "nif", "email", "123L");
 		// compara un null con un bien formado
 		assertFalse(ui1.equals(ui2));
 		// comapra 2 bien formados
-		ui1 = new UserInfo("name", "nif", "email", 123L);
+		ui1 = new UserInfo("name", "nif", "email", "123L");
 		assertTrue(ui1.equals(ui2));
 		//compara dif nif
-		ui1 = new UserInfo("pepe", "25", "email@dom.com", 1L);
-		ui2 = new UserInfo("pepe", "50", "email@dom.com", 1L);
+		ui1 = new UserInfo("pepe", "25", "email@dom.com", "1L");
+		ui2 = new UserInfo("pepe", "50", "email@dom.com", "1L");
 		assertFalse(ui1.equals(ui2));
 		//compara dif nombre
-		ui1 = new UserInfo("pepe", "25", "email@dom.com", 1L);
-		ui2 = new UserInfo("juan", "25", "email@dom.com", 1L);
+		ui1 = new UserInfo("pepe", "25", "email@dom.com", "1L");
+		ui2 = new UserInfo("juan", "25", "email@dom.com", "1L");
 		assertFalse(ui1.equals(ui2));
 		//compara dif colegio electoral
-		ui1 = new UserInfo("pepe", "50", "email@dom.com", 8L);
-		ui2 = new UserInfo("pepe", "50", "email@dom.com", 1L);
+		ui1 = new UserInfo("pepe", "50", "email@dom.com", "8L");
+		ui2 = new UserInfo("pepe", "50", "email@dom.com", "1L");
 		assertFalse(ui1.equals(ui2));
 		//compara dif correo
-		ui1 = new UserInfo("pepe", "50", "mail@dom.com", 1L);
-		ui2 = new UserInfo("pepe", "50", "email@hotmail.com", 1L);
+		ui1 = new UserInfo("pepe", "50", "mail@dom.com", "1L");
+		ui2 = new UserInfo("pepe", "50", "email@hotmail.com", "1L");
 		assertFalse(ui1.equals(ui2));
 	}
 
