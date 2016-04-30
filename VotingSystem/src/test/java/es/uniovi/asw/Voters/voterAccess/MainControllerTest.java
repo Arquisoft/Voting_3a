@@ -1,4 +1,4 @@
-package voterAccess;
+package es.uniovi.asw.Voters.voterAccess;
 
 
 import static org.hamcrest.Matchers.equalTo;

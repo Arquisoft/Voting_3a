@@ -1,4 +1,4 @@
-package es.uniovi.asw;
+package es.uniovi.asw.VotingSystem;
 
 import static org.hamcrest.Matchers.containsString;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -23,22 +23,23 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.util.Assert;
 import org.springframework.web.context.WebApplicationContext;
 
+import es.uniovi.asw.Application;
+import es.uniovi.asw.VotingSystem.business.systemConfiguration.votingParamsManagement.voting.VotingTypeService;
+import es.uniovi.asw.VotingSystem.view.pollingStationPresidentManagement.AddPV;
+import es.uniovi.asw.VotingSystem.view.systemConfiguration.administratorManagement.ConfCand;
+import es.uniovi.asw.VotingSystem.view.systemConfiguration.administratorManagement.ConfVT;
+import es.uniovi.asw.VotingSystem.view.systemConfiguration.administratorManagement.GetCand;
+import es.uniovi.asw.VotingSystem.view.systemConfiguration.administratorManagement.GetVT;
+import es.uniovi.asw.VotingSystem.view.votingSystem.voterManagement.AlreadyV;
+import es.uniovi.asw.VotingSystem.view.votingSystem.voterManagement.GetAV;
+import es.uniovi.asw.VotingSystem.view.votingSystem.voterManagement.GetVO;
+import es.uniovi.asw.dbManagement.CandidacyRepository;
+import es.uniovi.asw.dbManagement.ConfirmedVoteRepository;
+import es.uniovi.asw.dbManagement.VoterRepository;
+import es.uniovi.asw.dbManagement.VotingRepository;
 import es.uniovi.asw.model.Candidatura;
 import es.uniovi.asw.model.Eleccion;
 import es.uniovi.asw.model.Voter;
-import es.uniovi.asw.persistence.dbManagement.repository.CandidacyRepository;
-import es.uniovi.asw.persistence.dbManagement.repository.ConfirmedVoteRepository;
-import es.uniovi.asw.persistence.dbManagement.repository.EleccionRepository;
-import es.uniovi.asw.persistence.dbManagement.repository.VoterRepository;
-import es.uniovi.asw.persistence.dbManagement.repository.VotingRepository;
-import es.uniovi.asw.view.pollingStationPresidentManagement.AddPV;
-import es.uniovi.asw.view.systemConfiguration.administratorManagement.ConfCand;
-import es.uniovi.asw.view.systemConfiguration.administratorManagement.ConfVT;
-import es.uniovi.asw.view.systemConfiguration.administratorManagement.GetCand;
-import es.uniovi.asw.view.systemConfiguration.administratorManagement.GetVT;
-import es.uniovi.asw.view.votingSystem.voterManagement.AlreadyV;
-import es.uniovi.asw.view.votingSystem.voterManagement.GetAV;
-import es.uniovi.asw.view.votingSystem.voterManagement.GetVO;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
@@ -55,7 +56,7 @@ public class FunctionalTest {
   @Autowired
   private ConfirmedVoteRepository cvRep;
   @Autowired
-  private EleccionRepository eRep;
+  private VotingRepository eRep;
   @Autowired
   private VoterRepository voRep;
 

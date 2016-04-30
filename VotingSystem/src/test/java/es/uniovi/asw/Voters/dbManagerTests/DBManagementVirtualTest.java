@@ -1,4 +1,4 @@
-package dbManagerTests;
+package es.uniovi.asw.Voters.dbManagerTests;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
@@ -13,12 +13,10 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 import es.uniovi.asw.Application;
-import es.uniovi.asw.dbManagement.DBManagement;
+import es.uniovi.asw.Voters.types.ChangePass;
 import es.uniovi.asw.dbManagement.VoterRepository;
 import es.uniovi.asw.dbManagement.impl.DBManagementImpl;
-import es.uniovi.asw.dbManagement.impl.DBManagementVirtualImpl;
-import es.uniovi.asw.model.Voter;
-import es.uniovi.asw.types.ChangePass;;
+import es.uniovi.asw.model.Voter;;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)

@@ -1,9 +1,13 @@
 /**
  * Un test del models y no trabajo para tripAdvisor ojo... este es otro models. 
  */
-package es.uniovi.asw.cobertura.modelo;
+package es.uniovi.asw.VoteCounting.cobertura.modelo;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import java.util.HashSet;
 import java.util.Set;

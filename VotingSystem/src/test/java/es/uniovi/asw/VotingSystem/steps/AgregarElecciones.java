@@ -1,4 +1,4 @@
-package es.uniovi.asw.steps;
+package es.uniovi.asw.VotingSystem.steps;
 
 import static org.junit.Assert.assertEquals;
 

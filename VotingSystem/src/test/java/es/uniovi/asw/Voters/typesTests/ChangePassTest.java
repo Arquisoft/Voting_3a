@@ -1,9 +1,10 @@
 /**
  * 
  */
-package typesTests;
+package es.uniovi.asw.Voters.typesTests;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,7 +14,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 import es.uniovi.asw.Application;
-import es.uniovi.asw.types.ChangePass;
+import es.uniovi.asw.Voters.types.ChangePass;
 
 /**
  * @author Amir H Tofigh Halati

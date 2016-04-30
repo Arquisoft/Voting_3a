@@ -1,9 +1,9 @@
 /**
  * 
  */
-package es.uniovi.asw.cobertura.Types;
+package es.uniovi.asw.VoteCounting.cobertura.Types;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 

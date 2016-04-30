@@ -1,4 +1,4 @@
-package es.uniovi.asw;
+package es.uniovi.asw.VotingSystem;
 
 import static org.junit.Assert.assertEquals;
 
@@ -78,8 +78,8 @@ public class ModelTest {
 		cole.setVotos(votos);
 		
 		Set<Voter> votantes = new HashSet<>();
-		votantes.add(new Voter(cole));
-		votantes.add(new Voter(cole));
+		votantes.add(new Voter("Pepe", "pepe@mail.com", "password", "123456789K", cole));
+		votantes.add(new Voter("Juan", "juan@mail.com", "password", "534223349G", cole));
 		cole.setVotantes(votantes);
 	}
 	
