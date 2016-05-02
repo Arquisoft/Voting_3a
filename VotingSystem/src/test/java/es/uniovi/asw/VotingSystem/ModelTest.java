@@ -71,8 +71,8 @@ public class ModelTest {
 	public void testColegioVotantesVoto() {
 		ColegioElectoral cole = new ColegioElectoral("A", "B");
 		Set<Voto> votos = new HashSet<>();
-		votos.add(new Voto(cole, null));
-		votos.add(new Voto(cole, null));
+		votos.add(new Voto(cole, new Candidatura()));
+		votos.add(new Voto(cole, new Candidatura()));
 		cole.setVotos(votos);
 		
 		Set<Voter> votantes = new HashSet<>();
