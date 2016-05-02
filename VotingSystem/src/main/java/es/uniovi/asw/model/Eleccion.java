@@ -24,9 +24,8 @@ public class Eleccion {
 	private Long id;
 	@NotNull @NotEmpty
 	private String nombre;
-	@NotNull
+
 	private Date fechaInicio;
-	@NotNull
 	private Date fechaFin;
 	
 	private boolean activa;

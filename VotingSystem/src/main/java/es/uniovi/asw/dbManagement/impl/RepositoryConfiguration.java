@@ -49,7 +49,7 @@ public class RepositoryConfiguration {
 		Persistence.vote = votoRep;
 		Persistence.confirmedVote = votoConfirmadoRep;
 
-		//insertarDatosEjemplo();
+		insertarDatosEjemplo();
 	}
 	
 	

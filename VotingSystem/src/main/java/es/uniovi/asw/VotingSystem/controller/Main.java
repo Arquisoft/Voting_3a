@@ -104,7 +104,7 @@ public class Main {
 
 	@RequestMapping(value = "/admin_index", method = RequestMethod.POST)
 	public ModelAndView adminIndexGet(@ModelAttribute Eleccion eleccion, Model model) {
-		if (eleccion.getNumeroOpciones() == null || eleccion.getNumeroOpciones().intValue() < 2) {
+		if (eleccion.getOpciones().size() < 2) {
 			model.addAttribute("error", "El número mínimo de opciones es 2");
 			model.addAttribute("elecciones", new GetVT(vRep).getActiveVotings());
 			return new ModelAndView("admin_index");
