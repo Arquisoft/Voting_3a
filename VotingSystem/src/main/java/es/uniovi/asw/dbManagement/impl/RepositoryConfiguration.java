@@ -56,42 +56,60 @@ public class RepositoryConfiguration {
 
 	private void insertarDatosEjemplo() {
 
-		// Eleccion
-		Eleccion eleccion1 = new Eleccion("EleccionASW", new Date(), new Date(System.currentTimeMillis() + 86400000),
-				new Time(System.currentTimeMillis()), new Time(System.currentTimeMillis() + 100000));
+		// Elecciones / Votaciones
+		Eleccion eleccion1 = Persistence.voting.save(new Eleccion("Elecciones Generales España 2016"));
+		Eleccion eleccion2 = Persistence.voting.save(new Eleccion("Elecciones Municipales 2015"));
+		Eleccion eleccion3 = Persistence.voting.save(new Eleccion("Elecciones Autonómicas 2014"));
 
-		eleccion1 = Persistence.voting.save(eleccion1);
-
-		// Opciones
-		Candidatura can1 = Persistence.candidacy.save(new Candidatura("Coca cola", "Coca cola", "Refresco carbonatado", eleccion1));
-		Candidatura can2 = Persistence.candidacy.save(new Candidatura("Fanta", "Fanta", "Refresco carbonatado sabor naranja o limon", eleccion1));
-		Candidatura can3 = Persistence.candidacy.save(new Candidatura("Nestea", "Nestea", "Bebida refrescante sin burbujas", eleccion1));
-
+		// Candidaturas / Opciones
+		Candidatura candidato1 = Persistence.candidacy.save(new Candidatura("Candidato 1", eleccion1));
+		Candidatura candidato2 = Persistence.candidacy.save(new Candidatura("Candidato 2", eleccion1));
+		Candidatura candidato3 = Persistence.candidacy.save(new Candidatura("Candidato 3", eleccion1));
+		Candidatura candidato4 = Persistence.candidacy.save(new Candidatura("Candidato 4", eleccion1));
+		Candidatura candidato5 = Persistence.candidacy.save(new Candidatura("Candidato 5", eleccion1));
+		
+		for (Eleccion e : new Eleccion[]{eleccion2, eleccion3}) {
+			for (String c : new String[]{"Candidato 1", "Candidato 2", "Candidato 3", "Candidato 4", "Candidato 5"}) {
+				Persistence.candidacy.save(new Candidatura(c, e));
+			}
+		}
+		
 		// Comunidades Autonomas
-		ComunidadAutonoma ca = Persistence.comunidad.save(new ComunidadAutonoma("Asturias"));
+		ComunidadAutonoma asturias = Persistence.comunidad.save(new ComunidadAutonoma("Asturias"));
+		
+		for (String c : new String[]{"Galicia", "Castilla y León", "País Vasco", "Cataluña", "Andalucía", "Madrid"}) {
+			Persistence.comunidad.save(new ComunidadAutonoma(c));
+		}
 
 		// Circunscripciones
-		Circunscripcion c1 = Persistence.circumscription.save(new Circunscripcion("Gijon", ca));
-		Circunscripcion c2 = Persistence.circumscription.save(new Circunscripcion("Oviedo", ca));
-		Circunscripcion c3 = Persistence.circumscription.save(new Circunscripcion("Aviles", ca));
-		Circunscripcion c4 = Persistence.circumscription.save(new Circunscripcion("Mieres", ca));
-
+		Circunscripcion oviedo = Persistence.circumscription.save(new Circunscripcion("Oviedo", asturias));
+		
+		for (String c : new String[]{"Gijon", "Aviles", "Mieres"}) {
+			Persistence.circumscription.save(new Circunscripcion(c, asturias));
+		}
+		
 		// Colegios Electorales
-		ColegioElectoral colegio1 = Persistence.pollingStation.save(new ColegioElectoral("Colegio de Gijon", "Poblacion gijonesa", c1));
-		ColegioElectoral colegio2 = Persistence.pollingStation.save(new ColegioElectoral("Colegio de Oviedo", "Poblacion ovetense", c2));
+		ColegioElectoral naranco = Persistence.pollingStation.save(new ColegioElectoral("Ciudad Naranco", "Oviedo", oviedo));
+		ColegioElectoral argañosa = Persistence.pollingStation.save(new ColegioElectoral("Argañosa", "Oviedo", oviedo));
+		ColegioElectoral vallobin = Persistence.pollingStation.save(new ColegioElectoral("Vallobin", "Oviedo", oviedo));
 
 		// Votantes
-		Voter v1 = Persistence.voter.save(new Voter("Carlos", "email1@uniovi.es", "pass1", "7895176D"));
-		Voter v2 = Persistence.voter.save(new Voter("Raul", "email2@uniovi.es", "pass2", "98751487D"));
-		Voter v3 = Persistence.voter.save(new Voter("Amir", "email3@uniovi.es", "pass3", "1234567B"));
-		Voter v4 = Persistence.voter.save(new Voter("David", "email4@uniovi.es", "pass4", "8747414D"));
+		Voter carlos = Persistence.voter.save(new Voter("Carlos", "email1@uniovi.es", "pass1", "7895176D", argañosa));
+		Voter raul = Persistence.voter.save(new Voter("Raul", "email2@uniovi.es", "pass2", "98751487D", vallobin));
+		Voter amir = Persistence.voter.save(new Voter("Amir", "email3@uniovi.es", "pass3", "1234567B", naranco));
+		Voter david = Persistence.voter.save(new Voter("David", "email4@uniovi.es", "pass4", "8747414D", naranco));
 
 		// Votos
-		Voto voto = Persistence.vote.save(new Voto(colegio1));
+		Persistence.vote.save(new Voto(naranco, candidato1));
+		Persistence.vote.save(new Voto(naranco, candidato2));
+		Persistence.vote.save(new Voto(vallobin, candidato1));
+		Persistence.vote.save(new Voto(argañosa, candidato3));
 
 		// Confirmaciones de voto
-		VotoConfirmado vc = Persistence.confirmedVote.save(new VotoConfirmado(v1, eleccion1));
-
+		Persistence.confirmedVote.save(new VotoConfirmado(david, eleccion1));
+		Persistence.confirmedVote.save(new VotoConfirmado(raul, eleccion1));
+		Persistence.confirmedVote.save(new VotoConfirmado(amir, eleccion1));
+		Persistence.confirmedVote.save(new VotoConfirmado(carlos, eleccion1));
 	}
 
 }

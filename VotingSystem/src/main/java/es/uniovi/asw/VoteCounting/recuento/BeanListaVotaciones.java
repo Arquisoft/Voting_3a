@@ -13,15 +13,17 @@ import es.uniovi.asw.model.Eleccion;
 @Component("BeanListaVotaciones")
 @Scope("session")
 public class BeanListaVotaciones {
-	
+
 	public List<Eleccion> elecciones;
 
 	@PostConstruct
 	public void init() {
-		
-		this.elecciones = (List<Eleccion>) Persistence.voting.findAll();
-		
+		update();
 		System.out.println("BeanListaVotaciones creado");
+	}
+
+	public void update() {
+		this.elecciones = (List<Eleccion>) Persistence.voting.findAll();
 	}
 
 	public List<Eleccion> getElecciones() {
@@ -31,6 +33,5 @@ public class BeanListaVotaciones {
 	public void setElecciones(List<Eleccion> elecciones) {
 		this.elecciones = elecciones;
 	}
-	
 
 }

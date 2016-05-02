@@ -1,27 +1,30 @@
 package es.uniovi.asw.VoteCounting.recuento;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public interface CountSystem {
 
-	public boolean iniciar();
+	void iniciar();
 
-	public boolean terminar();
+	void terminar();
 	
-	public HashMap<String, Long> getResults();
+	String getName();
 	
-	public String getName();
+	List<String> GetOptions();
 	
-	public List<String> GetOptions();
+	void calcular();
 	
-	public void calcular();
-	
-	public Map<String, Long> getVotos();
+	Map<String, Long> getVotos();
 
-	public Map<String, Map<String, Long>> getColegios();
+	Map<String, Map<String, Long>> getColegios();
 
-	public Map<String, Map<String, Long>> getComunidades();
+	Map<String, Map<String, Long>> getComunidades();
+	
+	Map<String, Long> getResults();
+
+	Map<String, Long> getResultsByColegio();
+
+	Map<String, Long> getResultsByComunidad();
 	
 }
