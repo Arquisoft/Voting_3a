@@ -78,7 +78,7 @@ public class EmitirVoto {
 		System.out.println(e);
 		Voter voter = new Voter("Paco", "info@paco.es", "ocap", "9449870L");
 		VotoConfirmado confirmado = new VotoConfirmado(voter, e);
-		confirmado.setHaVotado(true);
+		//confirmado.setHaVotado(true);
 	}
 
 }

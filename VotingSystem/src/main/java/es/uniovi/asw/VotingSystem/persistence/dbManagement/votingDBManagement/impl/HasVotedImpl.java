@@ -14,7 +14,7 @@ class HasVotedImpl implements HasVoted {
 		if (confirmados != null) {
 			for (VotoConfirmado vc : confirmados) {
 				if (vc.getEleccion().getId().equals(idEleccion) && vc.getVotante().getId().equals(idVotante)) {
-					return vc.isHaVotado();
+					return true;
 				}
 			}
 		}

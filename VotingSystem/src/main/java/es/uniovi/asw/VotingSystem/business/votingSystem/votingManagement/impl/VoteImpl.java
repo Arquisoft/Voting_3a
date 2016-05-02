@@ -24,7 +24,7 @@ class VoteImpl implements Vote{
 		Voter v = vtRep.findOne(votante.getId());
 		vc.setEleccion(e);
 		vc.setVotante(v);
-		vc.setHaVotado(true);
+		//vc.setHaVotado(true);
 		PersistenceFactory.newAddVote().añadirVotoConfirmado(cvRep, vc);
 	}
 }

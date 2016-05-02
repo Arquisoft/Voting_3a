@@ -24,11 +24,7 @@ public class Circunscripcion {
 	private Set<ColegioElectoral> colegios = new HashSet<>();
 	
 	Circunscripcion() {}
-	
-	public Circunscripcion(ComunidadAutonoma comunidad){
-		Asociacion.ComunidadCircunscripcion.link(comunidad, this);
-	}
-	
+		
 	public Circunscripcion(String nombre, ComunidadAutonoma comunidad){
 		this.nombre = nombre;
 		Asociacion.ComunidadCircunscripcion.link(comunidad, this);

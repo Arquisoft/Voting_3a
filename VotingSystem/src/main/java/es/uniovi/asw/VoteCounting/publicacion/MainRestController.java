@@ -28,7 +28,6 @@ public class MainRestController {
 			array.add(eleccion);
 		}
 		
-		// Temporal hasta que aya datos
 		Eleccion e1 = new Eleccion();
 		e1.setNombre("Elecciones Generales España 2016");
 

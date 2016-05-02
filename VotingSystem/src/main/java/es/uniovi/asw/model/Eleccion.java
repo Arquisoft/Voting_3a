@@ -1,6 +1,5 @@
 package es.uniovi.asw.model;
 
-import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
@@ -13,7 +12,6 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotEmpty;
@@ -26,27 +24,23 @@ public class Eleccion {
 	private Long id;
 	@NotNull @NotEmpty
 	private String nombre;
-	@NotNull
+
 	private Date fechaInicio;
-	@NotNull
 	private Date fechaFin;
-	private Time horaInicio, horaFin;
-	private Integer numeroOpciones;
+	
 	private boolean activa;
 
 	@OneToMany(mappedBy = "eleccion", cascade=CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<Candidatura> opciones = new ArrayList<Candidatura>();
 	
-	@OneToMany(mappedBy = "eleccion") // , targetEntity= VotoConfirmado.class)
-	//private Set<VotoConfirmado> votantes;
+	@OneToMany(mappedBy = "eleccion", targetEntity= VotoConfirmado.class)
+	
 	private Set<VotoConfirmado> votantes = new HashSet<VotoConfirmado>();
 	
-	public Eleccion(String nombre, Date inicio, Date fin, Time hInicio, Time hFin){
+	public Eleccion(String nombre, Date inicio, Date fin){
 		this.nombre = nombre;
 		this.fechaInicio = inicio;
 		this.fechaFin = fin;
-		this.horaInicio = hInicio;
-		this.horaFin = hFin;
 	}
 	
 	public Eleccion(String nombre){
@@ -64,7 +58,6 @@ public class Eleccion {
 	}
 	
 	public void setFechaInicio(Date fechaInicio) {
-		this.horaInicio = new Time(fechaInicio.getTime());
 		this.fechaInicio = fechaInicio;
 	}
 	
@@ -73,26 +66,9 @@ public class Eleccion {
 	}
 	
 	public void setFechaFin(Date fechaFin) {
-		this.horaFin = new Time(fechaFin.getTime());
 		this.fechaFin = fechaFin;
 	}
 	
-	public Time getHoraInicio() {
-		return horaInicio;
-	}
-	
-	public void setHoraInicio(Time horaInicio) {
-		this.horaInicio = horaInicio;
-	}
-	
-	public Time getHoraFin() {
-		return horaFin;
-	}
-	
-	public void setHoraFin(Time horaFin) {
-		this.horaFin = horaFin;
-	}
-
 	public List<Candidatura> getOpciones() {
 		return opciones;
 	}
@@ -113,14 +89,6 @@ public class Eleccion {
 		this.nombre = nombre;
 	}
 	
-	public Integer getNumeroOpciones() {
-		return numeroOpciones;
-	}
-
-	public void setNumeroOpciones(Integer numeroOpciones) {
-		this.numeroOpciones = numeroOpciones;
-	}
-
 	public boolean isActiva() {
 		return activa;
 	}
@@ -136,7 +104,7 @@ public class Eleccion {
 	@Override
 	public String toString() {
 		return "Eleccion [id=" + id + ", nombre=" + nombre + ", fechaInicio=" + fechaInicio + ", fechaFin=" + fechaFin
-				+ ", horaInicio=" + horaInicio + ", horaFin=" + horaFin + ", opciones=" + opciones + "]";
+				+ ", opciones=" + opciones + "]";
 	}
 
 	@Override

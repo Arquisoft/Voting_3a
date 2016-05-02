@@ -2,7 +2,6 @@ package es.uniovi.asw.VotingSystem.steps;
 
 import static org.junit.Assert.assertEquals;
 
-import java.sql.Time;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -44,15 +43,15 @@ public class AgregarElecciones {
   @Dado("^una lista con las elecciones activas$")
   public void una_lista_con_las_elecciones_activas() throws Throwable {
       elecciones = new ArrayList<Eleccion>();
-      elecciones.add(new Eleccion("Eleccion 1", new Date(), new Date(), new Time(System.currentTimeMillis()), new Time(System.currentTimeMillis())));
-      elecciones.add(new Eleccion("Eleccion 2", new Date(), new Date(), new Time(System.currentTimeMillis()), new Time(System.currentTimeMillis())));
+      elecciones.add(new Eleccion("Eleccion 1"));
+      elecciones.add(new Eleccion("Eleccion 2"));
   }
 
   @Cuando("^creamos unas elecciones con un nombre \"([^\"]*)\",un numero de opciones de (\\d+) y una fecha de inicio de \"([^\"]*)\"$")
   public void creamos_unas_elecciones_con_un_nombre_un_numero_de_opciones_de_y_una_fecha_de_inicio_de(String arg1, int arg2, String arg3) throws Throwable {
       Eleccion e = new Eleccion();
       e.setNombre(arg1);
-      e.setNumeroOpciones(arg2);
+      /*e.setNumeroOpciones(arg2);*/
       DateFormat format = new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH);
       date = format.parse(arg3);
       e.setFechaInicio(date);

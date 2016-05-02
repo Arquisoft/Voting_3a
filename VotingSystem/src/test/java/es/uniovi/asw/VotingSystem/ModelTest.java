@@ -2,7 +2,6 @@ package es.uniovi.asw.VotingSystem;
 
 import static org.junit.Assert.assertEquals;
 
-import java.sql.Time;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -30,8 +29,7 @@ public class ModelTest {
 		ComunidadAutonoma comunidad2 = new ComunidadAutonoma("Comunidad 1");
 		assertEquals(true, comunidad.equals(comunidad2));
 		circun = new Circunscripcion("Circ 1", comunidad);
-		Circunscripcion circun2 = new Circunscripcion(comunidad);
-		circun2 = new Circunscripcion("Circ 1", comunidad);
+		Circunscripcion circun2 = new Circunscripcion("Circ 1", comunidad);
 		assertEquals(true, circun.equals(circun2));
 		circun.setNombre(null);
 		assertEquals(false, circun.equals(circun2));
@@ -73,8 +71,8 @@ public class ModelTest {
 	public void testColegioVotantesVoto() {
 		ColegioElectoral cole = new ColegioElectoral("A", "B");
 		Set<Voto> votos = new HashSet<>();
-		votos.add(new Voto(cole));
-		votos.add(new Voto(cole));
+		votos.add(new Voto(cole, new Candidatura()));
+		votos.add(new Voto(cole, new Candidatura()));
 		cole.setVotos(votos);
 		
 		Set<Voter> votantes = new HashSet<>();
@@ -86,11 +84,9 @@ public class ModelTest {
 	@Test
 	public void testVotoCandidatura() {
 		ColegioElectoral cole = new ColegioElectoral("A", "B");
-		Voto voto = new Voto(cole);
-		
 		Candidatura c = new Candidatura("Candidatura");
-		voto = new Voto(c);
-		voto.setColegio(cole);
+		Voto voto = new Voto(cole, c);
+
 		assertEquals(cole, voto.getColegio());
 		assertEquals(c, voto.getOpcion());
 	}
@@ -115,12 +111,8 @@ public class ModelTest {
 	
 	@Test
 	public void testVotoConfirmadoEleccionVoto() {
-		Eleccion e = new Eleccion("A",new Date(System.currentTimeMillis()),
-				new Date(System.currentTimeMillis()),new Time(System.currentTimeMillis()),
-				new Time(System.currentTimeMillis()));
-		Eleccion e1 = new Eleccion("A",new Date(System.currentTimeMillis()),
-				new Date(System.currentTimeMillis()),new Time(System.currentTimeMillis()),
-				new Time(System.currentTimeMillis()));
+		Eleccion e = new Eleccion("A");
+		Eleccion e1 = new Eleccion("A");
 		e.equals(e1);
 		e.toString();
 		e.setActiva(true);
@@ -131,12 +123,6 @@ public class ModelTest {
 		e.getFechaInicio();
 		e.setFechaFin(new Date(System.currentTimeMillis() + 100000));
 		e.getFechaFin();
-		e.setHoraInicio(new Time(System.currentTimeMillis()));
-		e.getHoraInicio();
-		e.setHoraFin(new Time(System.currentTimeMillis()));
-		e.getHoraFin();
-		e.setNumeroOpciones(3);
-		assertEquals(3, e.getNumeroOpciones().intValue());
 	}
 
 }

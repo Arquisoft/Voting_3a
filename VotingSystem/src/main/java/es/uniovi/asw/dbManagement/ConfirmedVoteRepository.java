@@ -9,6 +9,5 @@ import es.uniovi.asw.model.types.VotoConfirmadoKey;
 
 public interface ConfirmedVoteRepository extends CrudRepository<VotoConfirmado, VotoConfirmadoKey>{
 		
-	List<VotoConfirmado> findByHaVotadoTrue();
 
 }

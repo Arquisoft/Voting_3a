@@ -18,38 +18,40 @@ import es.uniovi.asw.model.VotoConfirmado;
  *
  */
 public class VotoConfirmadoTest {
-	
-	private Eleccion e= new Eleccion("elec");
-	private Voter vr= new Voter("a", "b", "c", "d");
+
+	private Eleccion e = new Eleccion("elec");
+	private Voter vr = new Voter("a", "b", "c", "d");
 	private VotoConfirmado v;
 
 	/**
-	 * Test method for {@link es.uniovi.asw.model.VotoConfirmado#VotoConfirmado(es.uniovi.asw.model.Voter, es.uniovi.asw.model.Eleccion)}.
+	 * Test method for
+	 * {@link es.uniovi.asw.model.VotoConfirmado#VotoConfirmado(es.uniovi.asw.model.Voter, es.uniovi.asw.model.Eleccion)}
+	 * .
 	 */
 	@Test
 	public final void testVotoConfirmadoVoterEleccion() {
 		v = new VotoConfirmado(vr, e);
-		assertEquals(e,v.getEleccion());
-		assertEquals(vr,v.getVotante());
-	
+		assertEquals(e, v.getEleccion());
+		assertEquals(vr, v.getVotante());
+
 	}
-	
+
 	@Test
 	public final void testHash() {
 		v = new VotoConfirmado(vr, e);
-		assertEquals(97517792,v.hashCode());
+		assertEquals(97517792, v.hashCode());
 	}
-	
+
 	@Test
 	public final void testEquals() {
 		v = new VotoConfirmado(vr, e);
 		VotoConfirmado vc = new VotoConfirmado(vr, e);
 		VotoConfirmado v1 = new VotoConfirmado(vr, e);
 		VotoConfirmado v2 = new VotoConfirmado(vr, e);
-		
+
 		assertTrue(v.equals(v));
 		assertTrue(v.equals(vc));
-		
+
 		v1.setEleccion(null);
 		v2.setVotante(null);
 		assertFalse(v.equals(new Object()));
@@ -61,16 +63,6 @@ public class VotoConfirmadoTest {
 		assertFalse(v1.equals(v2));
 
 	}
-	
-	@Test
-	public final void testHaVotado() {
-		v = new VotoConfirmado(vr, e);
-		v.setHaVotado(false);
-		assertFalse(v.isHaVotado());
-		v.setHaVotado(true);
-		assertTrue(v.isHaVotado());
-	}
-
 
 	/**
 	 * Test method for {@link es.uniovi.asw.model.VotoConfirmado#toString()}.
@@ -78,13 +70,12 @@ public class VotoConfirmadoTest {
 	@Test
 	public final void testToString() {
 		v = new VotoConfirmado(vr, e);
-		String s="VotoConfirmado "
-				+ "[votante=Voter [nombre=a, email=b, nif=d, password=c], "
-				+ "eleccion=Eleccion [id=null, nombre=elec, fechaInicio=null, fechaFin=null, horaInicio=null, horaFin=null, "
-				+ "opciones=[]], haVotado=false]";
+		String s = "VotoConfirmado " + "[votante=Voter [nombre=a, email=b, nif=d, password=c], "
+				+ "eleccion=Eleccion [id=null, nombre=elec, fechaInicio=null, fechaFin=null, "
+				+ "opciones=[]]]";
 
-		assertEquals(s,v.toString());
-		
+		assertEquals(s, v.toString());
+
 	}
 
 }
