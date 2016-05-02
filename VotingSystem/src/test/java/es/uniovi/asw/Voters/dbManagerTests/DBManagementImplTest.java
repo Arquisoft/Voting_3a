@@ -24,6 +24,7 @@ import es.uniovi.asw.model.Voter;
 @WebAppConfiguration
 @IntegrationTest({ "server.port=0" })
 public class DBManagementImplTest {
+	/*
 	@Autowired
 	VoterRepository voterRepository;
 	
@@ -80,4 +81,5 @@ public class DBManagementImplTest {
 	{
 		voterRepository=null;
 	}
+	*/
 }

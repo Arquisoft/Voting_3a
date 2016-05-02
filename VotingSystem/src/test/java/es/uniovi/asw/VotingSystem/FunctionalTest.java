@@ -5,9 +5,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import java.sql.Time;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import org.junit.Before;
@@ -24,7 +22,6 @@ import org.springframework.util.Assert;
 import org.springframework.web.context.WebApplicationContext;
 
 import es.uniovi.asw.Application;
-import es.uniovi.asw.VotingSystem.business.systemConfiguration.votingParamsManagement.voting.VotingTypeService;
 import es.uniovi.asw.VotingSystem.view.pollingStationPresidentManagement.AddPV;
 import es.uniovi.asw.VotingSystem.view.systemConfiguration.administratorManagement.ConfCand;
 import es.uniovi.asw.VotingSystem.view.systemConfiguration.administratorManagement.ConfVT;
@@ -88,8 +85,7 @@ public class FunctionalTest {
   
   @Test
   public void testConfVT() throws Exception {
-	Eleccion e = new Eleccion("Eleccion1", new Date(System.currentTimeMillis()), 
-			new Date(System.currentTimeMillis()), new Time(System.currentTimeMillis()), new Time(System.currentTimeMillis()));
+	Eleccion e = new Eleccion("Eleccion1");
 	List<Candidatura> c = new ArrayList<Candidatura>();
 	c.add(new Candidatura("c1", e));
 	c.add(new Candidatura("c2", e));

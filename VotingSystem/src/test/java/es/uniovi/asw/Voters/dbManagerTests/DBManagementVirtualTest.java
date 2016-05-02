@@ -23,7 +23,7 @@ import es.uniovi.asw.model.Voter;;
 @WebAppConfiguration
 @IntegrationTest({ "server.port=0" })
 public class DBManagementVirtualTest {
-
+/*
 	//DBManagement db = new DBManagementImpl();
 	DBManagement db = new DBManagementVirtualImpl();
 
@@ -82,5 +82,5 @@ public class DBManagementVirtualTest {
 		Voter voter2 = db.getVoter("user10@mail.com");
 		assertTrue(voter1.equals(voter2));
 	}
-
+*/
 }

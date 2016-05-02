@@ -1,8 +1,6 @@
 package es.uniovi.asw.VotingSystem.steps;
 
-import java.sql.Time;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +37,7 @@ public class ConsultarCandidaturas {
 	public void una_lista_con_las_próximas_elecciones_activas() throws Throwable {
 		 elecciones = new ArrayList<Eleccion>();
 		    for(int i=0; i< 5; i++){
-		    	elecciones.add(new Eleccion("Elecciones " + (i+1), new Date(), new Date(), new Time(System.currentTimeMillis()), new Time(System.currentTimeMillis())));
+		    	elecciones.add(new Eleccion("Elecciones " + (i+1)));
 		    	for(int j=0; j<3; j++){
 		    		elecciones.get(i).getOpciones().add(new Candidatura("Candidatura " + (j+1)));
 		    	}

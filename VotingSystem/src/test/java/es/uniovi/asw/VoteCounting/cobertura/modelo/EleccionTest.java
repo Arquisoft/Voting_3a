@@ -9,7 +9,6 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
-import java.sql.Time;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -31,8 +30,6 @@ public class EleccionTest {
 
 	private Eleccion e; 
 	private Date date1= new Date();
-	private Time t1 = new Time(0);
-	private Time t2 = new Time(154651847);
 	private String nombre = "a";
 
 	/**
@@ -42,7 +39,7 @@ public class EleccionTest {
 	public final void testHashCode() {
 		e = new Eleccion();		
 		assertEquals(29791, e.hashCode());
-		e= new Eleccion("a" , null, null, new Time(0), new Time(1));
+		e= new Eleccion("a");
 		assertEquals(29888, e.hashCode());
 	}
 
@@ -52,13 +49,10 @@ public class EleccionTest {
 	@Test
 	public final void testEleccionStringDateDateTimeTime() {
 		Date date2= new Date();
-		e= new Eleccion(nombre , date1, date2, t1, t2);
+		e= new Eleccion(nombre);
 		assertEquals(nombre, e.getNombre());
 		assertEquals(date2, e.getFechaFin());
 		assertEquals(date1, e.getFechaInicio());
-		assertEquals(t2, e.getHoraFin());
-		assertEquals(t1, e.getHoraInicio());
-		assertNull(e.getNumeroOpciones());
 		assertNotNull(e.getOpciones());
 		assertEquals(0, e.getOpciones().size());
 		assertEquals(0,e.getVotantes().size());
@@ -72,8 +66,6 @@ public class EleccionTest {
 		e= new Eleccion(nombre);	
 		assertEquals(nombre, e.getNombre());
 		assertNull(e.getFechaFin());
-		assertNull(e.getHoraFin());
-		assertNull(e.getNumeroOpciones());
 		assertNotNull(e.getOpciones());
 		assertEquals(0, e.getOpciones().size());
 		assertEquals(0,e.getVotantes().size());
@@ -87,10 +79,7 @@ public class EleccionTest {
 	@Test
 	public final void testEleccion() {
 		e= new Eleccion();
-		assertNull(e.getHoraInicio());
 		assertNull(e.getNombre());
-		assertNull(e.getHoraInicio());
-		assertNull(e.getNumeroOpciones());
 		assertNotNull(e.getOpciones());
 		assertEquals(0, e.getOpciones().size());
 		assertEquals(0,e.getVotantes().size());
@@ -101,14 +90,14 @@ public class EleccionTest {
 	 */
 	@Test
 	public final void testToString() {
-		e= new Eleccion(nombre , null, null, null, null);		
-		String s ="Eleccion [id=null, nombre=a, fechaInicio=null, fechaFin=null, horaInicio=null, horaFin=null, opciones=[]]";
+		e= new Eleccion(nombre);		
+		String s ="Eleccion [id=null, nombre=a, fechaInicio=null, fechaFin=null, opciones=[]]";
 		assertEquals(s, e.toString());
 	}
 
 	@Test
 	public final void testActiva() {
-		e= new Eleccion(nombre , null, null, null, null);	
+		e= new Eleccion(nombre);	
 		e.setActiva(true);
 		assertTrue(e.isActiva());
 		e.setActiva(false);
@@ -118,22 +107,16 @@ public class EleccionTest {
 
 	@Test
 	public final void testSets() {
-		e= new Eleccion(nombre , null, null, null, null);	
+		e= new Eleccion(nombre);	
 
 		e.setFechaFin(date1);
 		assertNotNull(e.getFechaFin());
 		e.setFechaInicio(date1);
 		assertNotNull(e.getFechaInicio());
-		e.setHoraFin(t1);
-		e.setHoraInicio(t2);
-		assertNotNull(e.getHoraInicio());
 		assertNotNull(e.getFechaFin());
 
 		e.setNombre("NuevoNombre");
 		assertEquals("NuevoNombre", e.getNombre());
-
-		e.setNumeroOpciones(99);
-		assertNotNull(e.getNumeroOpciones());
 
 		List<Candidatura> l = new LinkedList<Candidatura>();
 		l.add(new Candidatura());
@@ -162,10 +145,9 @@ public class EleccionTest {
 	public final void testEqualsObject() {
 		e= new Eleccion();
 		Eleccion e1, e2, e3;
-		Date date2= new Date();
-		e1= new Eleccion(nombre , date1, date2, t1, t2);
+		e1= new Eleccion(nombre);
 		e2= new Eleccion("otroNombre");
-		e3= new Eleccion(nombre , date1, date2, t1, t2);
+		e3= new Eleccion(nombre);
 
 		assertTrue(e.equals(e));
 		assertTrue(e1.equals(e3));
