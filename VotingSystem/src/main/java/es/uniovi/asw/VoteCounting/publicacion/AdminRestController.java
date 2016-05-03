@@ -1,5 +1,6 @@
 package es.uniovi.asw.VoteCounting.publicacion;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -21,6 +22,11 @@ public class AdminRestController {
 	 * @RequestMapping("/") public ModelAndView landing(Model model) { LOG.info(
 	 * "Landing page access"); return new ModelAndView("landing"); }
 	 */
+	@Autowired
+	CountingExecutor countingExecutor;
+	
+	@Autowired
+	CountSystemFactory countSystemFactory;
 
 	@RequestMapping(value = "/iniciarRecuento/{id}",
 			method = RequestMethod.GET)
@@ -28,9 +34,9 @@ public class AdminRestController {
 
 		System.out.println("Iniciando recuento " + id);
 
-		CountSystem countSystem = CountSystemFactory.newStdCountSystem(id);
+		CountSystem countSystem = countSystemFactory.newStdCountSystem(id);
 
-		CountingExecutor.register(countSystem);
+		countingExecutor.register(countSystem);
 
 		return new ResponseEntity<String>(HttpStatus.OK);
 	}
@@ -41,11 +47,10 @@ public class AdminRestController {
 
 		System.out.println("Recuento " + id + " terminado.");
 		
-		//CountSystem countSystem = CountSystemFactory.newStdCountSystem(id);
+		CountSystem countSystem = countSystemFactory.newStdCountSystem(id);
 
-		// Hasta que se solucione problema de persistencia
-		CountingExecutor.stopAll();
-		//CountingExecutor.unregister(countSystem);
+		//countingExecutor.stopAll();
+		countingExecutor.unregister(countSystem);
 
 		return new ResponseEntity<String>(HttpStatus.OK);
 	}

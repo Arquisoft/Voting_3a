@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import es.uniovi.asw.VoteCounting.recuento.CountSystem;
 import es.uniovi.asw.dbManagement.Persistence;
 import es.uniovi.asw.model.Candidatura;
@@ -14,6 +16,9 @@ import es.uniovi.asw.model.Eleccion;
 import es.uniovi.asw.model.Voto;
 
 public class StdCountSystem implements CountSystem {
+	
+	@Autowired
+	CountingExecutor countingExecutor;
 
 	private Eleccion voting;
 
@@ -52,16 +57,6 @@ public class StdCountSystem implements CountSystem {
 		for (ComunidadAutonoma co : comunis) {
 			comunidades.put(co.getNombre(), new HashMap<String, Long>(votos));
 		}
-	}
-
-	@Override
-	public void iniciar() {
-		CountingExecutor.register(this);
-	}
-
-	@Override
-	public void terminar() {
-		CountingExecutor.unregister(this);
 	}
 
 	@Override
