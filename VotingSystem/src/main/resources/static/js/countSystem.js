@@ -13,6 +13,11 @@ $(document).ready(function() {
 	page('*', notfound);
 
 	page('/');
+	
+	$(document.body).on("click","a", function(e){
+		e.preventDefault();
+		page($(this).attr("href"));
+	})
 
 	// Botones Admin
 	$("#iniciarRecuento").on("click", function() {
@@ -72,25 +77,16 @@ var list = function() {
 }
 
 var eleccion = function(arg) {
-	console.log(arg);
+	console.log(arg.params);
 	navTo("nanannana", "eleccion");
+	
+	$.ajax({
+		url : "/eleccion/" + arg.params.eleccion
+	}).then(function(data) {
+		console.log(data)
+		drawChart(data);
+	});
 
-	InitChart([ {
-		'x' : "Pepsi",
-		'y' : 10
-	}, {
-		'x' : "Cocacola",
-		'y' : 40
-	}, {
-		'x' : "Fanta",
-		'y' : 30
-	}, {
-		'x' : "Sprite",
-		'y' : 5
-	}, {
-		'x' : "Nestea",
-		'y' : 15
-	} ]);
 }
 
 var notfound = function() {
@@ -172,7 +168,7 @@ function addAlert(message, level) {
 							+ '&times;</button>' + message + '</div>');
 }
 
-function InitChart(barData) {
+function drawChart(barData) {
 
 	var vis = d3.select('#ChartResultadosEleccion'), WIDTH = 1000, HEIGHT = 500, MARGINS = {
 		top : 20,

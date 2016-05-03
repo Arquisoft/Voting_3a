@@ -30,10 +30,10 @@ public class Eleccion {
 	
 	private boolean activa;
 
-	@OneToMany(mappedBy = "eleccion", cascade=CascadeType.MERGE, fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "eleccion", cascade=CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<Candidatura> opciones = new ArrayList<Candidatura>();
 	
-	@OneToMany(mappedBy = "eleccion", cascade=CascadeType.MERGE, fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "eleccion", cascade=CascadeType.ALL, fetch = FetchType.EAGER)
 	private Set<VotoConfirmado> votantes = new HashSet<VotoConfirmado>();
 	
 	public Eleccion(String nombre, Date inicio, Date fin){
@@ -110,8 +110,6 @@ public class Eleccion {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((fechaFin == null) ? 0 : fechaFin.hashCode());
-		result = prime * result + ((fechaInicio == null) ? 0 : fechaInicio.hashCode());
 		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
 		return result;
 	}
@@ -125,16 +123,6 @@ public class Eleccion {
 		if (getClass() != obj.getClass())
 			return false;
 		Eleccion other = (Eleccion) obj;
-		if (fechaFin == null) {
-			if (other.fechaFin != null)
-				return false;
-		} else if (!fechaFin.equals(other.fechaFin))
-			return false;
-		if (fechaInicio == null) {
-			if (other.fechaInicio != null)
-				return false;
-		} else if (!fechaInicio.equals(other.fechaInicio))
-			return false;
 		if (nombre == null) {
 			if (other.nombre != null)
 				return false;
@@ -142,6 +130,5 @@ public class Eleccion {
 			return false;
 		return true;
 	}
-	
 	
 }

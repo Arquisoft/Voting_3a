@@ -17,9 +17,6 @@ import es.uniovi.asw.model.Voto;
 
 public class StdCountSystem implements CountSystem {
 	
-	@Autowired
-	CountingExecutor countingExecutor;
-
 	private Eleccion voting;
 
 	// Opcion, votos
@@ -97,7 +94,8 @@ public class StdCountSystem implements CountSystem {
 		for (Candidatura cand : voting.getOpciones()) {
 			votos.put(cand.getNombre(), new Long(cand.getVotos().size()).longValue());
 
-			for (Voto vot : cand.getVotos()) {
+			// Implementacion para cuando se permita ver por comunidades y colegios.
+			/*for (Voto vot : cand.getVotos()) {
 
 				colegios.get(vot.getColegio()).put(cand.getNombre(),
 						colegios.get(vot.getColegio()).get(cand.getNombre()) + 1);
@@ -105,7 +103,7 @@ public class StdCountSystem implements CountSystem {
 				comunidades.get(vot.getColegio().getCircunscripcion().getComunidad()).put(cand.getNombre(),
 						comunidades.get(vot.getColegio().getCircunscripcion().getComunidad()).get(cand.getNombre())
 								+ 1);
-			}
+			}*/
 
 		}
 

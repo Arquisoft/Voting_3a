@@ -1,11 +1,11 @@
 package es.uniovi.asw.VoteCounting.dto;
 
-public class RelultDto {
+public class ResultDto {
 
 	private String x;
 	private long y;
 	
-	public RelultDto(String x, long y) {
+	public ResultDto(String x, long y) {
 		this.x = x;
 		this.y = y;
 	}

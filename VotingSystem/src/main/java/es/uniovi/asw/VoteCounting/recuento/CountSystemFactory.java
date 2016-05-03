@@ -16,7 +16,7 @@ public class CountSystemFactory {
 	
 	private Map<Long, CountSystem> systems = new HashMap<Long, CountSystem>();
 
-	public CountSystem newStdCountSystem(Eleccion voting) {
+	public CountSystem getStdCountSystem(Eleccion voting) {
 		Long id = new Long(voting.getId());
 		CountSystem cs = systems.get(id);
 		
@@ -28,7 +28,7 @@ public class CountSystemFactory {
 		return cs;
 	}
 	
-	public CountSystem newStdCountSystem(long id) {
+	public CountSystem getStdCountSystem(long id) {
 		Eleccion e = Persistence.voting.findOne(id);
 		return e != null ? new StdCountSystem(e) : null;
 	}

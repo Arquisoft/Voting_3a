@@ -3,7 +3,9 @@ package es.uniovi.asw.model;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
@@ -18,10 +20,10 @@ public class ColegioElectoral {
 	@ManyToOne
 	private Circunscripcion circunscripcion;
 	
-	@OneToMany(mappedBy = "colegio")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "colegio", cascade = CascadeType.ALL)
 	private Set<Voto> votos = new HashSet<>();
 	
-	@OneToMany(mappedBy = "colegio")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "colegio", cascade = CascadeType.ALL)
 	private Set<Voter> votantes = new HashSet<>();
 	
 	private String nombre;

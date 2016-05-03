@@ -34,7 +34,7 @@ public class AdminRestController {
 
 		System.out.println("Iniciando recuento " + id);
 
-		CountSystem countSystem = countSystemFactory.newStdCountSystem(id);
+		CountSystem countSystem = countSystemFactory.getStdCountSystem(id);
 
 		countingExecutor.register(countSystem);
 
@@ -47,7 +47,7 @@ public class AdminRestController {
 
 		System.out.println("Recuento " + id + " terminado.");
 		
-		CountSystem countSystem = countSystemFactory.newStdCountSystem(id);
+		CountSystem countSystem = countSystemFactory.getStdCountSystem(id);
 
 		//countingExecutor.stopAll();
 		countingExecutor.unregister(countSystem);
