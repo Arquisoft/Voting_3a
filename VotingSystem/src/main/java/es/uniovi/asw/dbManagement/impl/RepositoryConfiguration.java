@@ -48,8 +48,8 @@ public class RepositoryConfiguration {
 		Persistence.voter = voterRep;
 		Persistence.vote = votoRep;
 		Persistence.confirmedVote = votoConfirmadoRep;
-
-		insertarDatosEjemplo();
+		
+		//insertarDatosEjemplo();
 	}
 	
 	
@@ -104,6 +104,8 @@ public class RepositoryConfiguration {
 		Persistence.vote.save(new Voto(naranco, candidato2));
 		Persistence.vote.save(new Voto(vallobin, candidato1));
 		Persistence.vote.save(new Voto(argañosa, candidato3));
+		
+		Persistence.voting.save(eleccion1);
 
 		// Confirmaciones de voto
 		/*
