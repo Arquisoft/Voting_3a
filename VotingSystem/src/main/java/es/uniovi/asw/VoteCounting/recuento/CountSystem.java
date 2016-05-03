@@ -4,10 +4,6 @@ import java.util.List;
 import java.util.Map;
 
 public interface CountSystem {
-
-	void iniciar();
-
-	void terminar();
 	
 	String getName();
 	

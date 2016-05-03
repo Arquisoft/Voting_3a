@@ -1,7 +1,7 @@
 /**
  * 
  */
-package es.uniovi.asw.VoteCounting.publicacion.dto;
+package es.uniovi.asw.VoteCounting.dto;
 
 /**
  * @author Amir H. Tofigh Halati

@@ -1,10 +1,13 @@
-package es.uniovi.asw.VoteCounting.recuento;
+package es.uniovi.asw.VoteCounting.recuento.impl;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import es.uniovi.asw.VoteCounting.recuento.CountSystem;
 import es.uniovi.asw.dbManagement.Persistence;
 import es.uniovi.asw.model.Candidatura;
 import es.uniovi.asw.model.ColegioElectoral;
@@ -13,7 +16,7 @@ import es.uniovi.asw.model.Eleccion;
 import es.uniovi.asw.model.Voto;
 
 public class StdCountSystem implements CountSystem {
-
+	
 	private Eleccion voting;
 
 	// Opcion, votos
@@ -54,16 +57,6 @@ public class StdCountSystem implements CountSystem {
 	}
 
 	@Override
-	public void iniciar() {
-		CountingExecutor.register(this);
-	}
-
-	@Override
-	public void terminar() {
-		CountingExecutor.unregister(this);
-	}
-
-	@Override
 	public Map<String, Long> getResults() {
 		return votos;
 	}
@@ -101,7 +94,8 @@ public class StdCountSystem implements CountSystem {
 		for (Candidatura cand : voting.getOpciones()) {
 			votos.put(cand.getNombre(), new Long(cand.getVotos().size()).longValue());
 
-			for (Voto vot : cand.getVotos()) {
+			// Implementacion para cuando se permita ver por comunidades y colegios.
+			/*for (Voto vot : cand.getVotos()) {
 
 				colegios.get(vot.getColegio()).put(cand.getNombre(),
 						colegios.get(vot.getColegio()).get(cand.getNombre()) + 1);
@@ -109,7 +103,7 @@ public class StdCountSystem implements CountSystem {
 				comunidades.get(vot.getColegio().getCircunscripcion().getComunidad()).put(cand.getNombre(),
 						comunidades.get(vot.getColegio().getCircunscripcion().getComunidad()).get(cand.getNombre())
 								+ 1);
-			}
+			}*/
 
 		}
 

@@ -1,4 +1,4 @@
-package es.uniovi.asw.VoteCounting.recuento;
+package es.uniovi.asw.VoteCounting.recuento.impl;
 
 import java.util.List;
 

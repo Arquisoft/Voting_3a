@@ -1,9 +1,11 @@
-package es.uniovi.asw.VoteCounting.recuento;
+package es.uniovi.asw.VoteCounting.recuento.impl;
 
 import java.util.Map;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+
+import es.uniovi.asw.VoteCounting.recuento.CountSystem;
 
 @Component("BeanCalculo")
 @Scope("session")
