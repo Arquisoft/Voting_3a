@@ -22,7 +22,7 @@ import org.springframework.util.Assert;
 import org.springframework.web.context.WebApplicationContext;
 
 import es.uniovi.asw.Application;
-import es.uniovi.asw.VotingSystem.view.pollingStationPresidentManagement.AddPV;
+import es.uniovi.asw.VotingSystem.view.registerVote.pollingStationPresidentManagement.AddPV;
 import es.uniovi.asw.VotingSystem.view.systemConfiguration.administratorManagement.ConfCand;
 import es.uniovi.asw.VotingSystem.view.systemConfiguration.administratorManagement.ConfVT;
 import es.uniovi.asw.VotingSystem.view.systemConfiguration.administratorManagement.GetCand;

@@ -27,7 +27,7 @@ public class Eleccion {
 
 	private Date fechaInicio;
 	private Date fechaFin;
-	
+	private Integer numeroOpciones;
 	private boolean activa;
 
 	@OneToMany(mappedBy = "eleccion", cascade=CascadeType.ALL, fetch = FetchType.EAGER)
@@ -129,6 +129,14 @@ public class Eleccion {
 		} else if (!nombre.equals(other.nombre))
 			return false;
 		return true;
+	}
+
+	public Integer getNumeroOpciones() {
+		return numeroOpciones;
+	}
+
+	public void setNumeroOpciones(Integer numeroOpciones) {
+		this.numeroOpciones = numeroOpciones;
 	}
 	
 }
