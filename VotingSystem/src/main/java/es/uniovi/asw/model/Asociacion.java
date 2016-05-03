@@ -84,8 +84,8 @@ public class Asociacion {
 	public static class EleccionVotoConfirmado {
 
 		public static void link(Eleccion e, VotoConfirmado vc) {
-			e.getVotantes().add(vc);
 			vc.setEleccion(e);
+			e.getVotantes().add(vc);
 		}
 
 		public static void unlink(Eleccion e, VotoConfirmado vc) {

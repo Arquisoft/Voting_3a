@@ -1,7 +1,7 @@
 package es.uniovi.asw.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.ManyToOne;
@@ -12,18 +12,23 @@ import es.uniovi.asw.model.types.VotoConfirmadoKey;
 @IdClass(VotoConfirmadoKey.class)
 public class VotoConfirmado {
 	
-	@Id
-	@GeneratedValue
-	private Long id;
+	//@Id
+	//@GeneratedValue
+	//private Long id;
 	
-	@Id @ManyToOne private Voter votante;
-	@Id @ManyToOne private Eleccion eleccion;
+	@Id
+	@ManyToOne
+	private Voter votante;
+	
+	@Id
+	@ManyToOne(cascade=CascadeType.MERGE)
+	private Eleccion eleccion;
 	
 	public VotoConfirmado() {}
 	
 	public VotoConfirmado(Voter voter, Eleccion eleccion){
-		Asociacion.VotanteVotoConfirmado.link(voter, this);
 		Asociacion.EleccionVotoConfirmado.link(eleccion, this);
+		Asociacion.VotanteVotoConfirmado.link(voter, this);
 	}
 	
 	public Voter getVotante() {
@@ -39,9 +44,9 @@ public class VotoConfirmado {
 		this.eleccion = eleccion;
 	}
 	
-	public Long getId() {
+	/*public Long getId() {
 		return this.id;
-	}
+	}*/
 
 	@Override
 	public String toString() {

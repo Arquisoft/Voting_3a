@@ -106,10 +106,12 @@ public class RepositoryConfiguration {
 		Persistence.vote.save(new Voto(argañosa, candidato3));
 
 		// Confirmaciones de voto
+		/*
 		Persistence.confirmedVote.save(new VotoConfirmado(david, eleccion1));
 		Persistence.confirmedVote.save(new VotoConfirmado(raul, eleccion1));
 		Persistence.confirmedVote.save(new VotoConfirmado(amir, eleccion1));
 		Persistence.confirmedVote.save(new VotoConfirmado(carlos, eleccion1));
+		*/
 	}
 
 }

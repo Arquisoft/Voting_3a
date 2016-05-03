@@ -1,5 +1,6 @@
 package es.uniovi.asw.VoteCounting.recuento;
 
+import es.uniovi.asw.VoteCounting.recuento.impl.StdCountSystem;
 import es.uniovi.asw.dbManagement.Persistence;
 import es.uniovi.asw.model.Eleccion;
 

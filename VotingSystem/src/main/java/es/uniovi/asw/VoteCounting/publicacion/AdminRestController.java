@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import es.uniovi.asw.VoteCounting.recuento.CountSystem;
 import es.uniovi.asw.VoteCounting.recuento.CountSystemFactory;
-import es.uniovi.asw.VoteCounting.recuento.CountingExecutor;
+import es.uniovi.asw.VoteCounting.recuento.impl.CountingExecutor;
 
 @Controller
 public class AdminRestController {

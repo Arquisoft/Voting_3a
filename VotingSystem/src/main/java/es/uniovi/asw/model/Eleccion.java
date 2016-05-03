@@ -30,11 +30,10 @@ public class Eleccion {
 	
 	private boolean activa;
 
-	@OneToMany(mappedBy = "eleccion", cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "eleccion", cascade=CascadeType.MERGE, fetch = FetchType.EAGER)
 	private List<Candidatura> opciones = new ArrayList<Candidatura>();
 	
-	@OneToMany(mappedBy = "eleccion", targetEntity= VotoConfirmado.class)
-	
+	@OneToMany(mappedBy = "eleccion", cascade=CascadeType.MERGE, fetch = FetchType.EAGER)
 	private Set<VotoConfirmado> votantes = new HashSet<VotoConfirmado>();
 	
 	public Eleccion(String nombre, Date inicio, Date fin){

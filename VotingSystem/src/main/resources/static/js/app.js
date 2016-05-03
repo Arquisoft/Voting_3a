@@ -12,7 +12,7 @@ $(document).ready(function() {
 	page('/elecciones/:eleccion', eleccion);
 	page('*', notfound);
 
-	page();
+	page('/');
 
 	// Botones Admin
 	$("#iniciarRecuento").on("click", function() {

@@ -1,9 +1,11 @@
-package es.uniovi.asw.VoteCounting.recuento;
+package es.uniovi.asw.VoteCounting.recuento.impl;
 
 import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.ConcurrentHashMap;
+
+import es.uniovi.asw.VoteCounting.recuento.CountSystem;
 
 public class CountingExecutor {
 

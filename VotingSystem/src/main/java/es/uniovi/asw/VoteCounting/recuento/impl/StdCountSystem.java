@@ -1,10 +1,11 @@
-package es.uniovi.asw.VoteCounting.recuento;
+package es.uniovi.asw.VoteCounting.recuento.impl;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import es.uniovi.asw.VoteCounting.recuento.CountSystem;
 import es.uniovi.asw.dbManagement.Persistence;
 import es.uniovi.asw.model.Candidatura;
 import es.uniovi.asw.model.ColegioElectoral;
