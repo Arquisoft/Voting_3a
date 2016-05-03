@@ -40,8 +40,6 @@
 		        <th>Nombre</th>
 		        <th>Fecha comienzo</th>
 		        <th>Fecha finalización</th>
-		        <th>Hora de inicio</th>
-		        <th>Hora de finalización</th>
 		        <th>Activación</th>
 		        <th>Activar/Desactivar</th>
 		        <th>Configurar opc./candid.</th>
@@ -51,8 +49,6 @@
 				        <td><center><b><p th:text="${e.nombre}"></p></b></center></td>
 				        <td th:text="${#dates.format(e.fechaInicio, 'dd/MM/yyyy')}"></td>
 				        <td th:text="${#dates.format(e.fechaFin, 'dd/MM/yyyy')}"></td>
-				        <td th:text="${e.horaInicio}"></td>
-				        <td th:text="${e.horaFin}"></td>
 				        <td th:if="${e.activa == true}" th:text="SI"></td>
 				        <td th:if="${e.activa == false}" th:text="NO"></td>
 				        <td th:if="${e.activa == true}"><center><button type="submit" class="btn btn-danger"  name="action" th:value="${e.id}">Desactivar</button></center></td>

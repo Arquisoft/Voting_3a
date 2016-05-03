@@ -15,11 +15,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import es.uniovi.asw.VotingSystem.business.login.Authenticate;
-import es.uniovi.asw.VotingSystem.view.pollingStationPresidentManagement.AddPV;
+import es.uniovi.asw.VotingSystem.view.registerVote.pollingStationPresidentManagement.AddPV;
+import es.uniovi.asw.VotingSystem.view.registerVote.pollingStationPresidentManagement.CheckV;
+import es.uniovi.asw.VotingSystem.view.registerVote.pollingStationPresidentManagement.GetV;
 import es.uniovi.asw.VotingSystem.view.systemConfiguration.administratorManagement.ConfCand;
 import es.uniovi.asw.VotingSystem.view.systemConfiguration.administratorManagement.ConfPS;
 import es.uniovi.asw.VotingSystem.view.systemConfiguration.administratorManagement.ConfVT;
@@ -104,7 +105,7 @@ public class Main {
 
 	@RequestMapping(value = "/admin_index", method = RequestMethod.POST)
 	public ModelAndView adminIndexGet(@ModelAttribute Eleccion eleccion, Model model) {
-		if (eleccion.getOpciones().size() < 2) {
+		if (eleccion.getNumeroOpciones() == null || eleccion.getNumeroOpciones() < 2) {
 			model.addAttribute("error", "El número mínimo de opciones es 2");
 			model.addAttribute("elecciones", new GetVT(vRep).getActiveVotings());
 			return new ModelAndView("admin_index");
@@ -226,6 +227,26 @@ public class Main {
 			model.addAttribute("mensaje", "El votante no se registro (dni o elección no válidas)");
 		}
 		model.addAttribute("elecciones", new GetVT(vRep).getActiveVotings());
+		model.addAttribute("votantes", new GetV(vtRep).getV(vtRep));
+
+		return new ModelAndView("president_index");
+	}
+	
+	@RequestMapping(value = "/president_checkvoter", method = RequestMethod.POST)
+	public ModelAndView presidentCheckVoter(
+				@RequestParam(value = "idVotante", required = true) Long idVotante,
+				@RequestParam(value = "eleccionId", required = true) Long idEleccion,
+				Model model) {
+	
+		boolean resultado = new CheckV(cvRep).checkV(idVotante, idEleccion);
+		if (resultado) {
+			model.addAttribute("mensaje", "El votante ha votado");
+		}
+		else {
+			model.addAttribute("mensaje", "El votante no ha votado");
+		}
+		model.addAttribute("elecciones", new es.uniovi.asw.VotingSystem.view.registerVote.pollingStationPresidentManagement.GetAV(vRep).getAV(vRep));
+		model.addAttribute("votantes", new GetV(vtRep).getV(vtRep));
 
 		return new ModelAndView("president_index");
 	}
