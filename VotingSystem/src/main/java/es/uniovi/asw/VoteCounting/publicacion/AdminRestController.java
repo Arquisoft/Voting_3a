@@ -15,13 +15,6 @@ import es.uniovi.asw.VoteCounting.recuento.impl.CountingExecutor;
 @Controller
 public class AdminRestController {
 
-	// private static final Logger LOG =
-	// LoggerFactory.getLogger(AdminRestController.class);
-
-	/*
-	 * @RequestMapping("/") public ModelAndView landing(Model model) { LOG.info(
-	 * "Landing page access"); return new ModelAndView("landing"); }
-	 */
 	@Autowired
 	CountingExecutor countingExecutor;
 	

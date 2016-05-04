@@ -5,15 +5,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import es.uniovi.asw.VoteCounting.recuento.CountSystem;
 import es.uniovi.asw.dbManagement.Persistence;
 import es.uniovi.asw.model.Candidatura;
 import es.uniovi.asw.model.ColegioElectoral;
 import es.uniovi.asw.model.ComunidadAutonoma;
 import es.uniovi.asw.model.Eleccion;
-import es.uniovi.asw.model.Voto;
 
 public class StdCountSystem implements CountSystem {
 	
@@ -30,6 +27,7 @@ public class StdCountSystem implements CountSystem {
 
 	public StdCountSystem(Eleccion voting) {
 		this.voting = voting;
+		System.out.println("StdCountSystem para " + voting.getId() + ": " + voting.getNombre());
 		restart();
 	}
 
@@ -58,7 +56,7 @@ public class StdCountSystem implements CountSystem {
 
 	@Override
 	public Map<String, Long> getResults() {
-		return votos;
+		return new HashMap<String, Long>(votos);
 	}
 
 	@Override
@@ -91,8 +89,12 @@ public class StdCountSystem implements CountSystem {
 			return;
 		}
 
+		System.out.println("Numero de candidatos: " + voting.getOpciones().size());
+		
 		for (Candidatura cand : voting.getOpciones()) {
-			votos.put(cand.getNombre(), new Long(cand.getVotos().size()).longValue());
+			votos.put(cand.getNombre(), new Long(cand.getVotos().size()));
+			
+			System.out.println(cand.getNombre() + " : " + cand.getVotos().size());
 
 			// Implementacion para cuando se permita ver por comunidades y colegios.
 			/*for (Voto vot : cand.getVotos()) {
@@ -108,6 +110,8 @@ public class StdCountSystem implements CountSystem {
 		}
 
 		System.out.println("Calculos realizados.");
+		
+		
 	}
 
 	@Override
@@ -124,5 +128,32 @@ public class StdCountSystem implements CountSystem {
 	public Map<String, Map<String, Long>> getComunidades() {
 		return comunidades;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((voting == null) ? 0 : voting.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		StdCountSystem other = (StdCountSystem) obj;
+		if (voting == null) {
+			if (other.voting != null)
+				return false;
+		} else if (!voting.equals(other.voting))
+			return false;
+		return true;
+	}
+	
+	
 
 }
