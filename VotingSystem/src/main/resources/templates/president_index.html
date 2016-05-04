@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+
+<meta charset="utf-8"/>
+	<link href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+    <link href="../static/css/simple-sidebar.css" th:href="@{/css/simple-sidebar.css}" rel="stylesheet" />
+<html>
+<head th:replace="fragments/header :: head">
+    <link href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+
+</head>
+<body>
+<div class="page-header jumbotron col-lg-10 col-lg-offset-1 text-center">
+   <h1>Página de presidente de mesa<small> Sistema de votación</small></h1>
+   
+   <div th:if="${mensaje != null}" th:text="${mensaje}"></div>
+   
+   <form th:action="@{/president_checkvoter}" method="post">
+   	<div class="form-group">
+    	<label for="idVotante">Id votante:</label>
+   		<select id="idVotante" name="idVotante" class="form-control">
+        	<option value="-1">Selecciona un votante</option>
+			<option th:each="votante : ${votantes}" 
+	                th:value="${votante.id}" th:text="${votante.nif}"></option>
+        </select>   	
+  	</div>
+   	<div>
+   		<label for="eleccionId">Eleccion:</label>
+   		<select id="eleccionId" name="eleccionId" class="form-control">
+        <option value="-1">Selecciona una eleccion</option>
+			<option th:each="eleccion : ${elecciones}" 
+	                th:value="${eleccion.id}" th:text="${eleccion.nombre}"></option>
+        </select>   	
+   	</div>
+   	<br></br>
+   	<button type="submit" class="btn btn-primary">Comprobar votante</button>
+   </form>
+   <p/>
+   <form th:action="@{/president_addpv}" method="post">
+   	<div class="form-group">
+    	<label for="dni">DNI:</label>
+   		<select id="DNI" name="DNI" class="form-control">
+        	<option value="-1">Selecciona una DNI</option>
+			<option th:each="votante : ${votantes}" 
+	                th:value="${votante.nif}" th:text="${votante.nif}"></option>
+        </select>   	
+  	</div>
+   	<div>
+   		<label for="eleccionId">Eleccion:</label>
+   		<select id="eleccionId" class="form-control" name="eleccionId">
+        <option value="-1">Selecciona una eleccion</option>
+			<option th:each="eleccion : ${elecciones}" 
+	                th:value="${eleccion.id}" th:text="${eleccion.nombre}"></option>
+        </select>   	
+   	</div>
+   	<br></br>
+   	<button type="submit" class="btn btn-success">Registrar votante</button>
+   </form>
+   
+</div>
+</body>
+</html>
