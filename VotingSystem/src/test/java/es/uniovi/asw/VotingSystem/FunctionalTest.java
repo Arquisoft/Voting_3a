@@ -92,7 +92,7 @@ public class FunctionalTest {
 	e.setOpciones(c);
 	ConfVT cv = new ConfVT(vRep, cRep, e);
 	cv.saveEleccion();
-	cv = new ConfVT(vRep, new Long(2));
+	cv = new ConfVT(vRep, new Long(e.getId()));
 	cv.updateEleccion();
   }
   
