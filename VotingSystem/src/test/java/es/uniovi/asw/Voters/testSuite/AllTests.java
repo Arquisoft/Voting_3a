@@ -6,7 +6,7 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 import es.uniovi.asw.Voters.dbManagerTests.DBManagementImplTest;
-import es.uniovi.asw.Voters.dbManagerTests.DBManagementVirtualTest;
+//import es.uniovi.asw.Voters.dbManagerTests.DBManagementVirtualTest;
 import es.uniovi.asw.Voters.exceptionsTest.ExceptionTests;
 import es.uniovi.asw.Voters.modelsTests.VoterTest;
 import es.uniovi.asw.Voters.typesTests.ChangePassTest;
@@ -21,7 +21,7 @@ import es.uniovi.asw.Voters.voterAccess.MainControllerTest;
 				EncrypterTest.class, 
 				UserInfoTest.class, 
 				UserPassTest.class,
-				DBManagementVirtualTest.class,				
+				//DBManagementVirtualTest.class,				
 				ExceptionTests.class,
 				VoterTest.class,
 				MainControllerTest.class,

@@ -39,7 +39,7 @@ public class VotoConfirmadoTest {
 	@Test
 	public final void testHash() {
 		v = new VotoConfirmado(vr, e);
-		assertEquals(97517792, v.hashCode());
+		assertEquals(96595232, v.hashCode());
 	}
 
 	@Test

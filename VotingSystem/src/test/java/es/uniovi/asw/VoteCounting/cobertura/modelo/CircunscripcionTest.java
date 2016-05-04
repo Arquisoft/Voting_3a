@@ -3,10 +3,7 @@
  */
 package es.uniovi.asw.VoteCounting.cobertura.modelo;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -56,7 +53,7 @@ public class CircunscripcionTest {
 	public void testConstructor1Par() {
 		c2par = new Circunscripcion("test", comunidad1);
 		assertEquals(comunidad1, c2par.getComunidad());
-		assertNull(c2par.getNombre());
+		assertNotNull(c2par.getNombre());
 		assertEquals(0, c2par.getColegios().size());
 		assertNull(c2par.getId());
 		assertEquals(0, c2par.getColegios().size());
@@ -98,11 +95,11 @@ public class CircunscripcionTest {
 	public void testHash1P() {
 
 		c1par = new Circunscripcion("test", comunidad1);
-		assertEquals(3045967, c1par.hashCode());
+		assertEquals(6602465, c1par.hashCode());
 
 		c1par = new Circunscripcion("test", comunidad1);
 		c1par.setComunidad(null);
-		assertEquals(961, c1par.hashCode());
+		assertEquals(3557459, c1par.hashCode());
 
 	}
 

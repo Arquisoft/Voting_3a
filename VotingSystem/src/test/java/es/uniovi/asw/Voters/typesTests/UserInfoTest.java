@@ -14,6 +14,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import es.uniovi.asw.Application;
 import es.uniovi.asw.Voters.types.ChangePass;
 import es.uniovi.asw.Voters.types.UserInfo;
+import es.uniovi.asw.model.ColegioElectoral;
 import es.uniovi.asw.model.Voter;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -60,6 +61,7 @@ public class UserInfoTest {
 	@Test
 	public void testUserInfoVoter() {
 		Voter v = new Voter();
+		v.setColegio(new ColegioElectoral("Colegio Oviedo", "Ovetense"));
 		UserInfo ui = new UserInfo(v);
 		assertNull(v.getNombre());
 		assertNull(v.getNif());
