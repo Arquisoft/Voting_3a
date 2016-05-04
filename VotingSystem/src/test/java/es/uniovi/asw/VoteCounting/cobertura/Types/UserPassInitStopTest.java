@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import es.uniovi.asw.VoteCounting.publicacion.dto.UserPassInitStop;
+import es.uniovi.asw.VoteCounting.dto.UserPassInitStop;
 
 /**
  * @author Amir

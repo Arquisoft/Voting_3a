@@ -22,11 +22,12 @@ public class CountingExecutor {
 		if (!timers.containsKey(countSystem)) {
 			Timer timer = new Timer();
 			timer.schedule(new CountTask(countSystem), 1, TIME);
+			timers.put(countSystem, timer);
 		}
 	}
 
 	public void unregister(CountSystem countSystem) {
-		Timer timer = timers.get(countSystem);
+		Timer timer = timers.remove(countSystem);
 
 		if (timer != null) {
 			timer.cancel();

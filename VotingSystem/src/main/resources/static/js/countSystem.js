@@ -78,13 +78,14 @@ var list = function() {
 
 var eleccion = function(arg) {
 	console.log(arg.params);
-	navTo("nanannana", "eleccion");
+	
 	
 	$.ajax({
 		url : "/eleccion/" + arg.params.eleccion
 	}).then(function(data) {
 		console.log(data)
 		drawChart(data);
+		navTo("nanannana", "eleccion");
 	});
 
 }
@@ -169,35 +170,42 @@ function addAlert(message, level) {
 }
 
 function drawChart(barData) {
+	console.log("Creando grafica..");
+	
+	
+	$("#chart-wrap").html('<svg id="ChartResultadosEleccion" width="1000" height="500"></svg>')
+	
+	var chart = d3.select('#ChartResultadosEleccion');
+	var WIDTH = 1000,
+		HEIGHT = 500,
+		MARGINS = {
+			top : 20,
+			right : 20,
+			bottom : 20,
+			left : 50
+		},
+		xRange = d3.scale.ordinal().rangeRoundBands(
+				[ MARGINS.left, WIDTH - MARGINS.right ], 0.1).domain(
+				barData.map(function(d) {
+					return d.x;
+				})),
 
-	var vis = d3.select('#ChartResultadosEleccion'), WIDTH = 1000, HEIGHT = 500, MARGINS = {
-		top : 20,
-		right : 20,
-		bottom : 20,
-		left : 50
-	}, xRange = d3.scale.ordinal().rangeRoundBands(
-			[ MARGINS.left, WIDTH - MARGINS.right ], 0.1).domain(
-			barData.map(function(d) {
-				return d.x;
-			})),
+		yRange = d3.scale.linear().range([ HEIGHT - MARGINS.top, MARGINS.bottom ])
+				.domain([ 0, d3.max(barData, function(d) {
+					return d.y;
+				}) ]),
 
-	yRange = d3.scale.linear().range([ HEIGHT - MARGINS.top, MARGINS.bottom ])
-			.domain([ 0, d3.max(barData, function(d) {
-				return d.y;
-			}) ]),
+		xAxis = d3.svg.axis().scale(xRange).tickSize(5).tickSubdivide(true),
+	
+		yAxis = d3.svg.axis().scale(yRange).tickSize(5).orient("left").tickSubdivide(true);
 
-	xAxis = d3.svg.axis().scale(xRange).tickSize(5).tickSubdivide(true),
-
-	yAxis = d3.svg.axis().scale(yRange).tickSize(5).orient("left")
-			.tickSubdivide(true);
-
-	vis.append('svg:g').attr('class', 'x axis').attr('transform',
+	chart.append('svg:g').attr('class', 'x axis').attr('transform',
 			'translate(0,' + (HEIGHT - MARGINS.bottom) + ')').call(xAxis);
 
-	vis.append('svg:g').attr('class', 'y axis').attr('transform',
+	chart.append('svg:g').attr('class', 'y axis').attr('transform',
 			'translate(' + (MARGINS.left) + ',0)').call(yAxis);
 
-	vis.selectAll('rect').data(barData).enter().append('rect').attr('x',
+	chart.selectAll('rect').data(barData).enter().append('rect').attr('x',
 			function(d) {
 				return xRange(d.x);
 			}).attr('y', function(d) {

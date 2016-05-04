@@ -17,7 +17,7 @@ import es.uniovi.asw.VoteCounting.dto.EleccionDto;
 import es.uniovi.asw.VoteCounting.dto.ResultDto;
 import es.uniovi.asw.VoteCounting.recuento.CountSystem;
 import es.uniovi.asw.VoteCounting.recuento.CountSystemFactory;
-import es.uniovi.asw.dbManagement.Persistence;
+import es.uniovi.asw.VoteCounting.recuento.impl.BeanListaVotaciones;
 import es.uniovi.asw.model.Eleccion;
 
 @RestController
@@ -26,13 +26,16 @@ public class MainRestController {
 	@Autowired
 	CountSystemFactory countSystemFactory;
 	
+	@Autowired
+	BeanListaVotaciones listaVotaciones;
+	
 	@RequestMapping(value = "/elecciones",
 			method = RequestMethod.GET,
 			produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
 	public ResponseEntity<EleccionDto[]> GetListOfElecciones() throws Exception {
 		
 		ArrayList<EleccionDto> array = new ArrayList<EleccionDto>();
-		for (Eleccion eleccion : Persistence.voting.findAll()) {
+		for (Eleccion eleccion : listaVotaciones.getElecciones()) {
 			array.add(new EleccionDto(eleccion));
 		}
 		
@@ -54,7 +57,7 @@ public class MainRestController {
 	
 		List<ResultDto> result = new ArrayList<ResultDto>(countSystem.getVotos().size());
 		for (Entry<String, Long> entry : countSystem.getVotos().entrySet()) {
-			result.add(new ResultDto(entry.getKey(), entry.getValue()));
+			result.add(new ResultDto(entry.getKey(), entry.getValue().longValue()));
 		}
 		
 		return  new ResponseEntity<ResultDto[]>(result.toArray(new ResultDto[0]), HttpStatus.OK);

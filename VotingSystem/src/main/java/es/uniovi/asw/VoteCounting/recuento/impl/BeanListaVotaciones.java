@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
 import es.uniovi.asw.dbManagement.Persistence;
 import es.uniovi.asw.model.Eleccion;
 
-@Component("BeanListaVotaciones")
-@Scope("session")
+@Component
+@Scope("singleton")
 public class BeanListaVotaciones {
 
 	public List<Eleccion> elecciones;

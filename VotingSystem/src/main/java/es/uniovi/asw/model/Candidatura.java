@@ -22,7 +22,7 @@ public class Candidatura {
 	private String descripcion;
 	private String programaElectoral;
 
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "opcion", cascade = CascadeType.ALL)
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "opcion", cascade = CascadeType.MERGE)
 	private Set<Voto> votos = new HashSet<>();
 	
 	public Long getId() {
