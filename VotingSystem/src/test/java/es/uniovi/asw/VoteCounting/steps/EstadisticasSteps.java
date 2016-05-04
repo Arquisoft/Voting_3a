@@ -15,14 +15,14 @@ import es.uniovi.asw.VoteCounting.SeleniumUtils;
 @IntegrationTest
 @WebAppConfiguration
 public class EstadisticasSteps {
-	
+
 	private WebDriver driver = SeleniumUtils.getDriver("Configuration");
-	
+
 	@Entonces("^el hace click en consultar lista de eleccion$")
 	public void el_hace_click_en_consultar_lista_de_eleccion() throws Throwable {
 		driver.get("http://localhost:8080");
 		WebElement elemento2 = driver.findElement(By.id("listaE"));
-		Actions builder = new Actions(driver);	
+		Actions builder = new Actions(driver);
 		builder.moveToElement(elemento2).perform();
 		elemento2.click();
 	}
@@ -39,4 +39,3 @@ public class EstadisticasSteps {
 		SeleniumUtils.finishTest(driver);
 	}
 }
-

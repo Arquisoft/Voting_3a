@@ -7,15 +7,15 @@ import es.uniovi.asw.dbManagement.VotingRepository;
 import es.uniovi.asw.model.Eleccion;
 
 class ConfVotingType {
-	
-	public void saveEleccion(VotingRepository vr, CandidacyRepository oRep, Eleccion e){
+
+	public void saveEleccion(VotingRepository vr, CandidacyRepository oRep, Eleccion e) {
 		AddVotingType votingType = PersistenceFactory.addVotingType();
 		votingType.addVotingType(vr, oRep, e);
 	}
-	
-	public void updateEleccion(VotingRepository vr, Long id){
+
+	public void updateEleccion(VotingRepository vr, Long id) {
 		AddVotingType votingType = PersistenceFactory.addVotingType();
-		votingType.setActivation(vr,id);
+		votingType.setActivation(vr, id);
 	}
 
 }

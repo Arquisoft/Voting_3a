@@ -13,6 +13,7 @@ public class GetAV {
 		super();
 		this.vRep = vRep;
 	}
+
 	public Iterable<Eleccion> getAV(VotingRepository vRep) {
 
 		PhysicalVoteService physicalVoteService = PhysicalVoteServiceImpl.getInstance();

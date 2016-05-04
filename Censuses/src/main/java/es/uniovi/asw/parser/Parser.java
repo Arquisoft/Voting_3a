@@ -13,7 +13,7 @@ import es.uniovi.asw.model.Voter;
  *
  */
 public interface Parser {
-	
+
 	List<Voter> loadUsers(String fichero) throws IOException;
 
 }

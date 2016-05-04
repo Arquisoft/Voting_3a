@@ -4,10 +4,10 @@ import org.docx4j.openpackaging.exceptions.Docx4JException;
 
 import es.uniovi.asw.model.Voter;
 
-public class WriteWordLetter implements WriteLetter{
-	
+public class WriteWordLetter implements WriteLetter {
+
 	private WordLetter word = new WordLetter();
-	
+
 	@Override
 	public void writeLetter(Voter voter) {
 		try {

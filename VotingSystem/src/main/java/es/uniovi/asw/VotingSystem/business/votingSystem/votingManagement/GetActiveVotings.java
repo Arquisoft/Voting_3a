@@ -8,5 +8,5 @@ import es.uniovi.asw.model.Eleccion;
 public interface GetActiveVotings {
 
 	public List<Eleccion> eleccionesActivas(VotingRepository vRep);
-	
+
 }

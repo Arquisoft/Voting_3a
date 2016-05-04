@@ -1,74 +1,90 @@
 package es.uniovi.asw.Voters.dbManagerTests;
 
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.IntegrationTest;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 import es.uniovi.asw.Application;
+import es.uniovi.asw.Voters.types.ChangePass;
+import es.uniovi.asw.Voters.types.Encrypter;
+import es.uniovi.asw.Voters.types.UserPass;
+import es.uniovi.asw.dbManagement.Persistence;
+import es.uniovi.asw.dbManagement.VoterRepository;
+import es.uniovi.asw.dbManagement.impl.DBManagementImpl;
+import es.uniovi.asw.model.Voter;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
 @WebAppConfiguration
 @IntegrationTest({ "server.port=0" })
 public class DBManagementImplTest {
-	/*
+
 	@Autowired
-	VoterRepository voterRepository;
-	
+	VoterRepository voterRepository = Persistence.voter;
+
 	DBManagementImpl dbTest = new DBManagementImpl(voterRepository);
-	
-    @Test
-    public void shouldWireRepositoryLocal() {
-    	assertNotNull(voterRepository);
-    }
+
+	@Test
+	public void shouldWireRepositoryLocal() {
+		assertNotNull(voterRepository);
+	}
 
 	@Test
 	public void testDBManagementImpl() {
 		DBManagementImpl db = new DBManagementImpl();
-		assertNull(db._getVoterRepository());
+		assertNull(db.getVoterRepository());
 	}
 
 	@Test
 	public void testDBManagementImplVoterRepository() {
 		DBManagementImpl db = new DBManagementImpl(voterRepository);
-		assertNotNull(db._getVoterRepository());
-		assertTrue(db._getVoterRepository().getClass().equals((voterRepository).getClass()));
+		assertNotNull(db.getVoterRepository());
+		assertTrue(Persistence.voter.getClass().equals((voterRepository).getClass()));
 	}
 
-	//@Test
-	public void testSave() {			
-			dbTest.save(   new Voter("User10", "user10@mail.com", "user10", "1111111X", 123));
-			Voter voter1 = new Voter("User10", "user10@mail.com", "user10", "1111111X", 123);
-			Voter voter2 = dbTest.getVoter("user10@mail.com");
-			assertTrue(voter1.equals(voter2));
-	}
-
-	//@Test
+	@Test
 	public void testGetVoterString() {
-		fail("Not yet implemented");
+		Voter voter1 = new Voter("User10", "user10@mail.com", "user10", "1111111X");
+		dbTest.save(voter1);
+		Voter voter2 = dbTest.getVoter("user10@mail.com");
+		String pass = voter2.getPassword();
+		assertEquals(voter2.toString(),
+				"Voter [nombre=User10, email=user10@mail.com, nif=1111111X, password=" + pass + "]");
 	}
 
-	//@Test
-	public void testGetVoterUserPass() {
-		fail("Not yet implemented");
+	@Test
+	public void testGetVoterUserPass() throws Exception {
+		Voter voter1 = new Voter("User10", "user10@mail.com", Encrypter.encrypt("user10"), "1111111X");
+		dbTest.save(voter1);
+		UserPass up = new UserPass("user10@mail.com", "user10");
+		Voter voter2 = dbTest.getVoter(up);
+		assertTrue(voter1.equals(voter2));
 	}
 
-	//@Test
+	// @Test
 	public void testChangePassword() {
-		fail("Not yet implemented");
+		Voter voter1 = new Voter("User10", "user10@mail.com", "user10", "1111111X");
+		dbTest.save(voter1);
+		dbTest.changePassword(new ChangePass("user10@mail.com", "user10", "user11"));
+		dbTest.getVoter("user10@mail.com");
 	}
 
-	//@Test
+	@Test
 	public void test_getVoterRepository() {
-		fail("Not yet implemented");
+		DBManagementImpl db = new DBManagementImpl(voterRepository);
+		assertNotNull(db);
 	}
-	
+
 	@After
-	public void finalizar()
-	{
-		voterRepository=null;
+	public void finalizar() {
+		voterRepository = null;
 	}
-	*/
+
 }

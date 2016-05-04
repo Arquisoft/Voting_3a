@@ -17,7 +17,7 @@ import es.uniovi.asw.model.Voter;
 import es.uniovi.asw.model.Voto;
 
 public class ModelTest {
-	
+
 	private ColegioElectoral colegio;
 	private ComunidadAutonoma comunidad;
 	private Circunscripcion circun;
@@ -40,20 +40,20 @@ public class ModelTest {
 		circun2.setComunidad(null);
 		circun.toString();
 		assertEquals(false, circun.equals(circun2));
-		
-		//Circunscripciones
+
+		// Circunscripciones
 		Set<Circunscripcion> circuns = new HashSet<>();
 		circuns.add(circun);
 		circuns.add(circun2);
 		comunidad.setCircunscripciones(circuns);
 		comunidad.getCircunscripciones();
-		//Colegios electorales
+		// Colegios electorales
 		Set<ColegioElectoral> colegios = new HashSet<ColegioElectoral>();
-		colegios.add(new ColegioElectoral("a","b"));
-		colegios.add(new ColegioElectoral("a","b"));
+		colegios.add(new ColegioElectoral("a", "b"));
+		colegios.add(new ColegioElectoral("a", "b"));
 		circun.setColegios(colegios);
 		circun.getColegios();
-		
+
 		colegio = new ColegioElectoral("X", "Grado", circun);
 		colegio.setCircunscripcion(circun2);
 		assertEquals(circun2, colegio.getCircunscripcion());
@@ -66,7 +66,7 @@ public class ModelTest {
 		colegio2.setPoblacion("Y");
 		assertEquals(true, colegio.equals(colegio2));
 	}
-	
+
 	@Test
 	public void testColegioVotantesVoto() {
 		ColegioElectoral cole = new ColegioElectoral("A", "B");
@@ -74,13 +74,13 @@ public class ModelTest {
 		votos.add(new Voto(cole, new Candidatura()));
 		votos.add(new Voto(cole, new Candidatura()));
 		cole.setVotos(votos);
-		
+
 		Set<Voter> votantes = new HashSet<>();
 		votantes.add(new Voter("Pepe", "pepe@mail.com", "password", "123456789K", cole));
 		votantes.add(new Voter("Juan", "juan@mail.com", "password", "534223349G", cole));
 		cole.setVotantes(votantes);
 	}
-	
+
 	@Test
 	public void testVotoCandidatura() {
 		ColegioElectoral cole = new ColegioElectoral("A", "B");
@@ -90,7 +90,7 @@ public class ModelTest {
 		assertEquals(cole, voto.getColegio());
 		assertEquals(c, voto.getOpcion());
 	}
-	
+
 	@Test
 	public void testVoter() {
 		Voter voter = new Voter("nombre", "email", "password", "nif");
@@ -108,7 +108,7 @@ public class ModelTest {
 		voter.getElecciones();
 		voter.toString();
 	}
-	
+
 	@Test
 	public void testVotoConfirmadoEleccionVoto() {
 		Eleccion e = new Eleccion("A");

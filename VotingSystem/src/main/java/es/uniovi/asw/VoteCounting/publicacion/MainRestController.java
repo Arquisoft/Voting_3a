@@ -25,42 +25,40 @@ public class MainRestController {
 
 	@Autowired
 	CountSystemFactory countSystemFactory;
-	
+
 	@Autowired
 	BeanListaVotaciones listaVotaciones;
-	
-	@RequestMapping(value = "/elecciones",
-			method = RequestMethod.GET,
-			produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
+
+	@RequestMapping(value = "/elecciones", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE,
+			MediaType.APPLICATION_XML_VALUE })
 	public ResponseEntity<EleccionDto[]> GetListOfElecciones() throws Exception {
-		
+
 		ArrayList<EleccionDto> array = new ArrayList<EleccionDto>();
 		for (Eleccion eleccion : listaVotaciones.getElecciones()) {
 			array.add(new EleccionDto(eleccion));
 		}
-		
+
 		System.out.println("/elecciones (" + array.size() + ")");
-		
-		return  new ResponseEntity<EleccionDto[]>(array.toArray(new EleccionDto[0]), HttpStatus.OK);
+
+		return new ResponseEntity<EleccionDto[]>(array.toArray(new EleccionDto[0]), HttpStatus.OK);
 	}
-	
-	@RequestMapping(value = "/eleccion/{id}",
-			method = RequestMethod.GET,
-			produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
+
+	@RequestMapping(value = "/eleccion/{id}", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE,
+			MediaType.APPLICATION_XML_VALUE })
 	public ResponseEntity<ResultDto[]> GetResultsOf(@PathVariable("id") long id) throws Exception {
-		
+
 		CountSystem countSystem = countSystemFactory.getStdCountSystem(id);
-		
+
 		if (countSystem == null) {
 			new ResponseEntity<String>("{}", HttpStatus.NOT_FOUND);
 		}
-	
+
 		List<ResultDto> result = new ArrayList<ResultDto>(countSystem.getVotos().size());
 		for (Entry<String, Long> entry : countSystem.getVotos().entrySet()) {
 			result.add(new ResultDto(entry.getKey(), entry.getValue().longValue()));
 		}
-		
-		return  new ResponseEntity<ResultDto[]>(result.toArray(new ResultDto[0]), HttpStatus.OK);
+
+		return new ResponseEntity<ResultDto[]>(result.toArray(new ResultDto[0]), HttpStatus.OK);
 	}
-	
+
 }

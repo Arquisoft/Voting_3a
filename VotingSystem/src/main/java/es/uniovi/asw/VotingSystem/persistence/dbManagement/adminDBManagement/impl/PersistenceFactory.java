@@ -7,29 +7,29 @@ import es.uniovi.asw.VotingSystem.persistence.dbManagement.adminDBManagement.Get
 import es.uniovi.asw.VotingSystem.persistence.dbManagement.adminDBManagement.GetPollingStationsP;
 import es.uniovi.asw.VotingSystem.persistence.dbManagement.adminDBManagement.GetVotings;
 
-public class PersistenceFactory{
-	
-	public static AddCandidacyC addCandidacys(){
+public class PersistenceFactory {
+
+	public static AddCandidacyC addCandidacys() {
 		return new AddCandidacyCImpl();
 	}
-	
-	public static AddPollingStation addPollingStation(){
+
+	public static AddPollingStation addPollingStation() {
 		return new AddPollingStationImpl();
 	}
-	
-	public static AddVotingType addVotingType(){
+
+	public static AddVotingType addVotingType() {
 		return new AddVotingTypeImpl();
 	}
-	
-	public static GetCandidacyS getCandidacys(){
+
+	public static GetCandidacyS getCandidacys() {
 		return new GetCandidacySImpl();
 	}
-	
-	public static GetPollingStationsP getPollingStations(){
+
+	public static GetPollingStationsP getPollingStations() {
 		return new GetPollingStationsPImpl();
 	}
-	
-	public static GetVotings getVotings(){
+
+	public static GetVotings getVotings() {
 		return new GetVotingsImpl();
 	}
 

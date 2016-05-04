@@ -5,5 +5,5 @@ import es.uniovi.asw.dbManagement.ConfirmedVoteRepository;
 public interface HasVoted {
 
 	public boolean alreadyVoted(ConfirmedVoteRepository cvRep, Long idVotante, Long idEleccion);
-	
+
 }

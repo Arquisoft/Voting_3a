@@ -7,7 +7,7 @@ import es.uniovi.asw.dbManagement.VotingRepository;
 import es.uniovi.asw.model.Candidatura;
 
 public interface GetCandidacyS {
-	
+
 	List<Candidatura> getCandidacys(VotingRepository vRep, CandidacyRepository cRep, Long id);
 
 }

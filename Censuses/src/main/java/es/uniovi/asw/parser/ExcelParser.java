@@ -12,15 +12,15 @@ import es.uniovi.asw.model.Voter;
  * @version 2016.02.09
  *
  */
-public class ExcelParser implements Parser{
-	
+public class ExcelParser implements Parser {
+
 	private LoadFromExcel excel = new LoadFromExcel();
 
 	@Override
 	public List<Voter> loadUsers(String fichero) throws IOException {
-		
+
 		return excel.loadUsers(fichero);
-	
+
 	}
 
 }

@@ -22,7 +22,7 @@ import es.uniovi.asw.model.Voter;
  */
 public class VoterTest {
 	private Voter v;
-	private Circunscripcion c= new Circunscripcion("ast", new ComunidadAutonoma("AA"));
+	private Circunscripcion c = new Circunscripcion("ast", new ComunidadAutonoma("AA"));
 	private ColegioElectoral ce = new ColegioElectoral("cole", "pola", c);
 
 	/**
@@ -34,7 +34,7 @@ public class VoterTest {
 		assertEquals(31, v.hashCode());
 		v = new Voter("a", "b", "c", "d");
 		assertEquals(131, v.hashCode());
-	
+
 	}
 
 	/**
@@ -45,33 +45,37 @@ public class VoterTest {
 		v = new Voter();
 		assertNull(v.getColegio());
 		assertNotNull(v.getElecciones());
-		assertEquals(0,v.getElecciones().size());
+		assertEquals(0, v.getElecciones().size());
 		assertNull(v.getEmail());
 		assertNull(v.getNif());
 		assertNull(v.getNombre());
 		assertNull(v.getPassword());
-		
+
 	}
 
 	/**
-	 * Test method for {@link es.uniovi.asw.model.Voter#Voter(es.uniovi.asw.model.ColegioElectoral)}.
+	 * Test method for
+	 * {@link es.uniovi.asw.model.Voter#Voter(es.uniovi.asw.model.ColegioElectoral)}
+	 * .
 	 */
 	@Test
 	public final void testVoterColegioElectoral() {
-		// TODO 
+		// TODO
 		v = new Voter(null, null, null, null, ce);
-		assertEquals(ce,v.getColegio());
+		assertEquals(ce, v.getColegio());
 		assertNotNull(v.getElecciones());
-		assertEquals(0,v.getElecciones().size());
+		assertEquals(0, v.getElecciones().size());
 		assertNull(v.getEmail());
 		assertNull(v.getNif());
 		assertNull(v.getNombre());
 		assertNull(v.getPassword());
-		
+
 	}
 
 	/**
-	 * Test method for {@link es.uniovi.asw.model.Voter#Voter(java.lang.String, java.lang.String, java.lang.String, java.lang.String)}.
+	 * Test method for
+	 * {@link es.uniovi.asw.model.Voter#Voter(java.lang.String, java.lang.String, java.lang.String, java.lang.String)}
+	 * .
 	 */
 	@Test
 	public final void testVoterStringStringStringString() {
@@ -80,10 +84,9 @@ public class VoterTest {
 		assertEquals("b", v.getEmail());
 		assertEquals("c", v.getPassword());
 		assertEquals("d", v.getNif());
-		
-		
+
 	}
-	
+
 	@Test
 	public final void testSets() {
 		v = new Voter("a", "b", "c", "d");
@@ -91,7 +94,7 @@ public class VoterTest {
 		assertEquals("b", v.getEmail());
 		assertEquals("c", v.getPassword());
 		assertEquals("d", v.getNif());
-		
+
 		v.setNombre("x");
 		v.setEmail("y");
 		v.setPassword("z");
@@ -100,7 +103,7 @@ public class VoterTest {
 		assertEquals("y", v.getEmail());
 		assertEquals("z", v.getPassword());
 		assertEquals("t", v.getNif());
-		
+
 	}
 
 	/**
@@ -113,28 +116,26 @@ public class VoterTest {
 	}
 
 	/**
-	 * Test method for {@link es.uniovi.asw.model.Voter#equals(java.lang.Object)}.
+	 * Test method for
+	 * {@link es.uniovi.asw.model.Voter#equals(java.lang.Object)}.
 	 */
 	@Test
 	public final void testEqualsObject() {
 		v = new Voter("a", "b", "c", "d");
 		Voter v2 = new Voter("a", "b", "c", "otroNif");
-		
+
 		assertTrue(v.equals(v));
-		
+
 		assertFalse(v.equals(new Object()));
 		assertFalse(v.equals(c));
-		
+
 		assertFalse(v.equals(v2));
 		assertFalse(v2.equals(v));
-		
+
 		v2.setNif(null);
 		assertFalse(v.equals(v2));
 		assertFalse(v2.equals(v));
-		
-		
-		
-		
+
 	}
 
 }

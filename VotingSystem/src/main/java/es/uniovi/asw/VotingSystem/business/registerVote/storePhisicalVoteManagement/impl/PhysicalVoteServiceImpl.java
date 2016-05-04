@@ -9,37 +9,34 @@ import es.uniovi.asw.dbManagement.VotingRepository;
 import es.uniovi.asw.model.Eleccion;
 import es.uniovi.asw.model.Voter;
 
+public class PhysicalVoteServiceImpl implements PhysicalVoteService {
+	private static PhysicalVoteServiceImpl ourInstance = new PhysicalVoteServiceImpl();
 
-public class PhysicalVoteServiceImpl implements PhysicalVoteService{
-    private static PhysicalVoteServiceImpl ourInstance = new PhysicalVoteServiceImpl();
+	public static PhysicalVoteServiceImpl getInstance() {
+		return ourInstance;
+	}
 
-    public static PhysicalVoteServiceImpl getInstance() {
-        return ourInstance;
-    }
+	private PhysicalVoteServiceImpl() {
+	}
 
-    private PhysicalVoteServiceImpl() {
-    }
+	@Override
+	public boolean add(String dniVoter, long idElection, ConfirmedVoteRepository cvRep, VoterRepository voterRep,
+			VotingRepository vRep) {
+		return new AddPhysicalVoteImpl().add(dniVoter, idElection, cvRep, voterRep, vRep);
+	}
 
-    @Override
-    public boolean add(String dniVoter, long idElection,
-                                  ConfirmedVoteRepository cvRep,
-                                  VoterRepository voterRep,
-                                  VotingRepository vRep) {
-        return new AddPhysicalVoteImpl().add(dniVoter, idElection, cvRep, voterRep, vRep);
-    }
+	@Override
+	public boolean checkVote(long idVotante, long idEleccion, ConfirmedVoteRepository cvRep) {
+		return new CheckVoteImpl().alreadyVoted(cvRep, idVotante, idEleccion);
+	}
 
-    @Override
-    public boolean checkVote(long idVotante, long idEleccion, ConfirmedVoteRepository cvRep) {
-        return new CheckVoteImpl().alreadyVoted(cvRep,idVotante,idEleccion);
-    }
+	@Override
+	public List<Voter> getVoters(VoterRepository voterRep) {
+		return new GetVotersImpl().getVoters(voterRep);
+	}
 
-    @Override
-    public List<Voter> getVoters(VoterRepository voterRep) {
-        return new GetVotersImpl().getVoters(voterRep);
-    }
-
-    @Override
-    public Iterable<Eleccion> getActiveVoter(VotingRepository vRep) {
-        return new GetActiveVotingsImpl().getActiveVoter(vRep);
-    }
+	@Override
+	public Iterable<Eleccion> getActiveVoter(VotingRepository vRep) {
+		return new GetActiveVotingsImpl().getActiveVoter(vRep);
+	}
 }

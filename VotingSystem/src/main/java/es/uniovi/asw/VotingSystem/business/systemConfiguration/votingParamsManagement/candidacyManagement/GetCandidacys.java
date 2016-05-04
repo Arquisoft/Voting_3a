@@ -9,7 +9,7 @@ import es.uniovi.asw.dbManagement.VotingRepository;
 import es.uniovi.asw.model.Candidatura;
 
 class GetCandidacys {
-	
+
 	public List<Candidatura> getCandidacys(VotingRepository vRep, CandidacyRepository cRep, Long id) {
 		GetCandidacyS gc = PersistenceFactory.getCandidacys();
 		return gc.getCandidacys(vRep, cRep, id);

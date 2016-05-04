@@ -17,7 +17,7 @@ class GetVotingsImpl implements GetVotings {
 		List<Eleccion> elecciones = new ArrayList<>();
 		if (!todas.isEmpty()) {
 			for (Eleccion e : todas) {
-				if (e.getFechaFin().after(new Date(System.currentTimeMillis()))) {
+				if (e.getFechaFin() != null && e.getFechaFin().after(new Date(System.currentTimeMillis()))) {
 					elecciones.add(e);
 				}
 			}

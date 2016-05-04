@@ -6,5 +6,5 @@ import es.uniovi.asw.model.Voter;
 public interface AlreadyVoted {
 
 	public boolean haVotado(Long idEleccion, Voter votante, ConfirmedVoteRepository cvRep);
-	
+
 }

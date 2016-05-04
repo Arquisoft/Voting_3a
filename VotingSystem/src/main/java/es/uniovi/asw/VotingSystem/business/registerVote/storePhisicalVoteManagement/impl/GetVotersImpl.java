@@ -9,9 +9,8 @@ import java.util.List;
 public class GetVotersImpl implements GetVoters {
 
 	@Override
-    public List<Voter> getVoters( VoterRepository voterRep) {
-        return PersistenceFactory.newGetVoters().findAll(voterRep);
-    }
+	public List<Voter> getVoters(VoterRepository voterRep) {
+		return PersistenceFactory.newGetVoters().findAll(voterRep);
+	}
 
 }
-

@@ -6,8 +6,7 @@ import es.uniovi.asw.dbManagement.VotingRepository;
 
 public interface AddPhysicalVote {
 
-	boolean add(String dniVoter, long idElection, ConfirmedVoteRepository cvRep,
-			VoterRepository voterRep, VotingRepository vRep);
-
+	boolean add(String dniVoter, long idElection, ConfirmedVoteRepository cvRep, VoterRepository voterRep,
+			VotingRepository vRep);
 
 }

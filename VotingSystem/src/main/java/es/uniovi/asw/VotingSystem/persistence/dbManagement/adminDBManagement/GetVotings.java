@@ -7,8 +7,8 @@ import es.uniovi.asw.dbManagement.VotingRepository;
 import es.uniovi.asw.model.Eleccion;
 
 public interface GetVotings {
-	
+
 	List<Eleccion> getVotings(VotingRepository vr);
-	
+
 	Eleccion getEleccionById(VotingRepository vr, CandidacyRepository cRep, Long id);
 }

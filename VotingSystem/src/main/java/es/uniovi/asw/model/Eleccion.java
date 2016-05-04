@@ -16,13 +16,14 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
-
 @Entity
 public class Eleccion {
-	
-	@Id @GeneratedValue
+
+	@Id
+	@GeneratedValue
 	private Long id;
-	@NotNull @NotEmpty
+	@NotNull
+	@NotEmpty
 	private String nombre;
 
 	private Date fechaInicio;
@@ -30,44 +31,45 @@ public class Eleccion {
 	private Integer numeroOpciones;
 	private boolean activa;
 
-	@OneToMany(mappedBy = "eleccion", cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "eleccion", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<Candidatura> opciones = new ArrayList<Candidatura>();
-	
-	@OneToMany(mappedBy = "eleccion", cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+
+	@OneToMany(mappedBy = "eleccion", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private Set<VotoConfirmado> votantes = new HashSet<VotoConfirmado>();
-	
-	public Eleccion(String nombre, Date inicio, Date fin){
+
+	public Eleccion(String nombre, Date inicio, Date fin) {
 		this.nombre = nombre;
 		this.fechaInicio = inicio;
 		this.fechaFin = fin;
 	}
-	
-	public Eleccion(String nombre){
+
+	public Eleccion(String nombre) {
 		this.nombre = nombre;
 	}
-	
-	public Eleccion() {}
-	
+
+	public Eleccion() {
+	}
+
 	public String getNombre() {
 		return nombre;
 	}
-	
+
 	public Date getFechaInicio() {
 		return fechaInicio;
 	}
-	
+
 	public void setFechaInicio(Date fechaInicio) {
 		this.fechaInicio = fechaInicio;
 	}
-	
+
 	public Date getFechaFin() {
 		return fechaFin;
 	}
-	
+
 	public void setFechaFin(Date fechaFin) {
 		this.fechaFin = fechaFin;
 	}
-	
+
 	public List<Candidatura> getOpciones() {
 		return opciones;
 	}
@@ -87,7 +89,7 @@ public class Eleccion {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	
+
 	public boolean isActiva() {
 		return activa;
 	}
@@ -138,5 +140,5 @@ public class Eleccion {
 	public void setNumeroOpciones(Integer numeroOpciones) {
 		this.numeroOpciones = numeroOpciones;
 	}
-	
+
 }

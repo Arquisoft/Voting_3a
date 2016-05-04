@@ -5,7 +5,6 @@ package es.uniovi.asw.VoteCounting.cobertura.modelo;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
@@ -36,8 +35,8 @@ public class VotoTest {
 	@Test
 	public final void testHashCode() {
 		v = new Voto(ce, candi);
-		assertEquals(1922, v.hashCode());
-		assertEquals(97627882, v.hashCode());
+		assertEquals(31, ce.hashCode());
+		assertEquals(96706283, v.hashCode());
 	}
 
 	/**
@@ -49,7 +48,6 @@ public class VotoTest {
 	public final void testVotoColegioElectoral() {
 		v = new Voto(ce, candi);
 		assertEquals(ce, v.getColegio());
-		assertNull(v.getOpcion());
 	}
 
 	/**
@@ -60,7 +58,6 @@ public class VotoTest {
 	public final void testVotoCandidatura() {
 		v = new Voto(ce, candi);
 		assertEquals(candi, v.getOpcion());
-		assertNull(v.getColegio());
 	}
 
 	/**
@@ -78,16 +75,16 @@ public class VotoTest {
 		assertFalse(v.equals(new Object()));
 		assertFalse(v.equals("otrotipodato"));
 
-		assertFalse(v.equals(v1));
-		assertFalse(v1.equals(v));
+		assertTrue(v.equals(v1));
+		assertTrue(v1.equals(v));
 
 		v2 = new Voto(ce, candi);
 		v2.setColegio(ce);
 
-		assertFalse(v.equals(v2));
-		assertFalse(v2.equals(v));
-		assertFalse(v2.equals(v1));
-		assertFalse(v1.equals(v2));
+		assertTrue(v.equals(v2));
+		assertTrue(v2.equals(v));
+		assertTrue(v2.equals(v1));
+		assertTrue(v1.equals(v2));
 
 	}
 

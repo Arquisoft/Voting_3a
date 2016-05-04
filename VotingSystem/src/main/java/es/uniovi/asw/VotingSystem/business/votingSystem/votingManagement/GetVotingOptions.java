@@ -7,8 +7,6 @@ import es.uniovi.asw.model.Candidatura;
 
 public interface GetVotingOptions {
 
-	
 	public List<Candidatura> getVotingOptions(Long idEleccion, CandidacyRepository cRep);
-	
-	
+
 }
