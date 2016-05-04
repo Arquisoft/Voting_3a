@@ -7,9 +7,14 @@ Voting System
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/b7c23b065b37409ebc7bf07d9399df36)](https://www.codacy.com/app/jelabra/Voting_3a)
 [![codecov.io](https://codecov.io/github/Arquisoft/Voting_3a/coverage.svg?branch=master)](https://codecov.io/github/Arquisoft/Voting_3a?branch=master)
 
+Voting System 
+[![Dependency Status](https://www.versioneye.com/user/projects/572a47c5a0ca35004baf83eb/badge.svg?style=flat)](https://www.versioneye.com/user/projects/572a47c5a0ca35004baf83eb)
+
+Censuses SubSystem 
+[![Dependency Status](https://www.versioneye.com/user/projects/572a47c0a0ca350034be6e7a/badge.svg?style=flat)](https://www.versioneye.com/user/projects/572a47c0a0ca350034be6e7a)
+
 Actualizar badges:
 
-[![Dependency Status](https://www.versioneye.com/user/projects/57155174fcd19a00415b1c2d/badge.svg?style=flat)](https://www.versioneye.com/user/projects/57155174fcd19a00415b1c2d)
 [![ViewOnHeroku](https://img.shields.io/badge/View%20on-Heroku-ff69b4.svg)](https://votecounting3av2.herokuapp.com)
 ![codecov.io](https://codecov.io/github/Arquisoft/VoteCounting_3a/branch.svg?branch=master)
 
