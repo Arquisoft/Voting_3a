@@ -88,7 +88,9 @@ public class StdCountSystem implements CountSystem {
 			System.out.println("Calculos no realizados");
 			return;
 		}
-
+		
+		voting = Persistence.voting.findOne(voting.getId());
+		
 		System.out.println("Numero de candidatos: " + voting.getOpciones().size());
 
 		for (Candidatura cand : voting.getOpciones()) {
