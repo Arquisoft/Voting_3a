@@ -8,10 +8,10 @@ import org.springframework.test.context.web.WebAppConfiguration;
 
 import es.uniovi.asw.Application;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = Application.class)
-@WebAppConfiguration
-@IntegrationTest({ "server.port=0" })
+//@RunWith(SpringJUnit4ClassRunner.class)
+//@SpringApplicationConfiguration(classes = Application.class)
+//@WebAppConfiguration
+//@IntegrationTest({ "server.port=0" })
 public class DBManagementImplTest {
 	/*
 	@Autowired
