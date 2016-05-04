@@ -16,7 +16,8 @@ Censuses SubSystem
 Actualizar badges:
 
 [![ViewOnHeroku](https://img.shields.io/badge/View%20on-Heroku-ff69b4.svg)](https://votecounting3av2.herokuapp.com)
-![codecov.io](https://codecov.io/github/Arquisoft/VoteCounting_3a/branch.svg?branch=master)
+
+![codecov.io](https://codecov.io/gh/Arquisoft/Voting_3a/branch.svg?branch=master)
 
 
 ## Censuses3A
