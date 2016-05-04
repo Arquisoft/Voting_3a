@@ -1,5 +1,4 @@
-/*
-package es.uniovi.asw;
+package es.uniovi.asw.VoteCounting;
 
 import org.junit.runner.RunWith;
 
@@ -10,4 +9,4 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(features = "src/test/resources/features")
 public class CucumberTest{
 }
-*/
+

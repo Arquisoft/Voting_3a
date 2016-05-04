@@ -182,7 +182,6 @@ public class MainControllerTest {
 
 	@Test
 	public void postUserChangePassErrorUser() throws Exception {		
-	
 		mvc.perform(post("/ChangePassword")
 				.contentType(MediaType.APPLICATION_JSON)
 				.content("{\"login\":\"user1@mail.com\", \"oldPassword\": \"user1\", \"newPassword\": \"newPass\"}"))

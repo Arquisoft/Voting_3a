@@ -41,10 +41,9 @@ public class VoterTest {
 	@Test
 	public void testHashCode() {
 		Voter v = new Voter();
-		assertTrue(v.hashCode()==31*31);
+		assertTrue(v.hashCode()==31);
 		v = new Voter(nombre, email, password, nif);
-		int result= 31 + email.hashCode();
-		result = 31 * result + nif.hashCode();
+		int result= 31 +  nif.hashCode();
 		assertTrue(v.hashCode()==result);
 	}
 
@@ -149,12 +148,12 @@ public class VoterTest {
 		assertFalse(v.equals(null));
 		Long l=1L;
 		assertFalse(v.equals(l));
-		Voter vDef= new Voter(nombre, null, password, nif);
+		Voter vDef= new Voter(nombre, null, password, "otroNif");
 		assertFalse(vDef.equals(v));
 		assertFalse(v.equals(vDef));
-		vDef= new Voter(nombre, "otro@email.es", password, nif);
-		assertFalse(vDef.equals(v));
-		assertFalse(v.equals(vDef));
+		vDef= new Voter(nombre, email, password, nif);
+		assertTrue(vDef.equals(v));
+		assertTrue(v.equals(vDef));
 		vDef= new Voter(nombre, email, password, null);
 		assertFalse(vDef.equals(v));
 		assertFalse(v.equals(vDef));

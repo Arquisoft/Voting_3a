@@ -101,7 +101,7 @@ public class CandidaturaTest {
 	@Test
 	public void testHash() {
 		c=  new Candidatura("a", "b", "c", new Eleccion());
-		assertEquals(924579, c.hashCode());
+		assertEquals(2019, c.hashCode());
 		
 	}
 

@@ -38,9 +38,9 @@ public class EleccionTest {
 	@Test
 	public final void testHashCode() {
 		e = new Eleccion();		
-		assertEquals(29791, e.hashCode());
+		assertEquals(31, e.hashCode());
 		e= new Eleccion("a");
-		assertEquals(29888, e.hashCode());
+		assertEquals(128, e.hashCode());
 	}
 
 	/**
@@ -51,8 +51,8 @@ public class EleccionTest {
 		Date date2= new Date();
 		e= new Eleccion(nombre);
 		assertEquals(nombre, e.getNombre());
-		assertEquals(date2, e.getFechaFin());
-		assertEquals(date1, e.getFechaInicio());
+		assertNull( e.getFechaFin());
+		assertNull(e.getFechaInicio());
 		assertNotNull(e.getOpciones());
 		assertEquals(0, e.getOpciones().size());
 		assertEquals(0,e.getVotantes().size());

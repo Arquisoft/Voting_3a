@@ -65,7 +65,7 @@ public class AgregarElecciones {
   @Entonces("^comprobamos que para la fecha \"([^\"]*)\" existe una eleccion almacenada$")
   public void comprobamos_que_para_la_fecha_existe_una_eleccion_almacenada(String arg1) throws Throwable {
 	  for(Eleccion e : elecciones){
-		  if(e.getFechaInicio().equals(date)){
+		  if(date.equals(e.getFechaInicio())){
 			  assertEquals(date, e.getFechaInicio());
 		  }
 	  }
