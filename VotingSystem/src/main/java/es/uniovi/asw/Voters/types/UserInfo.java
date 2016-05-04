@@ -17,7 +17,8 @@ public class UserInfo {
 	private String email;
 	private String pollingStation;
 
-	public UserInfo() {	}
+	public UserInfo() {
+	}
 
 	public UserInfo(String name, String nif, String email, String pollingStation) {
 		this.name = name;
@@ -36,22 +37,22 @@ public class UserInfo {
 
 	@XmlElement
 	public String getName() {
-		return name;	
+		return name;
 	}
 
 	@XmlElement
 	public String getNif() {
-		return nif;	
+		return nif;
 	}
 
 	@XmlElement
 	public String getEmail() {
-		return email;	
+		return email;
 	}
 
 	@XmlElement
 	public String getPollingStationCode() {
-		return pollingStation;	
+		return pollingStation;
 	}
 
 	@Override
@@ -99,8 +100,8 @@ public class UserInfo {
 
 	@Override
 	public String toString() {
-		return "UserInfo [name=" + name + ", nif=" + nif + ", email=" + email + ", pollingStationCode="
-				+ pollingStation + "]";
+		return "UserInfo [name=" + name + ", nif=" + nif + ", email=" + email + ", pollingStationCode=" + pollingStation
+				+ "]";
 	}
 
 }

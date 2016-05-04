@@ -1,7 +1,7 @@
 package es.uniovi.asw.model;
 
 public class Asociacion {
-	
+
 	public static class ComunidadCircunscripcion {
 
 		public static void link(ComunidadAutonoma c, Circunscripcion cir) {
@@ -12,10 +12,10 @@ public class Asociacion {
 		public static void unlink(ComunidadAutonoma c, Circunscripcion cir) {
 			c.getCircunscripciones().remove(cir);
 			cir.setComunidad(null);
-			
+
 		}
 	}
-	
+
 	public static class CircunscripcionColegio {
 
 		public static void link(Circunscripcion cir, ColegioElectoral col) {
@@ -28,7 +28,7 @@ public class Asociacion {
 			col.setCircunscripcion(null);
 		}
 	}
-	
+
 	public static class ColegioVoto {
 
 		public static void link(ColegioElectoral col, Voto voto) {
@@ -41,7 +41,7 @@ public class Asociacion {
 			voto.setColegio(null);
 		}
 	}
-	
+
 	public static class ColegioVotante {
 
 		public static void link(ColegioElectoral col, Voter votante) {
@@ -54,7 +54,7 @@ public class Asociacion {
 			votante.setColegio(null);
 		}
 	}
-	
+
 	public static class VotoOpcion {
 
 		public static void link(Voto voto, Candidatura opcion) {
@@ -67,7 +67,7 @@ public class Asociacion {
 			voto.setOpcion(null);
 		}
 	}
-	
+
 	public static class EleccionOpcion {
 
 		public static void link(Eleccion e, Candidatura o) {
@@ -80,7 +80,7 @@ public class Asociacion {
 			o.setEleccion(null);
 		}
 	}
-	
+
 	public static class EleccionVotoConfirmado {
 
 		public static void link(Eleccion e, VotoConfirmado vc) {
@@ -93,7 +93,7 @@ public class Asociacion {
 			vc.setEleccion(null);
 		}
 	}
-	
+
 	public static class VotanteVotoConfirmado {
 
 		public static void link(Voter v, VotoConfirmado vc) {

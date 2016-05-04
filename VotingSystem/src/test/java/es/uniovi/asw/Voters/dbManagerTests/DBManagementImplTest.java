@@ -18,7 +18,6 @@ import es.uniovi.asw.Voters.types.UserPass;
 import es.uniovi.asw.dbManagement.Persistence;
 import es.uniovi.asw.dbManagement.VoterRepository;
 import es.uniovi.asw.dbManagement.impl.DBManagementImpl;
-import es.uniovi.asw.model.ColegioElectoral;
 import es.uniovi.asw.model.Voter;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -26,16 +25,16 @@ import es.uniovi.asw.model.Voter;
 @WebAppConfiguration
 @IntegrationTest({ "server.port=0" })
 public class DBManagementImplTest {
-	
+
 	@Autowired
 	VoterRepository voterRepository = Persistence.voter;
-	
+
 	DBManagementImpl dbTest = new DBManagementImpl(voterRepository);
-	
-    @Test
-    public void shouldWireRepositoryLocal() {
-    	assertNotNull(voterRepository);
-    }
+
+	@Test
+	public void shouldWireRepositoryLocal() {
+		assertNotNull(voterRepository);
+	}
 
 	@Test
 	public void testDBManagementImpl() {
@@ -56,7 +55,8 @@ public class DBManagementImplTest {
 		dbTest.save(voter1);
 		Voter voter2 = dbTest.getVoter("user10@mail.com");
 		String pass = voter2.getPassword();
-		assertEquals(voter2.toString(),"Voter [nombre=User10, email=user10@mail.com, nif=1111111X, password="+pass+"]");
+		assertEquals(voter2.toString(),
+				"Voter [nombre=User10, email=user10@mail.com, nif=1111111X, password=" + pass + "]");
 	}
 
 	@Test
@@ -68,7 +68,7 @@ public class DBManagementImplTest {
 		assertTrue(voter1.equals(voter2));
 	}
 
-	//@Test
+	// @Test
 	public void testChangePassword() {
 		Voter voter1 = new Voter("User10", "user10@mail.com", "user10", "1111111X");
 		dbTest.save(voter1);
@@ -81,11 +81,10 @@ public class DBManagementImplTest {
 		DBManagementImpl db = new DBManagementImpl(voterRepository);
 		assertNotNull(db);
 	}
-	
+
 	@After
-	public void finalizar()
-	{
-		voterRepository=null;
+	public void finalizar() {
+		voterRepository = null;
 	}
-	
+
 }

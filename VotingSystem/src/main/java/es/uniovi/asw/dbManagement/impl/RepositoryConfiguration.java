@@ -1,8 +1,5 @@
 package es.uniovi.asw.dbManagement.impl;
 
-import java.sql.Time;
-import java.util.Date;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.orm.jpa.EntityScan;
@@ -26,7 +23,6 @@ import es.uniovi.asw.model.ComunidadAutonoma;
 import es.uniovi.asw.model.Eleccion;
 import es.uniovi.asw.model.Voter;
 import es.uniovi.asw.model.Voto;
-import es.uniovi.asw.model.VotoConfirmado;
 
 @Configuration
 @EnableAutoConfiguration
@@ -37,8 +33,9 @@ public class RepositoryConfiguration {
 
 	@Autowired
 	public void inicializar(CandidacyRepository candidacyRepository, CircumscriptionRepository circumscriptionRep,
-			PollingStationRepository pollingStationRepository, ComunidadRepository comunidadRep, VotingRepository eleccionRep,
-			VoterRepository voterRep, VoteRepository votoRep, ConfirmedVoteRepository votoConfirmadoRep) {
+			PollingStationRepository pollingStationRepository, ComunidadRepository comunidadRep,
+			VotingRepository eleccionRep, VoterRepository voterRep, VoteRepository votoRep,
+			ConfirmedVoteRepository votoConfirmadoRep) {
 
 		Persistence.candidacy = candidacyRepository;
 		Persistence.circumscription = circumscriptionRep;
@@ -48,11 +45,9 @@ public class RepositoryConfiguration {
 		Persistence.voter = voterRep;
 		Persistence.vote = votoRep;
 		Persistence.confirmedVote = votoConfirmadoRep;
-		
-		//insertarDatosEjemplo();
+
+		// insertarDatosEjemplo();
 	}
-	
-	
 
 	private void insertarDatosEjemplo() {
 
@@ -67,29 +62,32 @@ public class RepositoryConfiguration {
 		Candidatura candidato3 = Persistence.candidacy.save(new Candidatura("Candidato 3", eleccion1));
 		Candidatura candidato4 = Persistence.candidacy.save(new Candidatura("Candidato 4", eleccion1));
 		Candidatura candidato5 = Persistence.candidacy.save(new Candidatura("Candidato 5", eleccion1));
-		
-		for (Eleccion e : new Eleccion[]{eleccion2, eleccion3}) {
-			for (String c : new String[]{"Candidato 1", "Candidato 2", "Candidato 3", "Candidato 4", "Candidato 5"}) {
+
+		for (Eleccion e : new Eleccion[] { eleccion2, eleccion3 }) {
+			for (String c : new String[] { "Candidato 1", "Candidato 2", "Candidato 3", "Candidato 4",
+					"Candidato 5" }) {
 				Persistence.candidacy.save(new Candidatura(c, e));
 			}
 		}
-		
+
 		// Comunidades Autonomas
 		ComunidadAutonoma asturias = Persistence.comunidad.save(new ComunidadAutonoma("Asturias"));
-		
-		for (String c : new String[]{"Galicia", "Castilla y León", "País Vasco", "Cataluña", "Andalucía", "Madrid"}) {
+
+		for (String c : new String[] { "Galicia", "Castilla y León", "País Vasco", "Cataluña", "Andalucía",
+				"Madrid" }) {
 			Persistence.comunidad.save(new ComunidadAutonoma(c));
 		}
 
 		// Circunscripciones
 		Circunscripcion oviedo = Persistence.circumscription.save(new Circunscripcion("Oviedo", asturias));
-		
-		for (String c : new String[]{"Gijon", "Aviles", "Mieres"}) {
+
+		for (String c : new String[] { "Gijon", "Aviles", "Mieres" }) {
 			Persistence.circumscription.save(new Circunscripcion(c, asturias));
 		}
-		
+
 		// Colegios Electorales
-		ColegioElectoral naranco = Persistence.pollingStation.save(new ColegioElectoral("Ciudad Naranco", "Oviedo", oviedo));
+		ColegioElectoral naranco = Persistence.pollingStation
+				.save(new ColegioElectoral("Ciudad Naranco", "Oviedo", oviedo));
 		ColegioElectoral argañosa = Persistence.pollingStation.save(new ColegioElectoral("Argañosa", "Oviedo", oviedo));
 		ColegioElectoral vallobin = Persistence.pollingStation.save(new ColegioElectoral("Vallobin", "Oviedo", oviedo));
 
@@ -104,16 +102,17 @@ public class RepositoryConfiguration {
 		Persistence.vote.save(new Voto(naranco, candidato2));
 		Persistence.vote.save(new Voto(vallobin, candidato1));
 		Persistence.vote.save(new Voto(argañosa, candidato3));
-		
+
 		Persistence.voting.save(eleccion1);
 
 		// Confirmaciones de voto
 		/*
-		Persistence.confirmedVote.save(new VotoConfirmado(david, eleccion1));
-		Persistence.confirmedVote.save(new VotoConfirmado(raul, eleccion1));
-		Persistence.confirmedVote.save(new VotoConfirmado(amir, eleccion1));
-		Persistence.confirmedVote.save(new VotoConfirmado(carlos, eleccion1));
-		*/
+		 * Persistence.confirmedVote.save(new VotoConfirmado(david, eleccion1));
+		 * Persistence.confirmedVote.save(new VotoConfirmado(raul, eleccion1));
+		 * Persistence.confirmedVote.save(new VotoConfirmado(amir, eleccion1));
+		 * Persistence.confirmedVote.save(new VotoConfirmado(carlos,
+		 * eleccion1));
+		 */
 	}
 
 }

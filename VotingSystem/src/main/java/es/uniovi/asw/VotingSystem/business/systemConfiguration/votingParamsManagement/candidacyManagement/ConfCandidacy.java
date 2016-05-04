@@ -9,9 +9,9 @@ import es.uniovi.asw.dbManagement.VotingRepository;
 import es.uniovi.asw.model.Candidatura;
 
 class ConfCandidacy {
-	
-	public void saveCandidacys(VotingRepository vRep,
-			CandidacyRepository cRep, List<Candidatura> candidaturas, Long id) {
+
+	public void saveCandidacys(VotingRepository vRep, CandidacyRepository cRep, List<Candidatura> candidaturas,
+			Long id) {
 		AddCandidacyC c = PersistenceFactory.addCandidacys();
 		c.saveCandidacys(vRep, cRep, candidaturas, id);
 	}

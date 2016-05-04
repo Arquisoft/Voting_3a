@@ -19,38 +19,36 @@ import es.uniovi.asw.reportWriter.WreportR;
  *
  */
 public class LoadFromTxt {
-	
-	
-	public List<Voter> loadUsers( String fichero ) throws IOException{
-		
+
+	public List<Voter> loadUsers(String fichero) throws IOException {
+
 		assertFileExtension(fichero);
 		assertExistFile(fichero);
-		
+
 		BufferedReader in = new BufferedReader(new FileReader(fichero));
 		List<Voter> voters = new ArrayList<Voter>();
 		String line;
-		String [] campos;
+		String[] campos;
 		ColegioElectoral colegio = null;
 		int i = 0;
 		Voter voter = null;
-		while((line = in.readLine()) != null){
-			if(i > 0){
+		while ((line = in.readLine()) != null) {
+			if (i > 0) {
 				campos = line.split("\t");
-				try{
+				try {
 					voter = new Voter(campos[0], campos[1], null, campos[2]);
-					colegio = new ColegioElectoral((long)new Integer(campos[3]));
+					colegio = new ColegioElectoral((long) new Integer(campos[3]));
 					voter.setColegio(colegio);
 					voters.add(voter);
-				}catch(ArrayIndexOutOfBoundsException ai){
-					WreportR.getInstance().writeReport(fichero, 
+				} catch (ArrayIndexOutOfBoundsException ai) {
+					WreportR.getInstance().writeReport(fichero,
 							new IllegalStateException("Número de campos incorrectos en fila: " + line));
-				}catch(NumberFormatException ne){
-					WreportR.getInstance().writeReport(fichero, 
-							new IllegalStateException(
-									"El campo colegio debe ser de tipo numérico en la linea: " + line));
+				} catch (NumberFormatException ne) {
+					WreportR.getInstance().writeReport(fichero, new IllegalStateException(
+							"El campo colegio debe ser de tipo numérico en la linea: " + line));
 				}
 			}
-			i++;	
+			i++;
 		}
 		in.close();
 		return voters;
@@ -58,16 +56,16 @@ public class LoadFromTxt {
 
 	private BufferedReader assertExistFile(String fichero) {
 		BufferedReader in;
-		try{
+		try {
 			in = new BufferedReader(new FileReader(fichero));
-		}catch(FileNotFoundException fnfe){
+		} catch (FileNotFoundException fnfe) {
 			throw new IllegalArgumentException("No se encuentra el fichero especificado");
 		}
 		return in;
 	}
 
 	private void assertFileExtension(String fichero) {
-		if(! fichero.contains("txt")){
+		if (!fichero.contains("txt")) {
 			throw new IllegalArgumentException("El fichero especificado no es un fichero de texto (txt)");
 		}
 	}

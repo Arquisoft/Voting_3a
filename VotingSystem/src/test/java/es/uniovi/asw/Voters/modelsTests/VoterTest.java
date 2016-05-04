@@ -20,7 +20,7 @@ import es.uniovi.asw.model.ColegioElectoral;
 import es.uniovi.asw.model.Voter;
 
 /**
- * @author amir 
+ * @author amir
  *
  */
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -28,12 +28,11 @@ import es.uniovi.asw.model.Voter;
 @WebAppConfiguration
 @IntegrationTest({ "server.port=0" })
 public class VoterTest {
-	
-	private String nombre="pepe";
-	private String email="correo@dom.com";
-	private String password="pass";
-	private String nif="numNif";
 
+	private String nombre = "pepe";
+	private String email = "correo@dom.com";
+	private String password = "pass";
+	private String nif = "numNif";
 
 	/**
 	 * Test method for {@link es.uniovi.asw.model.Voter#hashCode()}.
@@ -41,10 +40,10 @@ public class VoterTest {
 	@Test
 	public void testHashCode() {
 		Voter v = new Voter();
-		assertTrue(v.hashCode()==31);
+		assertTrue(v.hashCode() == 31);
 		v = new Voter(nombre, email, password, nif);
-		int result= 31 +  nif.hashCode();
-		assertTrue(v.hashCode()==result);
+		int result = 31 + nif.hashCode();
+		assertTrue(v.hashCode() == result);
 	}
 
 	/**
@@ -60,7 +59,9 @@ public class VoterTest {
 	}
 
 	/**
-	 * Test method for {@link es.uniovi.asw.model.Voter#Voter(java.lang.String, java.lang.String, java.lang.String, java.lang.String, long)}.
+	 * Test method for
+	 * {@link es.uniovi.asw.model.Voter#Voter(java.lang.String, java.lang.String, java.lang.String, java.lang.String, long)}
+	 * .
 	 */
 	@Test
 	public void testVoterStringStringStringStringLong() {
@@ -69,7 +70,7 @@ public class VoterTest {
 		assertNotNull(v.getNif());
 		assertNotNull(v.getEmail());
 		assertNotNull(v.getPassword());
-		
+
 		assertTrue(nombre.equals(v.getNombre()));
 		assertTrue(nif.equals(v.getNif()));
 		assertTrue(email.equals(v.getEmail()));
@@ -77,7 +78,8 @@ public class VoterTest {
 	}
 
 	/**
-	 * Test method for {@link es.uniovi.asw.model.Voter#setEmail(java.lang.String)}.
+	 * Test method for
+	 * {@link es.uniovi.asw.model.Voter#setEmail(java.lang.String)}.
 	 */
 	@Test
 	public void testSetEmail() {
@@ -86,11 +88,12 @@ public class VoterTest {
 		v.setEmail(email);
 		assertNotNull(v.getEmail());
 		assertTrue(email.equals(v.getEmail()));
-		
+
 	}
 
 	/**
-	 * Test method for {@link es.uniovi.asw.model.Voter#setPassword(java.lang.String)}.
+	 * Test method for
+	 * {@link es.uniovi.asw.model.Voter#setPassword(java.lang.String)}.
 	 */
 	@Test
 	public void testSetPassword() {
@@ -102,7 +105,8 @@ public class VoterTest {
 	}
 
 	/**
-	 * Test method for {@link es.uniovi.asw.model.Voter#setPollingStationCode(long)}.
+	 * Test method for
+	 * {@link es.uniovi.asw.model.Voter#setPollingStationCode(long)}.
 	 */
 	@Test
 	public void testSetPollingStationCode() {
@@ -114,7 +118,8 @@ public class VoterTest {
 	}
 
 	/**
-	 * Test method for {@link es.uniovi.asw.model.Voter#setNombre(java.lang.String)}.
+	 * Test method for
+	 * {@link es.uniovi.asw.model.Voter#setNombre(java.lang.String)}.
 	 */
 	@Test
 	public void testSetNombre() {
@@ -126,7 +131,8 @@ public class VoterTest {
 	}
 
 	/**
-	 * Test method for {@link es.uniovi.asw.model.Voter#setNif(java.lang.String)}.
+	 * Test method for
+	 * {@link es.uniovi.asw.model.Voter#setNif(java.lang.String)}.
 	 */
 	@Test
 	public void testSetNif() {
@@ -138,32 +144,32 @@ public class VoterTest {
 	}
 
 	/**
-	 * Test method for {@link es.uniovi.asw.model.Voter#equals(java.lang.Object)}.
+	 * Test method for
+	 * {@link es.uniovi.asw.model.Voter#equals(java.lang.Object)}.
 	 */
 	@Test
 	public void testEqualsObject() {
 		Voter v = new Voter(nombre, email, password, nif);
-		Object o=v;
+		Object o = v;
 		assertTrue(v.equals(o));
 		assertFalse(v.equals(null));
-		Long l=1L;
+		Long l = 1L;
 		assertFalse(v.equals(l));
-		Voter vDef= new Voter(nombre, null, password, "otroNif");
+		Voter vDef = new Voter(nombre, null, password, "otroNif");
 		assertFalse(vDef.equals(v));
 		assertFalse(v.equals(vDef));
-		vDef= new Voter(nombre, email, password, nif);
+		vDef = new Voter(nombre, email, password, nif);
 		assertTrue(vDef.equals(v));
 		assertTrue(v.equals(vDef));
-		vDef= new Voter(nombre, email, password, null);
+		vDef = new Voter(nombre, email, password, null);
 		assertFalse(vDef.equals(v));
 		assertFalse(v.equals(vDef));
-		vDef= new Voter(nombre, email, password, "99999");
+		vDef = new Voter(nombre, email, password, "99999");
 		assertFalse(vDef.equals(v));
 		assertFalse(v.equals(vDef));
-		
+
 		assertTrue(v.equals(v));
-		
-	
+
 	}
 
 	/**
@@ -172,7 +178,8 @@ public class VoterTest {
 	@Test
 	public void testToString() {
 		Voter v = new Voter(nombre, email, password, nif);
-		assertTrue(v.toString().equals("Voter [nombre="+nombre+", email="+email+", nif="+nif+", password="+password+"]"));
+		assertTrue(v.toString().equals(
+				"Voter [nombre=" + nombre + ", email=" + email + ", nif=" + nif + ", password=" + password + "]"));
 		assertNotNull(v.toString());
 	}
 }

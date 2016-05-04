@@ -12,7 +12,7 @@ import es.uniovi.asw.parser.ReadCensus;
  *
  */
 public class LoadUsers {
-	
+
 	public static void main(String... args) {
 		ReadCensus rCensus = new RCensus();
 		try {

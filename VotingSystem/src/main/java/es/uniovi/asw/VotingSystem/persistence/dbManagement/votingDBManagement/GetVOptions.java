@@ -9,6 +9,6 @@ import es.uniovi.asw.model.Eleccion;
 public interface GetVOptions {
 
 	public List<Candidatura> getOpcionesDeVoto(CandidacyRepository cRep, Eleccion eleccion);
-	
+
 	public List<Candidatura> findAll(CandidacyRepository cRep);
 }

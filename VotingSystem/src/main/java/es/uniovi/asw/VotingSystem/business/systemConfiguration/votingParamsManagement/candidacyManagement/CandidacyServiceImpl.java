@@ -6,13 +6,13 @@ import es.uniovi.asw.dbManagement.CandidacyRepository;
 import es.uniovi.asw.dbManagement.VotingRepository;
 import es.uniovi.asw.model.Candidatura;
 
-public class CandidacyServiceImpl implements CandidacyService{
+public class CandidacyServiceImpl implements CandidacyService {
 
 	@Override
 	public void saveCandidacys(VotingRepository vRep, CandidacyRepository cRep, List<Candidatura> candidaturas,
 			Long id) {
 		new ConfCandidacy().saveCandidacys(vRep, cRep, candidaturas, id);
-		
+
 	}
 
 	@Override

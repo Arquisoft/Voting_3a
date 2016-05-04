@@ -15,8 +15,8 @@ public class DBManagementImpl {
 	public DBManagementImpl(VoterRepository voterRepository) {
 		Persistence.voter = voterRepository;
 	}
-	
-	public VoterRepository getVoterRepository(){
+
+	public VoterRepository getVoterRepository() {
 		return Persistence.voter;
 	}
 

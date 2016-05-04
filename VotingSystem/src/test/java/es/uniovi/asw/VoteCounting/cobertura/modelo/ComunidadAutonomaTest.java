@@ -21,10 +21,9 @@ import es.uniovi.asw.model.ComunidadAutonoma;
  */
 public class ComunidadAutonomaTest {
 	private ComunidadAutonoma ca;
-	private String nombre1="ca1";
-	private String nombre2="ca2";
+	private String nombre1 = "ca1";
+	private String nombre2 = "ca2";
 	private Object o = null;
-	
 
 	/**
 	 * Test method for {@link es.uniovi.asw.model.ComunidadAutonoma#hashCode()}.
@@ -32,13 +31,15 @@ public class ComunidadAutonomaTest {
 	@Test
 	public final void testHashCode() {
 		ca = new ComunidadAutonoma(nombre1);
-		assertEquals(98226,ca.hashCode());
+		assertEquals(98226, ca.hashCode());
 		ca = new ComunidadAutonoma(null);
-		assertEquals(31,ca.hashCode());
+		assertEquals(31, ca.hashCode());
 	}
 
 	/**
-	 * Test method for {@link es.uniovi.asw.model.ComunidadAutonoma#ComunidadAutonoma(java.lang.String)}.
+	 * Test method for
+	 * {@link es.uniovi.asw.model.ComunidadAutonoma#ComunidadAutonoma(java.lang.String)}
+	 * .
 	 */
 	@Test
 	public final void testComunidadAutonomaString() {
@@ -47,8 +48,9 @@ public class ComunidadAutonomaTest {
 	}
 
 	/**
-	 * Test method for {@link es.uniovi.asw.model.ComunidadAutonoma#setCircunscripciones(java.util.Set)}.
-	 * as example
+	 * Test method for
+	 * {@link es.uniovi.asw.model.ComunidadAutonoma#setCircunscripciones(java.util.Set)}
+	 * . as example
 	 */
 	@Test
 	public final void testSets() {
@@ -56,12 +58,13 @@ public class ComunidadAutonomaTest {
 		Set<Circunscripcion> s = new HashSet<Circunscripcion>();
 		ca.setCircunscripciones(s);
 		assertEquals(s, ca.getCircunscripciones());
-		assertTrue(s==ca.getCircunscripciones());
-				
+		assertTrue(s == ca.getCircunscripciones());
+
 	}
 
 	/**
-	 * Test method for {@link es.uniovi.asw.model.ComunidadAutonoma#equals(java.lang.Object)}.
+	 * Test method for
+	 * {@link es.uniovi.asw.model.ComunidadAutonoma#equals(java.lang.Object)}.
 	 */
 	@Test
 	public final void testEqualsObject() {
@@ -69,17 +72,17 @@ public class ComunidadAutonomaTest {
 		ComunidadAutonoma ca2 = new ComunidadAutonoma(nombre2);
 		ComunidadAutonoma ca3 = new ComunidadAutonoma(nombre1);
 		ComunidadAutonoma ca4 = new ComunidadAutonoma(null);
-		
+
 		assertTrue(ca.equals(ca));
 		assertTrue(ca.equals(ca3));
-		
+
 		assertFalse(ca.equals(ca4));
 		assertFalse(ca4.equals(ca));
 		assertFalse(ca.equals(o));
 		assertFalse(ca.equals(ca2));
 		assertFalse(ca2.equals(ca));
 		assertFalse(ca.equals("otra Clase"));
-		
+
 	}
 
 	/**
@@ -88,7 +91,7 @@ public class ComunidadAutonomaTest {
 	@Test
 	public final void testToString() {
 		ca = new ComunidadAutonoma(nombre1);
-	
+
 		assertEquals("ComunidadAutonoma [id=null, nombre=ca1]", ca.toString());
 	}
 

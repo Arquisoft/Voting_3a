@@ -31,53 +31,64 @@ import es.uniovi.asw.model.Voter;
 @IntegrationTest({ "server.port=0" })
 public class MainControllerTest {
 
-  @Autowired
-  private WebApplicationContext context;
+	@Autowired
+	private WebApplicationContext context;
 
-  private MockMvc mvc;
+	private MockMvc mvc;
 
-  @Before
-  public void setUp() throws Exception {
-    mvc = MockMvcBuilders.webAppContextSetup(context).build();
-  }
+	@Before
+	public void setUp() throws Exception {
+		mvc = MockMvcBuilders.webAppContextSetup(context).build();
+	}
 
-  @Test
-  public void testLanding() throws Exception {
-    mvc.perform(get("/")).andExpect(status().isOk()).andExpect(content().string(containsString("Log-in")));
-  }
-  
-  @Test
-  public void adminIndexGet() throws Exception {
-    mvc.perform(post("/admin_index")).andExpect(status().isOk()).andExpect(content().string(containsString("elecciones")));
-  }
-  
-  @Test
-  public void showVotings() throws Exception {
-	  mvc.perform(post("/").param("get_cand", "")).andExpect(status().isOk()).andExpect(content().string(containsString("elecciones")));
-  }
-  
-  //@Test
-  //public void adminIndexActivate() throws Exception {
-	  //mvc.perform(post("/admin_index").param("action", "1")).andExpect(status().isOk()).andExpect(content().string(containsString("elecciones")));
-  //}
-  
-  //@Test
-  //public void adminIndexConfOptions() throws Exception {
-	  //mvc.perform(post("/admin_index").param("conf", "1"));//.andExpect(status().isOk()).andExpect(content().string(containsString("de candidaturas")));
-  //}
-  
-  @Test
-  public void adminIndexConfPollings() throws Exception {
-	  mvc.perform(post("/admin_index").param("pollingStation", "")).andExpect(status().isOk()).andExpect(content().string(containsString("de configuración de colegios")));
-  }
-  
-  @Test
-  public void voterIndex() throws Exception {
-	  mvc.perform(post("/voter_index").session(new MockHttpSession()).sessionAttr("voter", new Voter("Prueba", "a@b.c","abc","0000000002")).param("vote" , "1")).andExpect(status().isOk()).andExpect(content().string(containsString("Opciones")));
-  }
-  
-  @Test
-  public void voterVote() throws Exception {
-	  mvc.perform(post("/show_options").session(new MockHttpSession()).sessionAttr("voter", new Voter("Prueba", "a@b.c","abc","0000000002")).sessionAttr("opciones", new ArrayList<Candidatura>()).param("decision" , "1")).andExpect(status().isOk()).andExpect(content().string(containsString("Sistema de votación")));
-  }
+	@Test
+	public void testLanding() throws Exception {
+		mvc.perform(get("/")).andExpect(status().isOk()).andExpect(content().string(containsString("Log-in")));
+	}
+
+	@Test
+	public void adminIndexGet() throws Exception {
+		mvc.perform(post("/admin_index")).andExpect(status().isOk())
+				.andExpect(content().string(containsString("elecciones")));
+	}
+
+	@Test
+	public void showVotings() throws Exception {
+		mvc.perform(post("/").param("get_cand", "")).andExpect(status().isOk())
+				.andExpect(content().string(containsString("elecciones")));
+	}
+
+	// @Test
+	// public void adminIndexActivate() throws Exception {
+	// mvc.perform(post("/admin_index").param("action",
+	// "1")).andExpect(status().isOk()).andExpect(content().string(containsString("elecciones")));
+	// }
+
+	// @Test
+	// public void adminIndexConfOptions() throws Exception {
+	// mvc.perform(post("/admin_index").param("conf",
+	// "1"));//.andExpect(status().isOk()).andExpect(content().string(containsString("de
+	// candidaturas")));
+	// }
+
+	@Test
+	public void adminIndexConfPollings() throws Exception {
+		mvc.perform(post("/admin_index").param("pollingStation", "")).andExpect(status().isOk())
+				.andExpect(content().string(containsString("de configuración de colegios")));
+	}
+
+	@Test
+	public void voterIndex() throws Exception {
+		mvc.perform(post("/voter_index").session(new MockHttpSession())
+				.sessionAttr("voter", new Voter("Prueba", "a@b.c", "abc", "0000000002")).param("vote", "1"))
+				.andExpect(status().isOk()).andExpect(content().string(containsString("Opciones")));
+	}
+
+	@Test
+	public void voterVote() throws Exception {
+		mvc.perform(post("/show_options").session(new MockHttpSession())
+				.sessionAttr("voter", new Voter("Prueba", "a@b.c", "abc", "0000000002"))
+				.sessionAttr("opciones", new ArrayList<Candidatura>()).param("decision", "1"))
+				.andExpect(status().isOk()).andExpect(content().string(containsString("Sistema de votación")));
+	}
 }

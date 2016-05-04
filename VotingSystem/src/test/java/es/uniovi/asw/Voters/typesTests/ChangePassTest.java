@@ -25,9 +25,9 @@ import es.uniovi.asw.Voters.types.ChangePass;
 @WebAppConfiguration
 @IntegrationTest({ "server.port=0" })
 public class ChangePassTest {
-	private String login="loglog"; 
-	private String pass="paspas";
-	private String passNew="masmas";
+	private String login = "loglog";
+	private String pass = "paspas";
+	private String passNew = "masmas";
 
 	/**
 	 * Test method for {@link es.uniovi.asw.types.ChangePass#ChangePass()}.
@@ -38,18 +38,20 @@ public class ChangePassTest {
 		assertNull(cp.getLogin());
 		assertNull(cp.getNewPassword());
 		assertNull(cp.getOldPassword());
-		cp = new ChangePass(login,pass,passNew);
+		cp = new ChangePass(login, pass, passNew);
 		assertTrue(login.equals(cp.getLogin()));
 		assertTrue(pass.equals(cp.getOldPassword()));
 		assertTrue(passNew.equals(cp.getNewPassword()));
 	}
 
 	/**
-	 * Test method for {@link es.uniovi.asw.types.ChangePass#ChangePass(java.lang.String, java.lang.String, java.lang.String)}.
+	 * Test method for
+	 * {@link es.uniovi.asw.types.ChangePass#ChangePass(java.lang.String, java.lang.String, java.lang.String)}
+	 * .
 	 */
 	@Test
 	public void testChangePassStringStringString() {
-		ChangePass cp  = new ChangePass(login,pass,passNew);
+		ChangePass cp = new ChangePass(login, pass, passNew);
 		assertTrue(login.equals(cp.getLogin()));
 		assertTrue(pass.equals(cp.getOldPassword()));
 		assertTrue(passNew.equals(cp.getNewPassword()));

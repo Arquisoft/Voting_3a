@@ -9,12 +9,12 @@ import es.uniovi.asw.model.Eleccion;
 
 class GetVOptionsImpl implements GetVOptions {
 
-	public List<Candidatura> getOpcionesDeVoto(CandidacyRepository cRep, Eleccion eleccion){
+	public List<Candidatura> getOpcionesDeVoto(CandidacyRepository cRep, Eleccion eleccion) {
 		return cRep.findByEleccion(eleccion);
 	}
-	
-	public List<Candidatura> findAll(CandidacyRepository cRep){
+
+	public List<Candidatura> findAll(CandidacyRepository cRep) {
 		return (List<Candidatura>) cRep.findAll();
 	}
-	
+
 }

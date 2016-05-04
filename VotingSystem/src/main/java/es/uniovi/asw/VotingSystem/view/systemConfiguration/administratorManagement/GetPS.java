@@ -10,29 +10,29 @@ import es.uniovi.asw.model.Circunscripcion;
 import es.uniovi.asw.model.ColegioElectoral;
 
 public class GetPS {
-	
+
 	private PollingStationRepository pRep;
 	private CircumscriptionRepository cRep;
-	
-	public GetPS(PollingStationRepository pRep){
+
+	public GetPS(PollingStationRepository pRep) {
 		this.pRep = pRep;
 	}
-	
-	public GetPS(CircumscriptionRepository cRep){
+
+	public GetPS(CircumscriptionRepository cRep) {
 		this.cRep = cRep;
 	}
-	
-	public List<ColegioElectoral> getPollingStations(){
+
+	public List<ColegioElectoral> getPollingStations() {
 		PollingStationService gp = SysConfigServiceFactory.getPollingStationService();
 		return gp.getPollingStatons(pRep);
 	}
-	
-	public List<Circunscripcion> getCircunscripciones(){
+
+	public List<Circunscripcion> getCircunscripciones() {
 		PollingStationService gp = SysConfigServiceFactory.getPollingStationService();
 		return gp.getCircunscripciones(cRep);
 	}
-	
-	public ColegioElectoral getPollingStation(Long id){
+
+	public ColegioElectoral getPollingStation(Long id) {
 		PollingStationService gp = SysConfigServiceFactory.getPollingStationService();
 		return gp.getById(pRep, id);
 	}

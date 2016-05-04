@@ -9,27 +9,27 @@ import es.uniovi.asw.dbManagement.VotingRepository;
 import es.uniovi.asw.model.Eleccion;
 
 public class GetVT {
-	
+
 	private VotingRepository vRep;
 	private CandidacyRepository cRep;
 	private Long id;
-	
+
 	public GetVT(VotingRepository vRep) {
 		this.vRep = vRep;
 	}
-	
+
 	public GetVT(VotingRepository vRep, CandidacyRepository cRep, Long id) {
 		this.vRep = vRep;
 		this.cRep = cRep;
 		this.id = id;
 	}
-	
-	public Eleccion getById(){
+
+	public Eleccion getById() {
 		VotingTypeService gvt = SysConfigServiceFactory.getVotingService();
 		return gvt.getEleccionById(vRep, cRep, id);
 	}
-	
-	public List<Eleccion> getActiveVotings(){
+
+	public List<Eleccion> getActiveVotings() {
 		VotingTypeService gvt = SysConfigServiceFactory.getVotingService();
 		return gvt.getActiveVotings(vRep);
 	}

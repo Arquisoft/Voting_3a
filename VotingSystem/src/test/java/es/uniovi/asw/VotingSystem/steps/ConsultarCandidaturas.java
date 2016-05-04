@@ -20,7 +20,7 @@ import es.uniovi.asw.model.Eleccion;
 @IntegrationTest
 @WebAppConfiguration
 public class ConsultarCandidaturas {
-	
+
 	@Autowired
 	protected WebApplicationContext context;
 
@@ -29,25 +29,26 @@ public class ConsultarCandidaturas {
 
 	@Value("${local.server.port}")
 	protected int port;
-	
+
 	private List<Eleccion> elecciones;
 	private Eleccion eleccion;
 
 	@Dado("^una lista con las próximas elecciones activas$")
 	public void una_lista_con_las_próximas_elecciones_activas() throws Throwable {
-		 elecciones = new ArrayList<Eleccion>();
-		    for(int i=0; i< 5; i++){
-		    	elecciones.add(new Eleccion("Elecciones " + (i+1)));
-		    	for(int j=0; j<3; j++){
-		    		elecciones.get(i).getOpciones().add(new Candidatura("Candidatura " + (j+1)));
-		    	}
-		    }
+		elecciones = new ArrayList<Eleccion>();
+		for (int i = 0; i < 5; i++) {
+			elecciones.add(new Eleccion("Elecciones " + (i + 1)));
+			for (int j = 0; j < 3; j++) {
+				elecciones.get(i).getOpciones().add(new Candidatura("Candidatura " + (j + 1)));
+			}
+		}
 	}
 
 	@Cuando("^el usuario selecciona las elecciones \"([^\"]*)\" con fecha (\\d+)/(\\d+)/(\\d+)$")
-	public void el_usuario_selecciona_las_elecciones_con_fecha(String arg1, int arg2, int arg3, int arg4) throws Throwable {
-		for(int i=0; i< 5; i++){
-			if(elecciones.get(i).getNombre().equals("Elecciones 1")){
+	public void el_usuario_selecciona_las_elecciones_con_fecha(String arg1, int arg2, int arg3, int arg4)
+			throws Throwable {
+		for (int i = 0; i < 5; i++) {
+			if (elecciones.get(i).getNombre().equals("Elecciones 1")) {
 				this.eleccion = elecciones.get(i);
 			}
 		}
@@ -55,11 +56,11 @@ public class ConsultarCandidaturas {
 
 	@Entonces("^al usuario se le muestran las opciones de voto que existen$")
 	public void al_usuario_se_le_muestran_las_opciones_de_voto_que_existen() throws Throwable {
-	    System.out.println("La lista de candidaturas son:");
-	    System.out.println("Eleccion:  " + eleccion);
-	    for(Candidatura c : eleccion.getOpciones()){
-	    	System.out.println("\t-" + c);
-	    }
+		System.out.println("La lista de candidaturas son:");
+		System.out.println("Eleccion:  " + eleccion);
+		for (Candidatura c : eleccion.getOpciones()) {
+			System.out.println("\t-" + c);
+		}
 	}
 
 }
