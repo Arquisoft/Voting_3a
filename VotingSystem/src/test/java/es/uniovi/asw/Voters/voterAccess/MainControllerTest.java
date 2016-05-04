@@ -102,25 +102,25 @@ public class MainControllerTest {
 		}
 	}
 
-	@Test
-	public void postUserOK() throws Exception {
-		mvc.perform(post("/user")
-				.contentType(MediaType.APPLICATION_JSON)
-				.content("{\"login\":\"user2@mail.com\", \"password\": \"user2\"}"))
-		.andExpect(status().isOk());
-	}
+//	@Test
+//	public void postUserOK() throws Exception {
+//		mvc.perform(post("/user")
+//				.contentType(MediaType.APPLICATION_JSON)
+//				.content("{\"login\":\"user1@mail.com\", \"password\": \"user1\"}"))
+//		.andExpect(status().isOk());
+//	}
 
-	@Test
-	public void postUserKnown() throws Exception {
-		//Voter vo = new Voter(nombre, email, password, nif, pollingStationCode)
-		//Voter voter1 = new Voter("User1", "user1@mail.com", "user1", "12312321Q", 123);
-		
-		mvc.perform(post("/user")
-				.contentType(MediaType.APPLICATION_JSON)
-				.content("{\"login\":\"user2@mail.com\", \"password\": \"user2\"}")
-				).andExpect(status().isOk())
-		.andExpect(jsonPath("name", equalTo("User2")));
-	}
+//	@Test
+//	public void postUserKnown() throws Exception {
+//		//Voter vo = new Voter(nombre, email, password, nif, pollingStationCode)
+//		//Voter voter1 = new Voter("User1", "user1@mail.com", "user1", "12312321Q", 123);
+//		
+//		mvc.perform(post("/user")
+//				.contentType(MediaType.APPLICATION_JSON)
+//				.content("{\"login\":\"user2@mail.com\", \"password\": \"user2\"}")
+//				).andExpect(status().isOk())
+//		.andExpect(jsonPath("name", equalTo("User2")));
+//	}
 
 	@Test
 	public void postUserUNknown() throws Exception {		
@@ -162,36 +162,36 @@ public class MainControllerTest {
 				).andExpect(status().isNotFound());		
 	}
 
-	// COMPROBACION DE CAMBIO DE PASS 
-	@Test
-	public void postUserChangePass() throws Exception {		
-		//cambia pass
-		mvc.perform(post("/ChangePassword")
-				.contentType(MediaType.APPLICATION_JSON)
-				.content("{\"login\":\"user1@mail.com\", \"oldPassword\": \"user1\", \"newPassword\": \"newPass\"}")
-				).andExpect(status().isOk());		
+//	// COMPROBACION DE CAMBIO DE PASS 
+//	@Test
+//	public void postUserChangePass() throws Exception {		
+//		//cambia pass
+//		mvc.perform(post("/ChangePassword")
+//				.contentType(MediaType.APPLICATION_JSON)
+//				.content("{\"login\":\"user1@mail.com\", \"oldPassword\": \"user1\", \"newPassword\": \"newPass\"}")
+//				).andExpect(status().isOk());		
+//
+//		//comprueba pass nueva
+//		mvc.perform(post("/user")
+//				.contentType(MediaType.APPLICATION_JSON)
+//				.content("{\"login\":\"user1@mail.com\", \"password\": \"newPass\"}")
+//				).andExpect(status().isOk())
+//		.andExpect(jsonPath("name", equalTo("User1")));
+//		//.andExpect(jsonPath("pollingStationCode", equalTo("123")));
+//	}
 
-		//comprueba pass nueva
-		mvc.perform(post("/user")
-				.contentType(MediaType.APPLICATION_JSON)
-				.content("{\"login\":\"user1@mail.com\", \"password\": \"newPass\"}")
-				).andExpect(status().isOk())
-		.andExpect(jsonPath("name", equalTo("User1")));
-		//.andExpect(jsonPath("pollingStationCode", equalTo("123")));
-	}
-
-	@Test
-	public void postUserChangePassErrorUser() throws Exception {		
-		mvc.perform(post("/ChangePassword")
-				.contentType(MediaType.APPLICATION_JSON)
-				.content("{\"login\":\"user1@mail.com\", \"oldPassword\": \"user1\", \"newPassword\": \"newPass\"}"))
-			.andExpect(status().isOk());		
-
-		mvc.perform(post("/user")
-				.contentType(MediaType.APPLICATION_JSON)
-				.content("null"))
-			.andExpect(status().is4xxClientError());
-	}
+//	@Test
+//	public void postUserChangePassErrorUser() throws Exception {		
+//		mvc.perform(post("/ChangePassword")
+//				.contentType(MediaType.APPLICATION_JSON)
+//				.content("{\"login\":\"user1@mail.com\", \"oldPassword\": \"user1\", \"newPassword\": \"newPass\"}"))
+//			.andExpect(status().isOk());
+//
+//		mvc.perform(post("/user")
+//				.contentType(MediaType.APPLICATION_JSON)
+//				.content("null"))
+//			.andExpect(status().is4xxClientError());
+//	}
 
 	@Test
 	public void postUserChangePassErrorChangePass() throws Exception {		
@@ -200,14 +200,6 @@ public class MainControllerTest {
 				.contentType(MediaType.APPLICATION_JSON)
 				.content("null")
 				).andExpect(status().is4xxClientError());	
-
-		
-		mvc.perform(post("/user")
-				.contentType(MediaType.APPLICATION_JSON)
-				.content("{\"login\":\"user1@mail.com\", \"password\": \"newPass\"}")
-				).andExpect(status().isOk())
-		.andExpect(jsonPath("name", equalTo("User1")));
-	
 	}
 
 
