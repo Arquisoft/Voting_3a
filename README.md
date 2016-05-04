@@ -13,11 +13,11 @@ Voting System
 Censuses SubSystem 
 [![Dependency Status](https://www.versioneye.com/user/projects/572a47c0a0ca350034be6e7a/badge.svg?style=flat)](https://www.versioneye.com/user/projects/572a47c0a0ca350034be6e7a)
 
+![codecov.io](https://codecov.io/gh/Arquisoft/Voting_3a/branch.svg?branch=master)
+
 Actualizar badges:
 
 [![ViewOnHeroku](https://img.shields.io/badge/View%20on-Heroku-ff69b4.svg)](https://votecounting3av2.herokuapp.com)
-
-![codecov.io](https://codecov.io/gh/Arquisoft/Voting_3a/branch.svg?branch=master)
 
 
 ## Censuses3A
