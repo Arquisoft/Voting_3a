@@ -16,7 +16,7 @@ Censuses SubSystem
 
 ![codecov.io](https://codecov.io/gh/Arquisoft/Voting_3a/branch.svg?branch=master)
 
-Actualizar badges:
+Sistema de VoteCounting desplegado en heroku:
 
 [![ViewOnHeroku](https://img.shields.io/badge/View%20on-Heroku-ff69b4.svg)](https://votecounting3av2.herokuapp.com)
 
@@ -60,7 +60,7 @@ Voting System es un sistema de gestión de votaciones de manera on-line. Permiti
 ### Lanzamiento de la aplicación
 La aplicación puede ser lanzada ejecutando mediante línea de comandos la instrucción ```spring-boot:run``` y se accede mediante el navegador en la URI ```http://localhost:8281```
 
-También puedes ver la aplicación desplegada en Heroku presionando el botón inferior
+También puedes ver el subsistema VoteCounting desplegada en Heroku presionando el botón inferior
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://votingsystem3a.herokuapp.com)
 
