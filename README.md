@@ -13,6 +13,7 @@ Censuses SubSystem
 [![Dependency Status](https://www.versioneye.com/user/projects/572a47c0a0ca350034be6e7a/badge.svg?style=flat)](https://www.versioneye.com/user/projects/572a47c0a0ca350034be6e7a)
 
 [![codecov.io](https://codecov.io/github/Arquisoft/Voting_3a/coverage.svg?branch=master)](https://codecov.io/github/Arquisoft/Voting_3a?branch=master)
+
 ![codecov.io](https://codecov.io/gh/Arquisoft/Voting_3a/branch.svg?branch=master)
 
 Actualizar badges:
