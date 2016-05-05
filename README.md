@@ -1,5 +1,7 @@
 Voting System
 =============
+[![Voting System](https://raw.githubusercontent.com/Arquisoft/Voting_3a/master/VotingSystem/src/main/resources/static/images/logo.gif)](https://github.com/Arquisoft/Voting_3a/)
+
 
 [![Join the chat at https://gitter.im/Arquisoft/Voting_3a](https://badges.gitter.im/Arquisoft/Voting_3a.svg)](https://gitter.im/Arquisoft/Voting_3a?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
