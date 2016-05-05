@@ -16,7 +16,7 @@ Censuses SubSystem
 
 ![codecov.io](https://codecov.io/gh/Arquisoft/Voting_3a/branch.svg?branch=master)
 
-Sistema de VoteCounting desplegado en heroku:
+Subsistema de VoteCounting desplegado en heroku como prototipo de presentacion final del sistema. El sistema definitivo sera desplegado antes del cierre definitivo del plazo entrega:
 
 [![ViewOnHeroku](https://img.shields.io/badge/View%20on-Heroku-ff69b4.svg)](https://votecounting3av2.herokuapp.com)
 
