@@ -34,13 +34,12 @@ import es.uniovi.asw.model.Voto;
 @WebAppConfiguration
 @IntegrationTest({ "server.port=0" })
 public class CandidaturaTest {
-	
-	private Candidatura c = null; 
-	
+
+	private Candidatura c = null;
 
 	@Test
 	public void testConstructorVacio() {
-		c=  new Candidatura();
+		c = new Candidatura();
 		assertNull(c.getEleccion());
 		assertEquals(null, c.getId());
 		assertEquals(null, c.getNombre());
@@ -48,85 +47,83 @@ public class CandidaturaTest {
 		assertEquals(null, c.getDescripcion());
 		assertEquals(null, c.getProgramaElectoral());
 		assertEquals(0, c.getVotos().size());
-		
+
 	}
-	
+
 	@Test
 	public void testConstructorFull() {
-		c=  new Candidatura("a", "b", "c", new Eleccion());
+		c = new Candidatura("a", "b", "c", new Eleccion());
 		assertEquals(null, c.getId());
 		assertEquals("a", c.getNombre());
 		assertEquals("b", c.getDescripcion());
 		assertEquals("c", c.getProgramaElectoral());
 		assertEquals(0, c.getVotos().size());
 	}
-	
+
 	@Test
 	public void testToString() {
-		c=  new Candidatura();
+		c = new Candidatura();
 		assertEquals(null, c.getId());
 		assertEquals(null, c.getEleccion());
 		assertEquals(null, c.getDescripcion());
 		assertEquals(null, c.getProgramaElectoral());
 		assertEquals(0, c.getVotos().size());
-		assertEquals("Candidatura [id=null, eleccion=null, nombre=null, descripcion=null, programaElectoral=null, votos=[]]", c.toString());
+		assertEquals(
+				"Candidatura [id=null, eleccion=null, nombre=null, descripcion=null, programaElectoral=null, votos=[]]",
+				c.toString());
 	}
-	
+
 	@Test
 	public void testSets() {
-		c=  new Candidatura();
+		c = new Candidatura();
 		c.setNombre("a");
 		c.setDescripcion("b");
 		c.setProgramaElectoral("c");
 		c.setEleccion(new Eleccion());
 		Set<Voto> v = new HashSet<Voto>();
 		c.setVotos(v);
-			
+
 		assertEquals(null, c.getId());
 		assertEquals("a", c.getNombre());
 		assertEquals("b", c.getDescripcion());
 		assertEquals("c", c.getProgramaElectoral());
 		assertEquals(0, c.getVotos().size());
 		assertNotNull(c.getEleccion());
-		
+
 	}
-	
+
 	@Test
 	public void testHashNull() {
-		c=  new Candidatura();
+		c = new Candidatura();
 		assertEquals(961, c.hashCode());
-		
+
 	}
-	
+
 	@Test
 	public void testHash() {
-		c=  new Candidatura("a", "b", "c", new Eleccion());
+		c = new Candidatura("a", "b", "c", new Eleccion());
 		assertEquals(2019, c.hashCode());
-		
+
 	}
 
 	@Test
 	public void testEquals() {
-		Eleccion e= new Eleccion();
-		c=  new Candidatura("a", "b", "c", e);
-		Candidatura c2=  new Candidatura();
-		//Candidatura c3=  new Candidatura("a", "b", "c", null);
-		Candidatura c4=  new Candidatura(null, "b", "c", e);
-		Candidatura c5=  new Candidatura("otro", "b", "c", e);
+		Eleccion e = new Eleccion();
+		c = new Candidatura("a", "b", "c", e);
+		Candidatura c2 = new Candidatura();
+		// Candidatura c3= new Candidatura("a", "b", "c", null);
+		Candidatura c4 = new Candidatura(null, "b", "c", e);
+		Candidatura c5 = new Candidatura("otro", "b", "c", e);
 		assertTrue(c.equals(c));
 		assertFalse(c.equals(c2));
 		assertFalse(c.equals(e));
 		assertFalse(c.equals(null));
-		//assertFalse(c.equals(c3));
-		//assertFalse(c3.equals(c));
+		// assertFalse(c.equals(c3));
+		// assertFalse(c3.equals(c));
 		assertFalse(c.equals(c4));
 		assertFalse(c4.equals(c));
 		assertFalse(c.equals(c5));
 		assertFalse(c5.equals(c));
 	}
-
-
-	
-
 
 }

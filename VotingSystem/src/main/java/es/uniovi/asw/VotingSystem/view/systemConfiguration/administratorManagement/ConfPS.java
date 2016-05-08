@@ -6,16 +6,16 @@ import es.uniovi.asw.dbManagement.PollingStationRepository;
 import es.uniovi.asw.model.ColegioElectoral;
 
 public class ConfPS {
-	
+
 	private PollingStationRepository pRep;
 	private ColegioElectoral colegio;
-	
-	public ConfPS(PollingStationRepository pRep, ColegioElectoral colegio){
+
+	public ConfPS(PollingStationRepository pRep, ColegioElectoral colegio) {
 		this.pRep = pRep;
 		this.colegio = colegio;
 	}
-	
-	public void saveColegio(){
+
+	public void saveColegio() {
 		PollingStationService cp = SysConfigServiceFactory.getPollingStationService();
 		cp.saveColegio(pRep, colegio);
 	}

@@ -71,8 +71,7 @@ public class VotoConfirmadoTest {
 	public final void testToString() {
 		v = new VotoConfirmado(vr, e);
 		String s = "VotoConfirmado " + "[votante=Voter [nombre=a, email=b, nif=d, password=c], "
-				+ "eleccion=Eleccion [id=null, nombre=elec, fechaInicio=null, fechaFin=null, "
-				+ "opciones=[]]]";
+				+ "eleccion=Eleccion [id=null, nombre=elec, fechaInicio=null, fechaFin=null, " + "opciones=[]]]";
 
 		assertEquals(s, v.toString());
 

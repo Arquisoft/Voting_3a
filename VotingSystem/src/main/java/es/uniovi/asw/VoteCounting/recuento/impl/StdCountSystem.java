@@ -13,7 +13,7 @@ import es.uniovi.asw.model.ComunidadAutonoma;
 import es.uniovi.asw.model.Eleccion;
 
 public class StdCountSystem implements CountSystem {
-	
+
 	private Eleccion voting;
 
 	// Opcion, votos
@@ -88,30 +88,34 @@ public class StdCountSystem implements CountSystem {
 			System.out.println("Calculos no realizados");
 			return;
 		}
-
-		System.out.println("Numero de candidatos: " + voting.getOpciones().size());
 		
+		voting = Persistence.voting.findOne(voting.getId());
+		
+		System.out.println("Numero de candidatos: " + voting.getOpciones().size());
+
 		for (Candidatura cand : voting.getOpciones()) {
 			votos.put(cand.getNombre(), new Long(cand.getVotos().size()));
-			
+
 			System.out.println(cand.getNombre() + " : " + cand.getVotos().size());
 
-			// Implementacion para cuando se permita ver por comunidades y colegios.
-			/*for (Voto vot : cand.getVotos()) {
-
-				colegios.get(vot.getColegio()).put(cand.getNombre(),
-						colegios.get(vot.getColegio()).get(cand.getNombre()) + 1);
-
-				comunidades.get(vot.getColegio().getCircunscripcion().getComunidad()).put(cand.getNombre(),
-						comunidades.get(vot.getColegio().getCircunscripcion().getComunidad()).get(cand.getNombre())
-								+ 1);
-			}*/
+			// Implementacion para cuando se permita ver por comunidades y
+			// colegios.
+			/*
+			 * for (Voto vot : cand.getVotos()) {
+			 * 
+			 * colegios.get(vot.getColegio()).put(cand.getNombre(),
+			 * colegios.get(vot.getColegio()).get(cand.getNombre()) + 1);
+			 * 
+			 * comunidades.get(vot.getColegio().getCircunscripcion().
+			 * getComunidad()).put(cand.getNombre(),
+			 * comunidades.get(vot.getColegio().getCircunscripcion().
+			 * getComunidad()).get(cand.getNombre()) + 1); }
+			 */
 
 		}
 
 		System.out.println("Calculos realizados.");
-		
-		
+
 	}
 
 	@Override
@@ -153,7 +157,5 @@ public class StdCountSystem implements CountSystem {
 			return false;
 		return true;
 	}
-	
-	
 
 }

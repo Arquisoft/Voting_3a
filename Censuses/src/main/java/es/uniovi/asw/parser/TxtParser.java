@@ -12,15 +12,15 @@ import es.uniovi.asw.model.Voter;
  * @version 2016.02.09
  *
  */
-public class TxtParser implements Parser{
-	
+public class TxtParser implements Parser {
+
 	private LoadFromTxt txt = new LoadFromTxt();
-	
+
 	@Override
 	public List<Voter> loadUsers(String fichero) throws IOException {
-		
-		return txt.loadUsers( fichero );
-	
+
+		return txt.loadUsers(fichero);
+
 	}
 
 }

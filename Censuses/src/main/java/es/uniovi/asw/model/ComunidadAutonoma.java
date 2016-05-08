@@ -10,19 +10,21 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class ComunidadAutonoma {
-	
-	@Id @GeneratedValue
+
+	@Id
+	@GeneratedValue
 	private Long id;
 	private String nombre;
-	@OneToMany(mappedBy = "comunidad") 
+	@OneToMany(mappedBy = "comunidad")
 	private Set<Circunscripcion> circunscripciones = new HashSet<>();
-	
-	ComunidadAutonoma() {}
-	
+
+	ComunidadAutonoma() {
+	}
+
 	public ComunidadAutonoma(String nombre) {
 		this.nombre = nombre;
 	}
-	
+
 	public String getNombre() {
 		return nombre;
 	}

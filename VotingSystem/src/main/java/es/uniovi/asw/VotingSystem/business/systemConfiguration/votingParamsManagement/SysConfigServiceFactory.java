@@ -8,16 +8,16 @@ import es.uniovi.asw.VotingSystem.business.systemConfiguration.votingParamsManag
 import es.uniovi.asw.VotingSystem.business.systemConfiguration.votingParamsManagement.voting.VotingTypeServiceImpl;
 
 public class SysConfigServiceFactory {
-	
-	public static VotingTypeService getVotingService(){
+
+	public static VotingTypeService getVotingService() {
 		return new VotingTypeServiceImpl();
 	}
-	
-	public static CandidacyService getCandidacyService(){
+
+	public static CandidacyService getCandidacyService() {
 		return new CandidacyServiceImpl();
 	}
-	
-	public static PollingStationService getPollingStationService(){
+
+	public static PollingStationService getPollingStationService() {
 		return new PollingStationServiceImpl();
 	}
 

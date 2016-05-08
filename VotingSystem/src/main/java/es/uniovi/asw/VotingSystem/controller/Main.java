@@ -47,7 +47,7 @@ import es.uniovi.asw.model.Voter;
 public class Main {
 
 	private static final Logger LOG = LoggerFactory.getLogger(Main.class);
-	
+
 	@Autowired
 	private VotingRepository vRep;
 	@Autowired
@@ -203,27 +203,22 @@ public class Main {
 		model.addAttribute("candidaturas", candidaturas);
 		return new ModelAndView("show_candidacys");
 	}
-	
-	
+
 	@RequestMapping(value = "/logout", method = RequestMethod.POST)
 	public ModelAndView logout() {
 		return new ModelAndView("index");
 	}
 
-
 	// Parte de administración de voto físico
-	
+
 	@RequestMapping(value = "/president_addpv", method = RequestMethod.POST)
-	public ModelAndView presidentIndexCheckVoter(
-				@RequestParam(value = "voterDNI", required = true) String voterDNI,
-				@RequestParam(value = "eleccionId", required = true) Long eleccionId,
-				Model model) {
-	
+	public ModelAndView presidentIndexCheckVoter(@RequestParam(value = "voterDNI", required = true) String voterDNI,
+			@RequestParam(value = "eleccionId", required = true) Long eleccionId, Model model) {
+
 		boolean resultado = new AddPV(cvRep, vtRep, eRep).addPV(voterDNI, eleccionId);
 		if (resultado) {
 			model.addAttribute("mensaje", "Votante registrado");
-		}
-		else {
+		} else {
 			model.addAttribute("mensaje", "El votante no se registro (dni o elección no válidas)");
 		}
 		model.addAttribute("elecciones", new GetVT(vRep).getActiveVotings());
@@ -231,50 +226,50 @@ public class Main {
 
 		return new ModelAndView("president_index");
 	}
-	
+
 	@RequestMapping(value = "/president_checkvoter", method = RequestMethod.POST)
-	public ModelAndView presidentCheckVoter(
-				@RequestParam(value = "idVotante", required = true) Long idVotante,
-				@RequestParam(value = "eleccionId", required = true) Long idEleccion,
-				Model model) {
-	
+	public ModelAndView presidentCheckVoter(@RequestParam(value = "idVotante", required = true) Long idVotante,
+			@RequestParam(value = "eleccionId", required = true) Long idEleccion, Model model) {
+
 		boolean resultado = new CheckV(cvRep).checkV(idVotante, idEleccion);
 		if (resultado) {
 			model.addAttribute("mensaje", "El votante ha votado");
-		}
-		else {
+		} else {
 			model.addAttribute("mensaje", "El votante no ha votado");
 		}
-		model.addAttribute("elecciones", new es.uniovi.asw.VotingSystem.view.registerVote.pollingStationPresidentManagement.GetAV(vRep).getAV(vRep));
+		model.addAttribute("elecciones",
+				new es.uniovi.asw.VotingSystem.view.registerVote.pollingStationPresidentManagement.GetAV(vRep)
+						.getAV(vRep));
 		model.addAttribute("votantes", new GetV(vtRep).getV(vtRep));
 
 		return new ModelAndView("president_index");
 	}
-	
+
 	// Parte de voto remoto
 
-		@RequestMapping(value = "/voter_index", method = RequestMethod.POST)
-		public ModelAndView voterIndexVote(HttpSession sesion, @RequestParam(name = "vote", required = true) String e,
-				Model model) {
-			if (!new AlreadyV(cvRep).yaHaVotado(Long.parseLong(e), (Voter) sesion.getAttribute("voter"))) {
-				sesion.setAttribute("opciones", new GetVO(cRep).obtenerOpciones(Long.parseLong(e)));
-				return new ModelAndView("show_options");
-			} else {
-				model.addAttribute("error", "Error, ya ha votado en esta elección");
-				return new ModelAndView("voter_index");
-			}
+	@RequestMapping(value = "/voter_index", method = RequestMethod.POST)
+	public ModelAndView voterIndexVote(HttpSession sesion, @RequestParam(name = "vote", required = true) String e,
+			Model model) {
+		if (!new AlreadyV(cvRep).yaHaVotado(Long.parseLong(e), (Voter) sesion.getAttribute("voter"))) {
+			sesion.setAttribute("opciones", new GetVO(cRep).obtenerOpciones(Long.parseLong(e)));
+			return new ModelAndView("show_options");
+		} else {
+			model.addAttribute("error", "Error, ya ha votado en esta elección");
+			return new ModelAndView("voter_index");
 		}
+	}
+
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/show_options", method = RequestMethod.POST)
-	public ModelAndView voterVote(HttpSession sesion,@RequestParam(name = "decision") String id, List<Candidatura> opciones, Model model) {
-		for(Candidatura c : (List<Candidatura>) sesion.getAttribute("opciones")){
-			if(c.getId().equals(Long.parseLong(id)))
-				new VoteV(vRep,vtRep, voRep, cvRep).meterVoto(c, (Voter) sesion.getAttribute("voter"));
+	public ModelAndView voterVote(HttpSession sesion, @RequestParam(name = "decision") String id,
+			List<Candidatura> opciones, Model model) {
+		for (Candidatura c : (List<Candidatura>) sesion.getAttribute("opciones")) {
+			if (c.getId().equals(Long.parseLong(id)))
+				new VoteV(vRep, vtRep, voRep, cvRep).meterVoto(c, (Voter) sesion.getAttribute("voter"));
 		}
 		model.addAttribute("votado", "Su voto se ha realizado con éxito");
 		return new ModelAndView("voter_index");
-		
+
 	}
-	
 
 }

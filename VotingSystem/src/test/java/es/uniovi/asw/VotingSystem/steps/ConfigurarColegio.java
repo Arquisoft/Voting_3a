@@ -20,38 +20,36 @@ import es.uniovi.asw.model.ComunidadAutonoma;
 @IntegrationTest
 @WebAppConfiguration
 public class ConfigurarColegio {
-  
-  @Autowired
-  protected WebApplicationContext context;
 
-  protected MockMvc mvc;
-  protected MvcResult result;
-  
-  @Value("${local.server.port}")
-  protected int port;
-  
-  protected ColegioElectoral colegio;
-  
-  @Dado("^un colegio electoral de unas elecciones$")
-  public void un_colegio_electoral_de_unas_elecciones() throws Throwable {
-      colegio = new ColegioElectoral(null, null);
-  }
+	@Autowired
+	protected WebApplicationContext context;
 
-  @Cuando("^le asignamos el nombre \"([^\"]*)\" de la circunscripción \"([^\"]*)\" y población \"([^\"]*)\"$")
-  public void le_asignamos_el_nombre_de_la_circunscripción_y_población(String arg1, String arg2, String arg3) throws Throwable {
-      colegio.setNombre(arg1);
-      colegio.setPoblacion(arg3);
-      colegio.setCircunscripcion(new Circunscripcion(arg2, new ComunidadAutonoma("Asturias")));
-  }
+	protected MockMvc mvc;
+	protected MvcResult result;
 
-  @Entonces("^comprobamos que los parámetros de \"([^\"]*)\" se han almacenado de forma correcta$")
-  public void comprobamos_que_los_parámetros_de_se_han_almacenado_de_forma_correcta(String arg1) throws Throwable {
-      assertEquals("Colegio 1", colegio.getNombre());
-      assertEquals("Este", colegio.getCircunscripcion().getNombre());
-      assertEquals("Oviedo", colegio.getPoblacion());
-  }
+	@Value("${local.server.port}")
+	protected int port;
 
-  
-  
+	protected ColegioElectoral colegio;
+
+	@Dado("^un colegio electoral de unas elecciones$")
+	public void un_colegio_electoral_de_unas_elecciones() throws Throwable {
+		colegio = new ColegioElectoral(null, null);
+	}
+
+	@Cuando("^le asignamos el nombre \"([^\"]*)\" de la circunscripción \"([^\"]*)\" y población \"([^\"]*)\"$")
+	public void le_asignamos_el_nombre_de_la_circunscripción_y_población(String arg1, String arg2, String arg3)
+			throws Throwable {
+		colegio.setNombre(arg1);
+		colegio.setPoblacion(arg3);
+		colegio.setCircunscripcion(new Circunscripcion(arg2, new ComunidadAutonoma("Asturias")));
+	}
+
+	@Entonces("^comprobamos que los parámetros de \"([^\"]*)\" se han almacenado de forma correcta$")
+	public void comprobamos_que_los_parámetros_de_se_han_almacenado_de_forma_correcta(String arg1) throws Throwable {
+		assertEquals("Colegio 1", colegio.getNombre());
+		assertEquals("Este", colegio.getCircunscripcion().getNombre());
+		assertEquals("Oviedo", colegio.getPoblacion());
+	}
 
 }

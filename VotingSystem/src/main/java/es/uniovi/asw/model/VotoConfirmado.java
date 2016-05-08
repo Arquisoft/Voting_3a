@@ -11,42 +11,46 @@ import es.uniovi.asw.model.types.VotoConfirmadoKey;
 @Entity
 @IdClass(VotoConfirmadoKey.class)
 public class VotoConfirmado {
-	
-	//@Id
-	//@GeneratedValue
-	//private Long id;
-	
+
+	// @Id
+	// @GeneratedValue
+	// private Long id;
+
 	@Id
 	@ManyToOne
 	private Voter votante;
-	
+
 	@Id
-	@ManyToOne(cascade=CascadeType.MERGE)
+	@ManyToOne(cascade = CascadeType.MERGE)
 	private Eleccion eleccion;
-	
-	public VotoConfirmado() {}
-	
-	public VotoConfirmado(Voter voter, Eleccion eleccion){
+
+	public VotoConfirmado() {
+	}
+
+	public VotoConfirmado(Voter voter, Eleccion eleccion) {
 		Asociacion.EleccionVotoConfirmado.link(eleccion, this);
 		Asociacion.VotanteVotoConfirmado.link(voter, this);
 	}
-	
+
 	public Voter getVotante() {
 		return votante;
 	}
+
 	public void setVotante(Voter votante) {
 		this.votante = votante;
 	}
+
 	public Eleccion getEleccion() {
 		return eleccion;
 	}
+
 	public void setEleccion(Eleccion eleccion) {
 		this.eleccion = eleccion;
 	}
-	
-	/*public Long getId() {
-		return this.id;
-	}*/
+
+	/*
+	 * public Long getId() { return this.id; }
+	 */
 
 	@Override
 	public String toString() {
@@ -83,6 +87,5 @@ public class VotoConfirmado {
 			return false;
 		return true;
 	}
-	
-	
+
 }

@@ -8,17 +8,16 @@ import es.uniovi.asw.VotingSystem.persistence.dbManagement.votingDBManagement.im
 import es.uniovi.asw.dbManagement.CandidacyRepository;
 import es.uniovi.asw.model.Candidatura;
 
-class GetVotingOptionsImpl implements GetVotingOptions{
+class GetVotingOptionsImpl implements GetVotingOptions {
 
-	
-	public List<Candidatura> getVotingOptions(Long idEleccion, CandidacyRepository cRep){
+	public List<Candidatura> getVotingOptions(Long idEleccion, CandidacyRepository cRep) {
 		List<Candidatura> resultado = new ArrayList<Candidatura>();
 		List<Candidatura> filtrar = PersistenceFactory.newGetVOptions().findAll(cRep);
-		for(Candidatura c : filtrar){
-			if(c.getEleccion().getId().equals(idEleccion))
+		for (Candidatura c : filtrar) {
+			if (c.getEleccion().getId().equals(idEleccion))
 				resultado.add(c);
 		}
 		return resultado;
 	}
-	
+
 }

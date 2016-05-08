@@ -13,25 +13,27 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Circunscripcion {
-	
-	@Id @GeneratedValue
+
+	@Id
+	@GeneratedValue
 	private Long id;
-	 
+
 	private String nombre;
 
 	@ManyToOne
 	private ComunidadAutonoma comunidad;
-	
+
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "circunscripcion", cascade = CascadeType.ALL)
 	private Set<ColegioElectoral> colegios = new HashSet<>();
-	
-	Circunscripcion() {}
-		
-	public Circunscripcion(String nombre, ComunidadAutonoma comunidad){
+
+	Circunscripcion() {
+	}
+
+	public Circunscripcion(String nombre, ComunidadAutonoma comunidad) {
 		this.nombre = nombre;
 		Asociacion.ComunidadCircunscripcion.link(comunidad, this);
 	}
-	
+
 	public ComunidadAutonoma getComunidad() {
 		return comunidad;
 	}
@@ -47,7 +49,7 @@ public class Circunscripcion {
 	public void setComunidad(ComunidadAutonoma comunidad) {
 		this.comunidad = comunidad;
 	}
-	
+
 	public String getNombre() {
 		return nombre;
 	}

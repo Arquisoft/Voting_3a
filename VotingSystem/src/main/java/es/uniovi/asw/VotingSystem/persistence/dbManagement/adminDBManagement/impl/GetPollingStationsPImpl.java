@@ -8,23 +8,20 @@ import es.uniovi.asw.dbManagement.PollingStationRepository;
 import es.uniovi.asw.model.Circunscripcion;
 import es.uniovi.asw.model.ColegioElectoral;
 
-class GetPollingStationsPImpl implements GetPollingStationsP{
+class GetPollingStationsPImpl implements GetPollingStationsP {
 
 	@Override
 	public List<ColegioElectoral> getPollingSttaion(PollingStationRepository pRep) {
 		return (List<ColegioElectoral>) pRep.findAll();
 	}
-	
+
 	@Override
 	public List<Circunscripcion> getCircunscripciones(CircumscriptionRepository cRep) {
 		return (List<Circunscripcion>) cRep.findAll();
 	}
 
-	
 	public ColegioElectoral getById(PollingStationRepository pRep, Long id) {
 		return pRep.findOne(id);
 	}
-	
-	
 
 }

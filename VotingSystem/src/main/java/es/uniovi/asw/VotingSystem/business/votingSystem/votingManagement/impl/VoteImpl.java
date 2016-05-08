@@ -12,9 +12,10 @@ import es.uniovi.asw.model.Voter;
 import es.uniovi.asw.model.Voto;
 import es.uniovi.asw.model.VotoConfirmado;
 
-class VoteImpl implements Vote{
-	
-	public void votar(VotingRepository vRep, VoterRepository vtRep ,VoteRepository voRep, ConfirmedVoteRepository cvRep, Voter votante, Candidatura candidatura){
+class VoteImpl implements Vote {
+
+	public void votar(VotingRepository vRep, VoterRepository vtRep, VoteRepository voRep, ConfirmedVoteRepository cvRep,
+			Voter votante, Candidatura candidatura) {
 		Voto voto = new Voto();
 		voto.setColegio(votante.getColegio());
 		voto.setOpcion(candidatura);
@@ -24,7 +25,7 @@ class VoteImpl implements Vote{
 		Voter v = vtRep.findOne(votante.getId());
 		vc.setEleccion(e);
 		vc.setVotante(v);
-		//vc.setHaVotado(true);
+		// vc.setHaVotado(true);
 		PersistenceFactory.newAddVote().añadirVotoConfirmado(cvRep, vc);
 	}
 }

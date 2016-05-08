@@ -21,7 +21,7 @@ public class EncrypterTest {
 
 	@Test
 	public void testEncryptDecrypt() throws Exception {
-		String texto="Hola mundo hacker";
+		String texto = "Hola mundo hacker";
 		String textoEncriptado = Encrypter.encrypt(texto);
 		String solucion = Encrypter.decrypt(textoEncriptado);
 		assertTrue(solucion.equals(texto));

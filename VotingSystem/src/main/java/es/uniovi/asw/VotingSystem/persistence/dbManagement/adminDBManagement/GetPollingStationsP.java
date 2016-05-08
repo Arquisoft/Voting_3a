@@ -8,11 +8,11 @@ import es.uniovi.asw.model.Circunscripcion;
 import es.uniovi.asw.model.ColegioElectoral;
 
 public interface GetPollingStationsP {
-	
+
 	List<ColegioElectoral> getPollingSttaion(PollingStationRepository pRep);
-	
+
 	List<Circunscripcion> getCircunscripciones(CircumscriptionRepository cRep);
-	
+
 	ColegioElectoral getById(PollingStationRepository pRep, Long id);
 
 }

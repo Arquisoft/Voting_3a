@@ -11,22 +11,22 @@ import es.uniovi.asw.model.Voter;
  * @author Dario Rodríguez García (@dariorg)
  *
  */
-public class DuplicateFieldValidation implements Validate{
-	
+public class DuplicateFieldValidation implements Validate {
+
 	private List<String> nifFields = new ArrayList<String>();
 	private List<String> emailFields = new ArrayList<String>();
 
 	@Override
-	public void validation( Voter voter ) {
-		if( nifFields.contains( voter.getNif() ) ){
+	public void validation(Voter voter) {
+		if (nifFields.contains(voter.getNif())) {
 			throw new IllegalStateException("DNI " + voter.getNif() + " duplicado");
-		}else{
-			nifFields.add( voter.getNif() );
+		} else {
+			nifFields.add(voter.getNif());
 		}
-		if( emailFields.contains( voter.getEmail() ) ){
+		if (emailFields.contains(voter.getEmail())) {
 			throw new IllegalStateException("Email " + voter.getEmail() + " duplicado");
-		}else{
-			emailFields.add( voter.getEmail() );
+		} else {
+			emailFields.add(voter.getEmail());
 		}
-	}	
+	}
 }

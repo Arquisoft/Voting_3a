@@ -7,14 +7,14 @@ import es.uniovi.asw.dbManagement.CandidacyRepository;
 import es.uniovi.asw.model.Candidatura;
 
 public class GetVO {
-	
+
 	private CandidacyRepository cRep;
-	
-	public GetVO(CandidacyRepository cRep){
+
+	public GetVO(CandidacyRepository cRep) {
 		this.cRep = cRep;
 	}
-	
-	public List<Candidatura> obtenerOpciones(Long idEleccion){
+
+	public List<Candidatura> obtenerOpciones(Long idEleccion) {
 		return ServicesFactory.newGetVotingOptions().getVotingOptions(idEleccion, cRep);
 	}
 

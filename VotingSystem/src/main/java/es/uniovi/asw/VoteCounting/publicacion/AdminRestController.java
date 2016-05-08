@@ -17,12 +17,11 @@ public class AdminRestController {
 
 	@Autowired
 	CountingExecutor countingExecutor;
-	
+
 	@Autowired
 	CountSystemFactory countSystemFactory;
 
-	@RequestMapping(value = "/iniciarRecuento/{id}",
-			method = RequestMethod.GET)
+	@RequestMapping(value = "/iniciarRecuento/{id}", method = RequestMethod.GET)
 	public ResponseEntity<String> IniciarRecuento(@PathVariable("id") long id) throws Exception {
 
 		System.out.println("Iniciando recuento " + id);
@@ -34,15 +33,14 @@ public class AdminRestController {
 		return new ResponseEntity<String>(HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "/terminarRecuento/{id}",
-			method = RequestMethod.GET)
+	@RequestMapping(value = "/terminarRecuento/{id}", method = RequestMethod.GET)
 	public ResponseEntity<String> terminarRecuento(@PathVariable("id") long id) throws Exception {
 
 		System.out.println("Recuento " + id + " terminado.");
-		
+
 		CountSystem countSystem = countSystemFactory.getStdCountSystem(id);
 
-		//countingExecutor.stopAll();
+		// countingExecutor.stopAll();
 		countingExecutor.unregister(countSystem);
 
 		return new ResponseEntity<String>(HttpStatus.OK);

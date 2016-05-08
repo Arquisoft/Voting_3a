@@ -37,20 +37,20 @@ public class EmitirVoto {
 
 	@Dado("^una lista con las elecciones que se encuentran activas$")
 	public void una_lista_con_las_elecciones_que_se_encuentran_activas() throws Throwable {
-	    elecciones = new ArrayList<Eleccion>();
-	    for(int i=0; i< 5; i++){
-	    	elecciones.add(new Eleccion("Eleccion " + (i+1)));
-	    	for(int j=0; j<3; j++){
-	    		elecciones.get(i).getOpciones().add(new Candidatura("Candidatura " + (j+1)));
-	    	}
-	    }
-	    
+		elecciones = new ArrayList<Eleccion>();
+		for (int i = 0; i < 5; i++) {
+			elecciones.add(new Eleccion("Eleccion " + (i + 1)));
+			for (int j = 0; j < 3; j++) {
+				elecciones.get(i).getOpciones().add(new Candidatura("Candidatura " + (j + 1)));
+			}
+		}
+
 	}
 
 	@Cuando("^el usuario selecciona la elección \"([^\"]*)\"$")
 	public void el_usuario_selecciona_la_elección(String arg1) throws Throwable {
-		for(Eleccion ele : elecciones){
-			if(ele.getNombre().equals(arg1)){
+		for (Eleccion ele : elecciones) {
+			if (ele.getNombre().equals(arg1)) {
 				e = ele;
 			}
 		}
@@ -59,15 +59,15 @@ public class EmitirVoto {
 
 	@Entonces("^se le muestran las opciones de voto para esas elección$")
 	public void se_le_muestran_las_opciones_de_voto_para_esas_elección() throws Throwable {
-		for(Candidatura c : e.getOpciones()){
+		for (Candidatura c : e.getOpciones()) {
 			System.out.println(c);
 		}
 	}
 
 	@Cuando("^el usuario selecciona la opción \"([^\"]*)\" y selecciona guardar$")
 	public void el_usuario_selecciona_la_opción_y_selecciona_guardar(String arg1) throws Throwable {
-		for(Candidatura c : e.getOpciones()){
-			if(c.getNombre().equals(arg1)){
+		for (Candidatura c : e.getOpciones()) {
+			if (c.getNombre().equals(arg1)) {
 				candidatura = c;
 			}
 		}
@@ -78,7 +78,7 @@ public class EmitirVoto {
 		System.out.println(e);
 		Voter voter = new Voter("Paco", "info@paco.es", "ocap", "9449870L");
 		VotoConfirmado confirmado = new VotoConfirmado(voter, e);
-		//confirmado.setHaVotado(true);
+		// confirmado.setHaVotado(true);
 	}
 
 }

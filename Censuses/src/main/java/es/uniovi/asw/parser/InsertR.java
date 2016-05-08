@@ -13,11 +13,11 @@ import es.uniovi.asw.parser.password.GenerarClave;
  * @author Darío Rodríguez García (@dariorg)
  *
  */
-public class InsertR{
+public class InsertR {
 
 	public void insertVoters(Parser parser, String... args) throws IOException {
-		List<Voter> voters = parser.loadUsers( args[0] );
-		for( Voter voter : voters ){
+		List<Voter> voters = parser.loadUsers(args[0]);
+		for (Voter voter : voters) {
 			voter.setPassword(GenerarClave.getPassword(8));
 		}
 		new InsertP().saveVoters(voters, args);

@@ -16,8 +16,9 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Eleccion {
-	
-	@Id @GeneratedValue
+
+	@Id
+	@GeneratedValue
 	private Long id;
 	private String nombre;
 	private Date fechaInicio;
@@ -26,60 +27,61 @@ public class Eleccion {
 	private Integer numeroOpciones;
 	private boolean activa;
 
-	@OneToMany(mappedBy = "eleccion", cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "eleccion", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<Candidatura> opciones = new ArrayList<Candidatura>();
 
-	@OneToMany(mappedBy = "eleccion", targetEntity= VotoConfirmado.class)
+	@OneToMany(mappedBy = "eleccion", targetEntity = VotoConfirmado.class)
 	private Set<VotoConfirmado> votantes = new HashSet<VotoConfirmado>();
-	
-	public Eleccion(String nombre, Date inicio, Date fin, Time hInicio, Time hFin){
+
+	public Eleccion(String nombre, Date inicio, Date fin, Time hInicio, Time hFin) {
 		this.nombre = nombre;
 		this.fechaInicio = inicio;
 		this.fechaFin = fin;
 		this.horaInicio = hInicio;
 		this.horaFin = hFin;
 	}
-	
-	public Eleccion(String nombre){
+
+	public Eleccion(String nombre) {
 		this.nombre = nombre;
 	}
-	
-	public Eleccion() {}
-	
+
+	public Eleccion() {
+	}
+
 	public String getNombre() {
 		return nombre;
 	}
-	
+
 	public Date getFechaInicio() {
 		return fechaInicio;
 	}
-	
+
 	public void setFechaInicio(Date fechaInicio) {
 		this.horaInicio = new Time(fechaInicio.getTime());
 		this.fechaInicio = fechaInicio;
 	}
-	
+
 	public Date getFechaFin() {
 		return fechaFin;
 	}
-	
+
 	public void setFechaFin(Date fechaFin) {
 		this.horaFin = new Time(fechaFin.getTime());
 		this.fechaFin = fechaFin;
 	}
-	
+
 	public Time getHoraInicio() {
 		return horaInicio;
 	}
-	
+
 	public void setHoraInicio(Time horaInicio) {
 		this.horaInicio = horaInicio;
 	}
-	
+
 	public Time getHoraFin() {
 		return horaFin;
 	}
-	
+
 	public void setHoraFin(Time horaFin) {
 		this.horaFin = horaFin;
 	}
@@ -103,7 +105,7 @@ public class Eleccion {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	
+
 	public Integer getNumeroOpciones() {
 		return numeroOpciones;
 	}
