@@ -25,7 +25,7 @@ Subsistema de VoteCounting desplegado en heroku como prototipo de presentacion f
 
 ## Censuses3A
 
-Censuses es un subsistema que permite cargar los datos de un determinado censo electoral contenidos en ficheros con extension XSLX o TXT. Además también permite generar las cartas que serán enviadas a los electores
+Censuses es un subsistema que permite cargar los datos de un determinado censo electoral contenidos en ficheros con extension XSLX o TXT. Además también permite generar las cartas, en diferentes formatos, que serán enviadas a los electores.
 
 ### Forma de ejecución
 Para la ejecución del programa se deben proporcionar tres parámetros:
