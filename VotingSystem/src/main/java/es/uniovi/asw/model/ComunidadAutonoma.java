@@ -12,20 +12,22 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class ComunidadAutonoma {
-	
-	@Id @GeneratedValue
+
+	@Id
+	@GeneratedValue
 	private Long id;
 	private String nombre;
 
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "comunidad", cascade = CascadeType.ALL)
 	private Set<Circunscripcion> circunscripciones = new HashSet<>();
-	
-	ComunidadAutonoma() {}
-	
+
+	ComunidadAutonoma() {
+	}
+
 	public ComunidadAutonoma(String nombre) {
 		this.nombre = nombre;
 	}
-	
+
 	public String getNombre() {
 		return nombre;
 	}
@@ -37,7 +39,7 @@ public class ComunidadAutonoma {
 	public void setCircunscripciones(Set<Circunscripcion> circunscripciones) {
 		this.circunscripciones = circunscripciones;
 	}
-	
+
 	public Long getId() {
 		return this.id;
 	}

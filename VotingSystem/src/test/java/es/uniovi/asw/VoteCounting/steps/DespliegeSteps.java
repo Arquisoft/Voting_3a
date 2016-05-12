@@ -11,9 +11,9 @@ import es.uniovi.asw.VoteCounting.SeleniumUtils;
 @IntegrationTest
 @WebAppConfiguration
 public class DespliegeSteps {
-	
+
 	private WebDriver driver = SeleniumUtils.getDriver("Configuration");
-	
+
 	@Cuando("^el cliente entra en la web$")
 	public void el_cliente_entra_en_la_web() throws Throwable {
 		driver.get("http://localhost:8080");

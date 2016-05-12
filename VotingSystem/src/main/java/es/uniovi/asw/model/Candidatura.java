@@ -13,8 +13,9 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Candidatura {
-	
-	@Id @GeneratedValue
+
+	@Id
+	@GeneratedValue
 	private Long id;
 	@ManyToOne
 	private Eleccion eleccion;
@@ -24,28 +25,28 @@ public class Candidatura {
 
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "opcion", cascade = CascadeType.MERGE)
 	private Set<Voto> votos = new HashSet<>();
-	
+
 	public Long getId() {
 		return id;
 	}
 
-	public Candidatura() {}
-	
-	public Candidatura(String nombre, Eleccion e){
+	public Candidatura() {
+	}
+
+	public Candidatura(String nombre, Eleccion e) {
 		this.nombre = nombre;
 		this.descripcion = "";
 		this.programaElectoral = "";
 		Asociacion.EleccionOpcion.link(e, this);
 	}
-	
-	public Candidatura(String nombre,String descripcion,String programaElectoral, Eleccion e){
+
+	public Candidatura(String nombre, String descripcion, String programaElectoral, Eleccion e) {
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 		this.programaElectoral = programaElectoral;
 		Asociacion.EleccionOpcion.link(e, this);
 	}
 
-	
 	public Candidatura(String nombre) {
 		this.nombre = nombre;
 	}
@@ -53,15 +54,15 @@ public class Candidatura {
 	public String getNombre() {
 		return nombre;
 	}
-	
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	
+
 	public String getDescripcion() {
 		return descripcion;
 	}
-	
+
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}

@@ -20,52 +20,49 @@ import es.uniovi.asw.model.Voter;
 @Controller
 @RestController
 public class MainController {
-	
-	@RequestMapping(
-			value = "/user",
-			method = RequestMethod.POST, produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE },
-			consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
-	
+
+	@RequestMapping(value = "/user", method = RequestMethod.POST, produces = { MediaType.APPLICATION_JSON_VALUE,
+			MediaType.APPLICATION_XML_VALUE }, consumes = { MediaType.APPLICATION_JSON_VALUE,
+					MediaType.APPLICATION_XML_VALUE })
+
 	public ResponseEntity<UserInfo> GetVoterInfo(@RequestBody @Valid final UserPass userPass) throws Exception {
-		
+
 		if (userPass == null) {
 			// throw new ResourceNotFoundException();
 			return new ResponseEntity<UserInfo>(HttpStatus.BAD_REQUEST);
 		}
-		
+
 		Voter voter = Persistence.voter.findByEmailAndPassword(userPass.getLogin(), userPass.getPassword());
-		
+
 		if (voter == null) {
 			// throw new UserNotFoundException(userPass);
 			return new ResponseEntity<UserInfo>(HttpStatus.NOT_FOUND);
 		}
-		
+
 		return new ResponseEntity<UserInfo>(new UserInfo(voter), HttpStatus.OK);
 	}
 
+	@RequestMapping(value = "/ChangePassword", method = RequestMethod.POST, produces = {
+			MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE }, consumes = {
+					MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
 
-	@RequestMapping(
-			value = "/ChangePassword",
-			method = RequestMethod.POST, produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE },
-			consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
-	
 	public ResponseEntity<String> ChangePassword(@RequestBody @Valid final ChangePass changePass) throws Exception {
-		
+
 		if (changePass == null) {
 			// throw new ResourceNotFoundException();
 			return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
 		}
-		
+
 		Voter voter = Persistence.voter.findOneByEmail(changePass.getLogin());
-		
+
 		if (voter == null) {
 			// throw new UserNotFoundException(userPass);
 			return new ResponseEntity<String>(HttpStatus.NOT_FOUND);
 		}
-		
+
 		voter.setPassword(changePass.getNewPassword());
 		Persistence.voter.save(voter);
-		
-		return new ResponseEntity<String>("{}",HttpStatus.OK);
+
+		return new ResponseEntity<String>("{}", HttpStatus.OK);
 	}
 }

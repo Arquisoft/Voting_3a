@@ -13,67 +13,69 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class ColegioElectoral {
-	
-	@Id @GeneratedValue
+
+	@Id
+	@GeneratedValue
 	private Long id;
-	
+
 	@ManyToOne
 	private Circunscripcion circunscripcion;
-	
+
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "colegio", cascade = CascadeType.ALL)
 	private Set<Voto> votos = new HashSet<>();
-	
+
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "colegio", cascade = CascadeType.ALL)
 	private Set<Voter> votantes = new HashSet<>();
-	
+
 	private String nombre;
 	private String poblacion;
-	
-	ColegioElectoral() {}
-	
-	public ColegioElectoral(String nombre, String poblacion){
+
+	ColegioElectoral() {
+	}
+
+	public ColegioElectoral(String nombre, String poblacion) {
 		this.nombre = nombre;
 		this.poblacion = poblacion;
 	}
-	
-	public ColegioElectoral(String nombre, String poblacion, Circunscripcion c){
+
+	public ColegioElectoral(String nombre, String poblacion, Circunscripcion c) {
 		this.nombre = nombre;
 		this.poblacion = poblacion;
 		Asociacion.CircunscripcionColegio.link(c, this);
 	}
-	
+
 	public Set<Voto> getVotos() {
 		return votos;
 	}
-	
+
 	public void setVotos(Set<Voto> votos) {
 		this.votos = votos;
 	}
-	
+
 	public Set<Voter> getVotantes() {
 		return votantes;
 	}
-	
+
 	public void setVotantes(Set<Voter> votantes) {
 		this.votantes = votantes;
 	}
-	
+
 	public String getPoblacion() {
 		return poblacion;
 	}
-	
+
 	public void setPoblacion(String poblacion) {
 		this.poblacion = poblacion;
 	}
-	
+
 	public Circunscripcion getCircunscripcion() {
 		return circunscripcion;
 	}
-	
+
 	public String getNombre() {
 		return nombre;
 	}
-	
+
 	public void setCircunscripcion(Circunscripcion circunscripcion) {
 		this.circunscripcion = circunscripcion;
 	}
@@ -85,11 +87,11 @@ public class ColegioElectoral {
 	public Long getId() {
 		return id;
 	}
-	
-	public void setId(Long id){
+
+	public void setId(Long id) {
 		this.id = id;
 	}
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -120,5 +122,5 @@ public class ColegioElectoral {
 		return "ColegioElectoral [circunscripcion=" + circunscripcion + ", votos=" + votos + ", votantes=" + votantes
 				+ ", nombre=" + nombre + ", poblacion=" + poblacion + "]";
 	}
-	
+
 }

@@ -10,14 +10,13 @@ import es.uniovi.asw.dbManagement.VotingRepository;
 
 public interface PhysicalVoteService {
 
-	boolean add(String dniVoter, long idElection, ConfirmedVoteRepository cvRep,
-			VoterRepository voterRep, VotingRepository vRep);
+	boolean add(String dniVoter, long idElection, ConfirmedVoteRepository cvRep, VoterRepository voterRep,
+			VotingRepository vRep);
 
 	boolean checkVote(long dniVoter, long idElection, ConfirmedVoteRepository cvRep);
 
-    public List<Voter> getVoters(VoterRepository voterRep);
+	public List<Voter> getVoters(VoterRepository voterRep);
 
-    Iterable<Eleccion> getActiveVoter(VotingRepository vRep);
+	Iterable<Eleccion> getActiveVoter(VotingRepository vRep);
 
 }
-

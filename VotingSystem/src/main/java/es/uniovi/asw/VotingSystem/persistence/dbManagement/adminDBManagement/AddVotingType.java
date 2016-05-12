@@ -5,9 +5,9 @@ import es.uniovi.asw.dbManagement.VotingRepository;
 import es.uniovi.asw.model.Eleccion;
 
 public interface AddVotingType {
-	
+
 	void addVotingType(VotingRepository vr, CandidacyRepository oRep, Eleccion e);
-	
+
 	void setActivation(VotingRepository vr, Long id);
 
 }

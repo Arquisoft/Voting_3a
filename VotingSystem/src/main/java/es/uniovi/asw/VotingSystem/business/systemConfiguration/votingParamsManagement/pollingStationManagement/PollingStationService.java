@@ -8,13 +8,13 @@ import es.uniovi.asw.model.Circunscripcion;
 import es.uniovi.asw.model.ColegioElectoral;
 
 public interface PollingStationService {
-	
+
 	public void saveColegio(PollingStationRepository pRep, ColegioElectoral colegio);
-	
+
 	public List<ColegioElectoral> getPollingStatons(PollingStationRepository pRep);
-	
+
 	public List<Circunscripcion> getCircunscripciones(CircumscriptionRepository cRep);
-	
+
 	public ColegioElectoral getById(PollingStationRepository pRep, Long id);
 
 }

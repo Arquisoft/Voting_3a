@@ -10,18 +10,18 @@ import es.uniovi.asw.model.Circunscripcion;
 import es.uniovi.asw.model.ColegioElectoral;
 
 class GetPollingStations {
-	
-	public List<ColegioElectoral> getPollingStatons(PollingStationRepository pRep){
+
+	public List<ColegioElectoral> getPollingStatons(PollingStationRepository pRep) {
 		GetPollingStationsP gp = PersistenceFactory.getPollingStations();
 		return gp.getPollingSttaion(pRep);
 	}
-	
-	public List<Circunscripcion> getCircunscripciones(CircumscriptionRepository cRep){
+
+	public List<Circunscripcion> getCircunscripciones(CircumscriptionRepository cRep) {
 		GetPollingStationsP gp = PersistenceFactory.getPollingStations();
 		return gp.getCircunscripciones(cRep);
 	}
-	
-	public ColegioElectoral getById(PollingStationRepository pRep, Long id){
+
+	public ColegioElectoral getById(PollingStationRepository pRep, Long id) {
 		GetPollingStationsP gp = PersistenceFactory.getPollingStations();
 		return gp.getById(pRep, id);
 	}

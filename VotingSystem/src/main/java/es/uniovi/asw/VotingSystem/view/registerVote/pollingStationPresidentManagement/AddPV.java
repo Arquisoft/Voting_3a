@@ -7,13 +7,12 @@ import es.uniovi.asw.dbManagement.VoterRepository;
 import es.uniovi.asw.dbManagement.VotingRepository;
 
 public class AddPV {
-	
+
 	private ConfirmedVoteRepository cvRep;
 	private VoterRepository vRep;
 	private VotingRepository voRep;
 
-	public AddPV(ConfirmedVoteRepository cvRep, VoterRepository vRep,
-			VotingRepository voRep) {
+	public AddPV(ConfirmedVoteRepository cvRep, VoterRepository vRep, VotingRepository voRep) {
 		super();
 		this.cvRep = cvRep;
 		this.vRep = vRep;
@@ -21,10 +20,9 @@ public class AddPV {
 	}
 
 	public boolean addPV(String dniVoter, long idElection) {
-		
+
 		PhysicalVoteService physicalVoteService = PhysicalVoteServiceImpl.getInstance();
-		return physicalVoteService.add(dniVoter, idElection,
-				cvRep, vRep, voRep);
+		return physicalVoteService.add(dniVoter, idElection, cvRep, vRep, voRep);
 	}
 
 }

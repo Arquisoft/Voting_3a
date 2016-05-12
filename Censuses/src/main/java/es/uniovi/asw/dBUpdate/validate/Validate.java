@@ -11,7 +11,7 @@ import es.uniovi.asw.model.Voter;
  *
  */
 public interface Validate {
-	
-	void validation( Voter voter ) throws IllegalStateException;
+
+	void validation(Voter voter) throws IllegalStateException;
 
 }

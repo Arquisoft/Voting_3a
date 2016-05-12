@@ -1,4 +1,5 @@
 package es.uniovi.asw.VotingSystem.persistence.dbManagement.votingDBManagement.impl;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -27,12 +28,12 @@ class GetActiveVotingsImpl implements GetActiveVotings {
 		List<Eleccion> aux = new ArrayList<Eleccion>();
 		Date inicio, fin = null;
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		for(Eleccion e : elecciones){
+		for (Eleccion e : elecciones) {
 			try {
 				inicio = sdf.parse(e.getFechaInicio().toString());
 				fin = sdf.parse(e.getFechaFin().toString());
-				if(inicio.getTime() < new Date(System.currentTimeMillis()).getTime() 
-						&& fin.getTime() > new Date(System.currentTimeMillis()).getTime()){
+				if (inicio.getTime() < new Date(System.currentTimeMillis()).getTime()
+						&& fin.getTime() > new Date(System.currentTimeMillis()).getTime()) {
 					aux.add(e);
 				}
 			} catch (ParseException e1) {

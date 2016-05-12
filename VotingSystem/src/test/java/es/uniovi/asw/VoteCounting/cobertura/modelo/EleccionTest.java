@@ -28,8 +28,8 @@ import es.uniovi.asw.model.VotoConfirmado;
  */
 public class EleccionTest {
 
-	private Eleccion e; 
-	private Date date1= new Date();
+	private Eleccion e;
+	private Date date1 = new Date();
 	private String nombre = "a";
 
 	/**
@@ -37,39 +37,41 @@ public class EleccionTest {
 	 */
 	@Test
 	public final void testHashCode() {
-		e = new Eleccion();		
-		assertEquals(29791, e.hashCode());
-		e= new Eleccion("a");
-		assertEquals(29888, e.hashCode());
+		e = new Eleccion();
+		assertEquals(31, e.hashCode());
+		e = new Eleccion("a");
+		assertEquals(128, e.hashCode());
 	}
 
 	/**
-	 * Test method for {@link es.uniovi.asw.model.Eleccion#Eleccion(java.lang.String, java.util.Date, java.util.Date, java.sql.Time, java.sql.Time)}.
+	 * Test method for
+	 * {@link es.uniovi.asw.model.Eleccion#Eleccion(java.lang.String, java.util.Date, java.util.Date, java.sql.Time, java.sql.Time)}
+	 * .
 	 */
 	@Test
 	public final void testEleccionStringDateDateTimeTime() {
-		Date date2= new Date();
-		e= new Eleccion(nombre);
+		Date date2 = new Date();
+		e = new Eleccion(nombre);
 		assertEquals(nombre, e.getNombre());
-		assertEquals(date2, e.getFechaFin());
-		assertEquals(date1, e.getFechaInicio());
+		assertNull(e.getFechaFin());
+		assertNull(e.getFechaInicio());
 		assertNotNull(e.getOpciones());
 		assertEquals(0, e.getOpciones().size());
-		assertEquals(0,e.getVotantes().size());
+		assertEquals(0, e.getVotantes().size());
 	}
 
 	/**
-	 * Test method for {@link es.uniovi.asw.model.Eleccion#Eleccion(java.lang.String)}.
+	 * Test method for
+	 * {@link es.uniovi.asw.model.Eleccion#Eleccion(java.lang.String)}.
 	 */
 	@Test
-	public final void testEleccionString() {	
-		e= new Eleccion(nombre);	
+	public final void testEleccionString() {
+		e = new Eleccion(nombre);
 		assertEquals(nombre, e.getNombre());
 		assertNull(e.getFechaFin());
 		assertNotNull(e.getOpciones());
 		assertEquals(0, e.getOpciones().size());
-		assertEquals(0,e.getVotantes().size());
-
+		assertEquals(0, e.getVotantes().size());
 
 	}
 
@@ -78,11 +80,11 @@ public class EleccionTest {
 	 */
 	@Test
 	public final void testEleccion() {
-		e= new Eleccion();
+		e = new Eleccion();
 		assertNull(e.getNombre());
 		assertNotNull(e.getOpciones());
 		assertEquals(0, e.getOpciones().size());
-		assertEquals(0,e.getVotantes().size());
+		assertEquals(0, e.getVotantes().size());
 	}
 
 	/**
@@ -90,14 +92,14 @@ public class EleccionTest {
 	 */
 	@Test
 	public final void testToString() {
-		e= new Eleccion(nombre);		
-		String s ="Eleccion [id=null, nombre=a, fechaInicio=null, fechaFin=null, opciones=[]]";
+		e = new Eleccion(nombre);
+		String s = "Eleccion [id=null, nombre=a, fechaInicio=null, fechaFin=null, opciones=[]]";
 		assertEquals(s, e.toString());
 	}
 
 	@Test
 	public final void testActiva() {
-		e= new Eleccion(nombre);	
+		e = new Eleccion(nombre);
 		e.setActiva(true);
 		assertTrue(e.isActiva());
 		e.setActiva(false);
@@ -107,7 +109,7 @@ public class EleccionTest {
 
 	@Test
 	public final void testSets() {
-		e= new Eleccion(nombre);	
+		e = new Eleccion(nombre);
 
 		e.setFechaFin(date1);
 		assertNotNull(e.getFechaFin());
@@ -127,10 +129,9 @@ public class EleccionTest {
 		Set<VotoConfirmado> v = new HashSet<VotoConfirmado>();
 		v.add(new VotoConfirmado(new Voter("a", "b", "c", "d"), new Eleccion("ff")));
 		v.add(new VotoConfirmado(new Voter("aa", "ab", "ac", "ad"), new Eleccion("rr")));
-		e.setVotantes(v);;
+		e.setVotantes(v);
+		;
 		assertEquals(2, e.getVotantes().size());
-
-
 
 		e.setActiva(true);
 		assertTrue(e.isActiva());
@@ -139,20 +140,21 @@ public class EleccionTest {
 	}
 
 	/**
-	 * Test method for {@link es.uniovi.asw.model.Eleccion#equals(java.lang.Object)}.
+	 * Test method for
+	 * {@link es.uniovi.asw.model.Eleccion#equals(java.lang.Object)}.
 	 */
 	@Test
 	public final void testEqualsObject() {
-		e= new Eleccion();
+		e = new Eleccion();
 		Eleccion e1, e2, e3;
-		e1= new Eleccion(nombre);
-		e2= new Eleccion("otroNombre");
-		e3= new Eleccion(nombre);
+		e1 = new Eleccion(nombre);
+		e2 = new Eleccion("otroNombre");
+		e3 = new Eleccion(nombre);
 
 		assertTrue(e.equals(e));
 		assertTrue(e1.equals(e3));
 		assertTrue(e3.equals(e1));
-		
+
 		assertFalse(e.equals(e2));
 		assertFalse(e2.equals(e));
 
@@ -166,19 +168,16 @@ public class EleccionTest {
 		e3.setNombre(null);
 		assertFalse(e1.equals(e3));
 		assertFalse(e3.equals(e1));
-		
-		/* ESTE CASO NUNCA SE PUEDE DAR AUNQUE EL EQUALS LO CONTEMPLA
-		e3= new Eleccion(nombre , date1, date2, t1, t2);
-		e3.setFechaFin(null);
-		assertFalse(e1.equals(e3));
-		assertFalse(e3.equals(e1));
-	
-		e3= new Eleccion(nombre , date1, date2, t1, t2);
-		e3.setFechaInicio(null);
-		assertFalse(e1.equals(e3));
-		assertFalse(e3.equals(e1));
-		*/
 
+		/*
+		 * ESTE CASO NUNCA SE PUEDE DAR AUNQUE EL EQUALS LO CONTEMPLA e3= new
+		 * Eleccion(nombre , date1, date2, t1, t2); e3.setFechaFin(null);
+		 * assertFalse(e1.equals(e3)); assertFalse(e3.equals(e1));
+		 * 
+		 * e3= new Eleccion(nombre , date1, date2, t1, t2);
+		 * e3.setFechaInicio(null); assertFalse(e1.equals(e3));
+		 * assertFalse(e3.equals(e1));
+		 */
 
 	}
 

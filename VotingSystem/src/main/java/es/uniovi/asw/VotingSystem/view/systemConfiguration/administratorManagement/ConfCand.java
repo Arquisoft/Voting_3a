@@ -9,20 +9,20 @@ import es.uniovi.asw.dbManagement.VotingRepository;
 import es.uniovi.asw.model.Candidatura;
 
 public class ConfCand {
-	
+
 	private VotingRepository vRep;
 	private CandidacyRepository cRep;
 	private List<Candidatura> candidaturas;
 	private Long id;
-	
-	public ConfCand(VotingRepository vRep, CandidacyRepository cRep, List<Candidatura> candidaturas, Long id){
+
+	public ConfCand(VotingRepository vRep, CandidacyRepository cRep, List<Candidatura> candidaturas, Long id) {
 		this.vRep = vRep;
 		this.cRep = cRep;
 		this.candidaturas = candidaturas;
 		this.id = id;
 	}
-	
-	public void saveCandidaturas(){
+
+	public void saveCandidaturas() {
 		CandidacyService cc = SysConfigServiceFactory.getCandidacyService();
 		cc.saveCandidacys(vRep, cRep, candidaturas, id);
 	}

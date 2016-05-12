@@ -37,9 +37,11 @@ public class Voter {
 	public Voter() {
 	}
 
-	/*public Voter(ColegioElectoral colegio) {
-		
-	}*/
+	/*
+	 * public Voter(ColegioElectoral colegio) {
+	 * 
+	 * }
+	 */
 
 	public Voter(String nombre, String email, String password, String nif) {
 		this.nombre = nombre;
@@ -47,15 +49,15 @@ public class Voter {
 		this.password = password;
 		this.nif = nif;
 	}
-	
+
 	public Voter(String nombre, String email, String password, String nif, ColegioElectoral pollingStation) {
 		this.nombre = nombre;
 		this.email = email;
 		this.password = password;
-		this.nif = nif;	
+		this.nif = nif;
 		Asociacion.ColegioVotante.link(pollingStation, this);
 	}
-	
+
 	public Long getId() {
 		return id;
 	}

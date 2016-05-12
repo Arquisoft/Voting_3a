@@ -5,10 +5,10 @@ import java.io.UnsupportedEncodingException;
 
 import es.uniovi.asw.model.Voter;
 
-public class WriteTxtLetter implements WriteLetter{
-	
+public class WriteTxtLetter implements WriteLetter {
+
 	private TxtLetter txt = new TxtLetter();
-	
+
 	@Override
 	public void writeLetter(Voter voter) {
 		try {

@@ -9,18 +9,18 @@ import es.uniovi.asw.dbManagement.VotingRepository;
 import es.uniovi.asw.model.Candidatura;
 
 public class GetCand {
-	
+
 	private VotingRepository vRep;
 	private CandidacyRepository cRep;
 	private Long id;
-	
+
 	public GetCand(VotingRepository vRep, CandidacyRepository cRep, Long id) {
 		this.vRep = vRep;
 		this.cRep = cRep;
 		this.id = id;
 	}
-	
-	public List<Candidatura> getCandidacys(){
+
+	public List<Candidatura> getCandidacys() {
 		CandidacyService gc = SysConfigServiceFactory.getCandidacyService();
 		return gc.getCandidacys(vRep, cRep, id);
 	}

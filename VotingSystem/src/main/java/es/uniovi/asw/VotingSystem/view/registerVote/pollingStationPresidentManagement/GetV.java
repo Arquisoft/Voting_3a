@@ -15,6 +15,7 @@ public class GetV {
 		super();
 		this.voterRep = voterRep;
 	}
+
 	public List<Voter> getV(VoterRepository voterRep) {
 
 		PhysicalVoteService physicalVoteService = PhysicalVoteServiceImpl.getInstance();

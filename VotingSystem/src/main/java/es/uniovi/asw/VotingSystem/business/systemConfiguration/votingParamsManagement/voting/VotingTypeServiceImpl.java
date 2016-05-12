@@ -6,18 +6,18 @@ import es.uniovi.asw.dbManagement.CandidacyRepository;
 import es.uniovi.asw.dbManagement.VotingRepository;
 import es.uniovi.asw.model.Eleccion;
 
-public class VotingTypeServiceImpl implements VotingTypeService{
+public class VotingTypeServiceImpl implements VotingTypeService {
 
 	@Override
 	public void saveEleccion(VotingRepository vr, CandidacyRepository oRep, Eleccion e) {
 		new ConfVotingType().saveEleccion(vr, oRep, e);
-		
+
 	}
 
 	@Override
 	public void updateEleccion(VotingRepository vr, Long id) {
 		new ConfVotingType().updateEleccion(vr, id);
-		
+
 	}
 
 	@Override
@@ -30,6 +30,4 @@ public class VotingTypeServiceImpl implements VotingTypeService{
 		return new GetVotingTypes().getEleccionById(vRep, cRep, id);
 	}
 
-	
-	
 }

@@ -9,11 +9,11 @@ import es.uniovi.asw.model.Voter;
 public interface VoterRepository extends CrudRepository<Voter, Long> {
 
 	public Voter findById(Long id);
-	
+
 	Voter findOneByEmail(String email);
-	
+
 	List<Voter> findByEmail(String email);
-	
+
 	Voter findOneByNif(String dniVoter);
 
 	public Voter findByEmailAndPassword(String email, String password);
@@ -27,7 +27,7 @@ public interface VoterRepository extends CrudRepository<Voter, Long> {
 	// public void delete(Voter entity);
 
 	// public boolean exists(Long primaryKey);
-	
+
 	// http://docs.spring.io/spring-data/commons/docs/current/api/org/springframework/data/repository/CrudRepository.html
 
 }

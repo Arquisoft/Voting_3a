@@ -4,7 +4,7 @@ public class ResultDto {
 
 	private String x;
 	private long y;
-	
+
 	public ResultDto(String x, long y) {
 		this.x = x;
 		this.y = y;
@@ -25,6 +25,5 @@ public class ResultDto {
 	public void setY(long y) {
 		this.y = y;
 	}
-	
-	
+
 }

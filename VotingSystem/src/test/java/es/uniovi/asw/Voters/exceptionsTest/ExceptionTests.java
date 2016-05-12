@@ -26,7 +26,7 @@ public class ExceptionTests {
 		} catch (RuntimeException e) {
 			assertTrue(true);
 		}
-		
+
 	}
 
 }

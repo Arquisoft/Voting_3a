@@ -7,7 +7,7 @@ import es.uniovi.asw.dbManagement.PollingStationRepository;
 import es.uniovi.asw.model.Circunscripcion;
 import es.uniovi.asw.model.ColegioElectoral;
 
-public class PollingStationServiceImpl implements PollingStationService{
+public class PollingStationServiceImpl implements PollingStationService {
 
 	@Override
 	public void saveColegio(PollingStationRepository pRep, ColegioElectoral colegio) {
@@ -28,7 +28,5 @@ public class PollingStationServiceImpl implements PollingStationService{
 	public ColegioElectoral getById(PollingStationRepository pRep, Long id) {
 		return new GetPollingStations().getById(pRep, id);
 	}
-	
-	
 
 }

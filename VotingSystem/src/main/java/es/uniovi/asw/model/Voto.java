@@ -8,19 +8,21 @@ import javax.persistence.ManyToOne;
 
 @Entity
 public class Voto {
-	
-	@Id @GeneratedValue(strategy = GenerationType.AUTO)
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
+
 	@ManyToOne
 	private ColegioElectoral colegio;
-	
+
 	@ManyToOne
 	private Candidatura opcion;
-	
-	public Voto() {}
 
-	public Voto(ColegioElectoral colegio, Candidatura opcion){
+	public Voto() {
+	}
+
+	public Voto(ColegioElectoral colegio, Candidatura opcion) {
 		Asociacion.ColegioVoto.link(colegio, this);
 		Asociacion.VotoOpcion.link(this, opcion);
 	}
@@ -40,7 +42,7 @@ public class Voto {
 	public void setOpcion(Candidatura opcion) {
 		this.opcion = opcion;
 	}
-	
+
 	public Long getId() {
 		return this.id;
 	}

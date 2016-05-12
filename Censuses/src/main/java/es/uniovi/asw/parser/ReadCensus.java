@@ -9,7 +9,7 @@ import java.io.IOException;
  *
  */
 public interface ReadCensus {
-	
-	void readCensus(String...args) throws IOException;
-	
+
+	void readCensus(String... args) throws IOException;
+
 }

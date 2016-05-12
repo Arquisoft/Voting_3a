@@ -1,17 +1,26 @@
 Voting System
 =============
+[![Voting System](https://raw.githubusercontent.com/Arquisoft/Voting_3a/master/VotingSystem/src/main/resources/static/images/logo.gif)](https://github.com/Arquisoft/Voting_3a/)
+
 
 [![Join the chat at https://gitter.im/Arquisoft/Voting_3a](https://badges.gitter.im/Arquisoft/Voting_3a.svg)](https://gitter.im/Arquisoft/Voting_3a?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-[![Build Status](https://travis-ci.org/Arquisoft/Voting_3a.svg?branch=master)](https://travis-ci.org/Arquisoft/Voting_3a)
+[![Build Status](https://travis-ci.org/Arquisoft/Voting_3a.svg)](https://travis-ci.org/Arquisoft/Voting_3a)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/b7c23b065b37409ebc7bf07d9399df36)](https://www.codacy.com/app/jelabra/Voting_3a)
+
+Voting System
+[![Dependency Status](https://www.versioneye.com/user/projects/572a47c5a0ca35004baf83eb/badge.svg?style=flat)](https://www.versioneye.com/user/projects/572a47c5a0ca35004baf83eb)
+
+Censuses SubSystem
+[![Dependency Status](https://www.versioneye.com/user/projects/572a47c0a0ca350034be6e7a/badge.svg?style=flat)](https://www.versioneye.com/user/projects/572a47c0a0ca350034be6e7a)
+
 [![codecov.io](https://codecov.io/github/Arquisoft/Voting_3a/coverage.svg?branch=master)](https://codecov.io/github/Arquisoft/Voting_3a?branch=master)
 
-Actualizar badges:
+![codecov.io](https://codecov.io/gh/Arquisoft/Voting_3a/branch.svg?branch=master)
 
-[![Dependency Status](https://www.versioneye.com/user/projects/57155174fcd19a00415b1c2d/badge.svg?style=flat)](https://www.versioneye.com/user/projects/57155174fcd19a00415b1c2d)
+Subsistema de VoteCounting desplegado en heroku como prototipo de presentacion final del sistema. El sistema definitivo sera desplegado antes del cierre definitivo del plazo entrega:
+
 [![ViewOnHeroku](https://img.shields.io/badge/View%20on-Heroku-ff69b4.svg)](https://votecounting3av2.herokuapp.com)
-![codecov.io](https://codecov.io/github/Arquisoft/VoteCounting_3a/branch.svg?branch=master)
 
 
 ## Censuses3A
@@ -53,7 +62,7 @@ Voting System es un sistema de gestión de votaciones de manera on-line. Permiti
 ### Lanzamiento de la aplicación
 La aplicación puede ser lanzada ejecutando mediante línea de comandos la instrucción ```spring-boot:run``` y se accede mediante el navegador en la URI ```http://localhost:8281```
 
-También puedes ver la aplicación desplegada en Heroku presionando el botón inferior
+También puedes ver el subsistema VoteCounting desplegada en Heroku presionando el botón inferior
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://votingsystem3a.herokuapp.com)
 
@@ -73,4 +82,3 @@ Para el tratamiento de los datos se han empleado tres bases de datos diferentes:
 * Darío Rodríguez García
 * Héctor Álvarez Ibáñez
 * Jorge Vila Suárez
-* Jose Labra

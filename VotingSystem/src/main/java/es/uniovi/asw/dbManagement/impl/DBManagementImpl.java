@@ -9,10 +9,15 @@ import es.uniovi.asw.model.Voter;
 public class DBManagementImpl {
 
 	public DBManagementImpl() {
+		Persistence.voter = null;
 	}
 
 	public DBManagementImpl(VoterRepository voterRepository) {
 		Persistence.voter = voterRepository;
+	}
+
+	public VoterRepository getVoterRepository() {
+		return Persistence.voter;
 	}
 
 	public Voter save(Voter voter) {

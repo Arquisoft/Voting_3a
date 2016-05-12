@@ -5,19 +5,20 @@ import java.io.Serializable;
 import es.uniovi.asw.model.Eleccion;
 import es.uniovi.asw.model.Voter;
 
-public class VotoConfirmadoKey implements Serializable{
+public class VotoConfirmadoKey implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	private Long votante;
 	private Long eleccion;
-	
-	 public VotoConfirmadoKey(){}
-	    public VotoConfirmadoKey(Voter v, Eleccion e){
-	        votante = v.getId();
-	        eleccion = e.getId();
-	    }
-	
+
+	public VotoConfirmadoKey() {
+	}
+
+	public VotoConfirmadoKey(Voter v, Eleccion e) {
+		votante = v.getId();
+		eleccion = e.getId();
+	}
 
 	public Long getVotante() {
 		return votante;
@@ -34,7 +35,7 @@ public class VotoConfirmadoKey implements Serializable{
 	public void setEleccion(Long eleccion) {
 		this.eleccion = eleccion;
 	}
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -43,6 +44,7 @@ public class VotoConfirmadoKey implements Serializable{
 		result = prime * result + ((votante == null) ? 0 : votante.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -64,7 +66,5 @@ public class VotoConfirmadoKey implements Serializable{
 			return false;
 		return true;
 	}
-	
-	
 
 }
