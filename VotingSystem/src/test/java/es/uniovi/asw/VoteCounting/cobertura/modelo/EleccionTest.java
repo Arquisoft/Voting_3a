@@ -146,12 +146,9 @@ public class EleccionTest {
 	@Test
 	public final void testEqualsObject() {
 		e = new Eleccion();
-		Eleccion e1;
-		Eleccion e2; 
-		Eleccion e1; 
-		e1 = new Eleccion(nombre);
-		e2 = new Eleccion("otroNombre");
-		e3 = new Eleccion(nombre);
+		Eleccion e1= new Eleccion(nombre);
+		Eleccion e2= new Eleccion("otroNombre");
+		Eleccion e1= new Eleccion(nombre); 
 
 		assertTrue(e.equals(e));
 		assertTrue(e1.equals(e3));
