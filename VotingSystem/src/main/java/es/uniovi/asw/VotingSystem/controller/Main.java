@@ -48,8 +48,25 @@ public class Main {
 
 	private static final Logger LOG = LoggerFactory.getLogger(Main.class);
 
-	@Autowired
+	/*@Autowired
 	private VotingRepository vRep;
+	@Autowired
+	private CandidacyRepository cRep;
+	@Autowired
+	private PollingStationRepository pRep;
+	@Autowired
+	private CircumscriptionRepository ciRep;
+	@Autowired
+	private VoterRepository vtRep;
+	@Autowired
+	private VotingRepository eRep;
+	@Autowired
+	private ConfirmedVoteRepository cvRep;
+	@Autowired
+	private VoteRepository voRep;*/
+	
+	@Autowired
+	 VotingRepository vRep;
 	@Autowired
 	private CandidacyRepository cRep;
 	@Autowired
