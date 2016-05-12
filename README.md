@@ -18,14 +18,14 @@ Censuses SubSystem
 
 ![codecov.io](https://codecov.io/gh/Arquisoft/Voting_3a/branch.svg?branch=master)
 
-Subsistema de VoteCounting desplegado en heroku como prototipo de presentacion final del sistema. El sistema definitivo sera desplegado antes del cierre definitivo del plazo entrega:
+Subsistema de VoteCounting desplegado en heroku como prototipo de presentación final del sistema. 
 
 [![ViewOnHeroku](https://img.shields.io/badge/View%20on-Heroku-ff69b4.svg)](https://votecounting3av2.herokuapp.com)
 
 
 ## Censuses3A
 
-Censuses es un subsistema que permite cargar los datos de un determinado censo electoral contenidos en ficheros con extension XSLX o TXT. Además también permite generar las cartas, en diferentes formatos, que serán enviadas a los electores.
+Censuses es un subsistema que permite cargar los datos de un determinado censo electoral contenidos en ficheros con extensión XSLX o TXT. Además también permite generar las cartas, en diferentes formatos, que serán enviadas a los electores.
 
 ### Forma de ejecución
 Para la ejecución del programa se deben proporcionar tres parámetros:
