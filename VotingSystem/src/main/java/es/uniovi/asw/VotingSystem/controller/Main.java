@@ -17,6 +17,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+//import es.uniovi.asw.votingSystem.view.registerVote.pollingStationPresidentManagement.GetAV;
+//import es.uniovi.asw.votingSystem.view.registerVote.pollingStationPresidentManagement.GetAV;
+
+
 import es.uniovi.asw.dbmanagement.CandidacyRepository;
 import es.uniovi.asw.dbmanagement.CircumscriptionRepository;
 import es.uniovi.asw.dbmanagement.ConfirmedVoteRepository;
@@ -40,6 +44,7 @@ import es.uniovi.asw.votingSystem.view.systemConfiguration.administratorManageme
 import es.uniovi.asw.votingSystem.view.systemConfiguration.administratorManagement.GetVT;
 import es.uniovi.asw.votingSystem.view.votingSystem.voterManagement.AlreadyV;
 import es.uniovi.asw.votingSystem.view.votingSystem.voterManagement.GetAV;
+//import es.uniovi.asw.votingSystem.view.votingSystem.voterManagement.GetAV;
 import es.uniovi.asw.votingSystem.view.votingSystem.voterManagement.GetVO;
 import es.uniovi.asw.votingSystem.view.votingSystem.voterManagement.VoteV;
 
@@ -48,25 +53,8 @@ public class Main {
 
 	private static final Logger LOG = LoggerFactory.getLogger(Main.class);
 
-	/*@Autowired
+	@Autowired
 	private VotingRepository vRep;
-	@Autowired
-	private CandidacyRepository cRep;
-	@Autowired
-	private PollingStationRepository pRep;
-	@Autowired
-	private CircumscriptionRepository ciRep;
-	@Autowired
-	private VoterRepository vtRep;
-	@Autowired
-	private VotingRepository eRep;
-	@Autowired
-	private ConfirmedVoteRepository cvRep;
-	@Autowired
-	private VoteRepository voRep;*/
-	
-	@Autowired
-	 VotingRepository vRep;
 	@Autowired
 	private CandidacyRepository cRep;
 	@Autowired
@@ -255,6 +243,7 @@ public class Main {
 			model.addAttribute("mensaje", "El votante no ha votado");
 		}
 		model.addAttribute("elecciones",
+				// import .GetAV;
 				new es.uniovi.asw.votingSystem.view.registerVote.pollingStationPresidentManagement.GetAV(vRep).getAV(vRep));
 		model.addAttribute("votantes", new GetV(vtRep).getV(vtRep));
 
