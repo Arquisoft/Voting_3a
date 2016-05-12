@@ -1,4 +1,4 @@
-package es.uniovi.asw.VoteCounting.publicacion;
+package es.uniovi.asw.VoteCounting.publicacionAPI;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
