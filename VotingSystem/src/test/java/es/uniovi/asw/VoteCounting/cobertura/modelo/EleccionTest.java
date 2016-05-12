@@ -148,7 +148,7 @@ public class EleccionTest {
 		e = new Eleccion();
 		Eleccion e1= new Eleccion(nombre);
 		Eleccion e2= new Eleccion("otroNombre");
-		Eleccion e1= new Eleccion(nombre); 
+		Eleccion e3= new Eleccion(nombre); 
 
 		assertTrue(e.equals(e));
 		assertTrue(e1.equals(e3));
