@@ -27,7 +27,7 @@ import es.uniovi.asw.model.Voto;
 @Configuration
 @EnableAutoConfiguration
 @EntityScan(basePackages = { "es.uniovi.asw.model" })
-@EnableJpaRepositories(basePackages = { "es.uniovi.asw.dbManagement" })
+@EnableJpaRepositories(basePackages = { "es.uniovi.asw.dbmanagement" })
 @EnableTransactionManagement
 public class RepositoryConfiguration {
 
