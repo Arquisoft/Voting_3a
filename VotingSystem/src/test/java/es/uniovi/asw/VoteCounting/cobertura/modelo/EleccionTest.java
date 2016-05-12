@@ -50,7 +50,7 @@ public class EleccionTest {
 	 */
 	@Test
 	public final void testEleccionStringDateDateTimeTime() {
-		Date date2 = new Date();
+
 		e = new Eleccion(nombre);
 		assertEquals(nombre, e.getNombre());
 		assertNull(e.getFechaFin());
@@ -130,7 +130,7 @@ public class EleccionTest {
 		v.add(new VotoConfirmado(new Voter("a", "b", "c", "d"), new Eleccion("ff")));
 		v.add(new VotoConfirmado(new Voter("aa", "ab", "ac", "ad"), new Eleccion("rr")));
 		e.setVotantes(v);
-		;
+
 		assertEquals(2, e.getVotantes().size());
 
 		e.setActiva(true);
@@ -146,7 +146,9 @@ public class EleccionTest {
 	@Test
 	public final void testEqualsObject() {
 		e = new Eleccion();
-		Eleccion e1, e2, e3;
+		Eleccion e1;
+		Eleccion e2; 
+		Eleccion e1; 
 		e1 = new Eleccion(nombre);
 		e2 = new Eleccion("otroNombre");
 		e3 = new Eleccion(nombre);
@@ -157,9 +159,9 @@ public class EleccionTest {
 
 		assertFalse(e.equals(e2));
 		assertFalse(e2.equals(e));
-
+		String n = "otra Clase";
 		assertFalse(e.equals(new Object()));
-		assertFalse(e.equals("otraClase"));
+		assertFalse(e.equals(n));
 
 		assertFalse(e.equals(e1));
 		assertFalse(e1.equals(e));

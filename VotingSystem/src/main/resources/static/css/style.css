@@ -4,16 +4,6 @@ body {
 	margin: 0;
 }
 
-@media ( min-width : 768px) {
-	body {
-		
-	}
-}
-
-#main {
-	
-}
-
 .footer {
 	position: absolute;
 	bottom: 0;

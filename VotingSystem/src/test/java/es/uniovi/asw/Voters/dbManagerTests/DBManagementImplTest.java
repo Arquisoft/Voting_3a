@@ -77,7 +77,7 @@ public class DBManagementImplTest {
 	}
 
 	@Test
-	public void test_getVoterRepository() {
+	public void testGetVoterRepository() {
 		DBManagementImpl db = new DBManagementImpl(voterRepository);
 		assertNotNull(db);
 	}

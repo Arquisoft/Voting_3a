@@ -119,7 +119,9 @@
 		<dependency>
   			<groupId>org.postgresql</groupId>
   			<artifactId>postgresql</artifactId>
-  			<version>9.4.1208</version>
+  			<!-- The managed version is 9.4.1207.jre7 The artifact is managed in org.springframework.boot:spring-boot-dependencies:1.3.2.RELEASE -->
+  			<!-- alerta de: se duplica la version  <version>9.4.1207</version> -->
+  			<!-- da alerta con la version dice que tiene que ser la acabada en 7  <version>9.4.1208</version> -->
 		</dependency>
 	</dependencies>
 
