@@ -1,4 +1,4 @@
-package es.uniovi.asw.VoteCounting.steps;
+package es.uniovi.asw.votecounting.steps;
 
 import org.openqa.selenium.WebDriver;
 import org.springframework.boot.test.IntegrationTest;
@@ -6,7 +6,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
-import es.uniovi.asw.VoteCounting.SeleniumUtils;
+import es.uniovi.asw.votecounting.SeleniumUtils;
 
 @IntegrationTest
 @WebAppConfiguration

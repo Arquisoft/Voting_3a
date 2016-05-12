@@ -1,7 +1,7 @@
 /**
  * 
  */
-package es.uniovi.asw.Voters.typesTests;
+package es.uniovi.asw.voters.typestests;
 
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
@@ -14,8 +14,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 import es.uniovi.asw.Application;
-import es.uniovi.asw.Voters.types.Encrypter;
-import es.uniovi.asw.Voters.types.UserPass;
+import es.uniovi.asw.voters.types.Encrypter;
+import es.uniovi.asw.voters.types.UserPass;
 
 /**
  * @author Amir H Tofigh H

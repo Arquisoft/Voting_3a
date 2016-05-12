@@ -1,12 +1,12 @@
-package es.uniovi.asw.VotingSystem.persistence.dbManagement.adminDBManagement.impl;
+package es.uniovi.asw.votingSystem.persistence.dbManagement.adminDBManagement.impl;
 
 import java.util.List;
 
-import es.uniovi.asw.VotingSystem.persistence.dbManagement.adminDBManagement.AddCandidacyC;
-import es.uniovi.asw.VotingSystem.persistence.dbManagement.adminDBManagement.GetCandidacyS;
-import es.uniovi.asw.dbManagement.CandidacyRepository;
-import es.uniovi.asw.dbManagement.VotingRepository;
+import es.uniovi.asw.dbmanagement.CandidacyRepository;
+import es.uniovi.asw.dbmanagement.VotingRepository;
 import es.uniovi.asw.model.Candidatura;
+import es.uniovi.asw.votingSystem.persistence.dbManagement.adminDBManagement.AddCandidacyC;
+import es.uniovi.asw.votingSystem.persistence.dbManagement.adminDBManagement.GetCandidacyS;
 
 class AddCandidacyCImpl implements AddCandidacyC {
 

@@ -1,10 +1,10 @@
-package es.uniovi.asw.VotingSystem.view.systemConfiguration.administratorManagement;
+package es.uniovi.asw.votingSystem.view.systemConfiguration.administratorManagement;
 
-import es.uniovi.asw.VotingSystem.business.systemConfiguration.votingParamsManagement.SysConfigServiceFactory;
-import es.uniovi.asw.VotingSystem.business.systemConfiguration.votingParamsManagement.voting.VotingTypeService;
-import es.uniovi.asw.dbManagement.CandidacyRepository;
-import es.uniovi.asw.dbManagement.VotingRepository;
+import es.uniovi.asw.dbmanagement.CandidacyRepository;
+import es.uniovi.asw.dbmanagement.VotingRepository;
 import es.uniovi.asw.model.Eleccion;
+import es.uniovi.asw.votingSystem.business.systemConfiguration.votingParamsManagement.SysConfigServiceFactory;
+import es.uniovi.asw.votingSystem.business.systemConfiguration.votingParamsManagement.voting.VotingTypeService;
 
 public class ConfVT {
 

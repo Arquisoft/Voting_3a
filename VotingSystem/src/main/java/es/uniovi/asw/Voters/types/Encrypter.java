@@ -1,4 +1,4 @@
-package es.uniovi.asw.Voters.types;
+package es.uniovi.asw.voters.types;
 
 import java.security.MessageDigest;
 import java.util.Arrays;

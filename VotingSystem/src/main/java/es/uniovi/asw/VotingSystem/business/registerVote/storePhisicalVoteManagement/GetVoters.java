@@ -1,9 +1,9 @@
-package es.uniovi.asw.VotingSystem.business.registerVote.storePhisicalVoteManagement;
+package es.uniovi.asw.votingSystem.business.registerVote.storePhisicalVoteManagement;
 
 import java.util.List;
 
+import es.uniovi.asw.dbmanagement.VoterRepository;
 import es.uniovi.asw.model.Voter;
-import es.uniovi.asw.dbManagement.VoterRepository;
 
 public interface GetVoters {
 

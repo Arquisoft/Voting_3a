@@ -3,7 +3,7 @@ package es.uniovi.asw.parser;
 import java.io.IOException;
 import java.util.List;
 
-import es.uniovi.asw.dBUpdate.InsertP;
+import es.uniovi.asw.dbupdate.InsertP;
 import es.uniovi.asw.model.Voter;
 import es.uniovi.asw.parser.password.GenerarClave;
 

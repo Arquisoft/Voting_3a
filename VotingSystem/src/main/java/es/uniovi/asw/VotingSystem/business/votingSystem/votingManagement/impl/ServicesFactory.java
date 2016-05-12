@@ -1,9 +1,9 @@
-package es.uniovi.asw.VotingSystem.business.votingSystem.votingManagement.impl;
+package es.uniovi.asw.votingSystem.business.votingSystem.votingManagement.impl;
 
-import es.uniovi.asw.VotingSystem.business.votingSystem.votingManagement.AlreadyVoted;
-import es.uniovi.asw.VotingSystem.business.votingSystem.votingManagement.GetActiveVotings;
-import es.uniovi.asw.VotingSystem.business.votingSystem.votingManagement.GetVotingOptions;
-import es.uniovi.asw.VotingSystem.business.votingSystem.votingManagement.Vote;
+import es.uniovi.asw.votingSystem.business.votingSystem.votingManagement.AlreadyVoted;
+import es.uniovi.asw.votingSystem.business.votingSystem.votingManagement.GetActiveVotings;
+import es.uniovi.asw.votingSystem.business.votingSystem.votingManagement.GetVotingOptions;
+import es.uniovi.asw.votingSystem.business.votingSystem.votingManagement.Vote;
 
 public class ServicesFactory {
 

@@ -1,9 +1,9 @@
-package es.uniovi.asw.VotingSystem.business.systemConfiguration.votingParamsManagement.voting;
+package es.uniovi.asw.votingSystem.business.systemConfiguration.votingParamsManagement.voting;
 
 import java.util.List;
 
-import es.uniovi.asw.dbManagement.CandidacyRepository;
-import es.uniovi.asw.dbManagement.VotingRepository;
+import es.uniovi.asw.dbmanagement.CandidacyRepository;
+import es.uniovi.asw.dbmanagement.VotingRepository;
 import es.uniovi.asw.model.Eleccion;
 
 public class VotingTypeServiceImpl implements VotingTypeService {

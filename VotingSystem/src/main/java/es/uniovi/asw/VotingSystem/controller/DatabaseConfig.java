@@ -1,4 +1,4 @@
-package es.uniovi.asw.VotingSystem.controller;
+package es.uniovi.asw.votingSystem.controller;
 /*
 import javax.sql.DataSource;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;
