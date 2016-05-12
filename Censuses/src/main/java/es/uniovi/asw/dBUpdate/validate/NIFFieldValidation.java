@@ -1,4 +1,4 @@
-package es.uniovi.asw.dBUpdate.validate;
+package es.uniovi.asw.dbupdate.validate;
 
 import es.uniovi.asw.model.Voter;
 

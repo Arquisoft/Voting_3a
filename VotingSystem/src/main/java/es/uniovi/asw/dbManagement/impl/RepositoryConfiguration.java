@@ -1,4 +1,4 @@
-package es.uniovi.asw.dbManagement.impl;
+package es.uniovi.asw.dbmanagement.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -7,15 +7,15 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import es.uniovi.asw.dbManagement.CandidacyRepository;
-import es.uniovi.asw.dbManagement.CircumscriptionRepository;
-import es.uniovi.asw.dbManagement.ComunidadRepository;
-import es.uniovi.asw.dbManagement.ConfirmedVoteRepository;
-import es.uniovi.asw.dbManagement.Persistence;
-import es.uniovi.asw.dbManagement.PollingStationRepository;
-import es.uniovi.asw.dbManagement.VoteRepository;
-import es.uniovi.asw.dbManagement.VoterRepository;
-import es.uniovi.asw.dbManagement.VotingRepository;
+import es.uniovi.asw.dbmanagement.CandidacyRepository;
+import es.uniovi.asw.dbmanagement.CircumscriptionRepository;
+import es.uniovi.asw.dbmanagement.ComunidadRepository;
+import es.uniovi.asw.dbmanagement.ConfirmedVoteRepository;
+import es.uniovi.asw.dbmanagement.Persistence;
+import es.uniovi.asw.dbmanagement.PollingStationRepository;
+import es.uniovi.asw.dbmanagement.VoteRepository;
+import es.uniovi.asw.dbmanagement.VoterRepository;
+import es.uniovi.asw.dbmanagement.VotingRepository;
 import es.uniovi.asw.model.Candidatura;
 import es.uniovi.asw.model.Circunscripcion;
 import es.uniovi.asw.model.ColegioElectoral;

@@ -1,4 +1,4 @@
-package es.uniovi.asw.VotingSystem;
+package es.uniovi.asw.votingsystem;
 
 import static org.hamcrest.Matchers.containsString;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -20,20 +20,19 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.util.Assert;
 import org.springframework.web.context.WebApplicationContext;
-
 import es.uniovi.asw.Application;
-import es.uniovi.asw.VotingSystem.view.registerVote.pollingStationPresidentManagement.AddPV;
-import es.uniovi.asw.VotingSystem.view.systemConfiguration.administratorManagement.ConfCand;
-import es.uniovi.asw.VotingSystem.view.systemConfiguration.administratorManagement.ConfVT;
-import es.uniovi.asw.VotingSystem.view.systemConfiguration.administratorManagement.GetCand;
-import es.uniovi.asw.VotingSystem.view.systemConfiguration.administratorManagement.GetVT;
-import es.uniovi.asw.VotingSystem.view.votingSystem.voterManagement.AlreadyV;
-import es.uniovi.asw.VotingSystem.view.votingSystem.voterManagement.GetAV;
-import es.uniovi.asw.VotingSystem.view.votingSystem.voterManagement.GetVO;
-import es.uniovi.asw.dbManagement.CandidacyRepository;
-import es.uniovi.asw.dbManagement.ConfirmedVoteRepository;
-import es.uniovi.asw.dbManagement.VoterRepository;
-import es.uniovi.asw.dbManagement.VotingRepository;
+import es.uniovi.asw.votingSystem.view.registerVote.pollingStationPresidentManagement.AddPV;
+import es.uniovi.asw.votingSystem.view.systemConfiguration.administratorManagement.ConfCand;
+import es.uniovi.asw.votingSystem.view.systemConfiguration.administratorManagement.ConfVT;
+import es.uniovi.asw.votingSystem.view.systemConfiguration.administratorManagement.GetCand;
+import es.uniovi.asw.votingSystem.view.systemConfiguration.administratorManagement.GetVT;
+import es.uniovi.asw.votingSystem.view.votingSystem.voterManagement.AlreadyV;
+import es.uniovi.asw.votingSystem.view.votingSystem.voterManagement.GetAV;
+import es.uniovi.asw.votingSystem.view.votingSystem.voterManagement.GetVO;
+import es.uniovi.asw.dbmanagement.CandidacyRepository;
+import es.uniovi.asw.dbmanagement.ConfirmedVoteRepository;
+import es.uniovi.asw.dbmanagement.VoterRepository;
+import es.uniovi.asw.dbmanagement.VotingRepository;
 import es.uniovi.asw.model.Candidatura;
 import es.uniovi.asw.model.Eleccion;
 import es.uniovi.asw.model.Voter;

@@ -1,12 +1,12 @@
-package es.uniovi.asw.VotingSystem.view.systemConfiguration.administratorManagement;
+package es.uniovi.asw.votingSystem.view.systemConfiguration.administratorManagement;
 
 import java.util.List;
 
-import es.uniovi.asw.VotingSystem.business.systemConfiguration.votingParamsManagement.SysConfigServiceFactory;
-import es.uniovi.asw.VotingSystem.business.systemConfiguration.votingParamsManagement.candidacyManagement.CandidacyService;
-import es.uniovi.asw.dbManagement.CandidacyRepository;
-import es.uniovi.asw.dbManagement.VotingRepository;
+import es.uniovi.asw.dbmanagement.CandidacyRepository;
+import es.uniovi.asw.dbmanagement.VotingRepository;
 import es.uniovi.asw.model.Candidatura;
+import es.uniovi.asw.votingSystem.business.systemConfiguration.votingParamsManagement.SysConfigServiceFactory;
+import es.uniovi.asw.votingSystem.business.systemConfiguration.votingParamsManagement.candidacyManagement.CandidacyService;
 
 public class ConfCand {
 

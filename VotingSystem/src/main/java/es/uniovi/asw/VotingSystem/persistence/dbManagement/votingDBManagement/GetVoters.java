@@ -1,8 +1,8 @@
-package es.uniovi.asw.VotingSystem.persistence.dbManagement.votingDBManagement;
+package es.uniovi.asw.votingSystem.persistence.dbManagement.votingDBManagement;
 
 import java.util.List;
 
-import es.uniovi.asw.dbManagement.VoterRepository;
+import es.uniovi.asw.dbmanagement.VoterRepository;
 import es.uniovi.asw.model.Voter;
 
 public interface GetVoters {

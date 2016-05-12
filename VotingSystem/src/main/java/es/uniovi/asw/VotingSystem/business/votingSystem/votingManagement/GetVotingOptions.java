@@ -1,8 +1,8 @@
-package es.uniovi.asw.VotingSystem.business.votingSystem.votingManagement;
+package es.uniovi.asw.votingSystem.business.votingSystem.votingManagement;
 
 import java.util.List;
 
-import es.uniovi.asw.dbManagement.CandidacyRepository;
+import es.uniovi.asw.dbmanagement.CandidacyRepository;
 import es.uniovi.asw.model.Candidatura;
 
 public interface GetVotingOptions {

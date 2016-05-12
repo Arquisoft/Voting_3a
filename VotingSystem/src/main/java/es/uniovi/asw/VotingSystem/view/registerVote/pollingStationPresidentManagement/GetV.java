@@ -1,11 +1,11 @@
-package es.uniovi.asw.VotingSystem.view.registerVote.pollingStationPresidentManagement;
+package es.uniovi.asw.votingSystem.view.registerVote.pollingStationPresidentManagement;
 
 import java.util.List;
 
-import es.uniovi.asw.VotingSystem.business.registerVote.storePhisicalVoteManagement.PhysicalVoteService;
-import es.uniovi.asw.VotingSystem.business.registerVote.storePhisicalVoteManagement.impl.PhysicalVoteServiceImpl;
-import es.uniovi.asw.dbManagement.VoterRepository;
+import es.uniovi.asw.dbmanagement.VoterRepository;
 import es.uniovi.asw.model.Voter;
+import es.uniovi.asw.votingSystem.business.registerVote.storePhisicalVoteManagement.PhysicalVoteService;
+import es.uniovi.asw.votingSystem.business.registerVote.storePhisicalVoteManagement.impl.PhysicalVoteServiceImpl;
 
 public class GetV {
 

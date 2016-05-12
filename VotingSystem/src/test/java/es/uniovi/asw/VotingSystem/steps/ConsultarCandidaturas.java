@@ -1,4 +1,4 @@
-package es.uniovi.asw.VotingSystem.steps;
+package es.uniovi.asw.votingsystem.steps;
 
 import java.util.ArrayList;
 import java.util.List;
