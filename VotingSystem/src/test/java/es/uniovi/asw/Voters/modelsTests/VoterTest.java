@@ -1,7 +1,7 @@
 /**
  * 
  */
-package es.uniovi.asw.Voters.modelsTests;
+package es.uniovi.asw.voters.modelstests;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;

@@ -1,6 +1,6 @@
-package es.uniovi.asw.VotingSystem.persistence.dbManagement.votingDBManagement;
+package es.uniovi.asw.votingSystem.persistence.dbManagement.votingDBManagement;
 
-import es.uniovi.asw.dbManagement.ConfirmedVoteRepository;
+import es.uniovi.asw.dbmanagement.ConfirmedVoteRepository;
 
 public interface HasVoted {
 

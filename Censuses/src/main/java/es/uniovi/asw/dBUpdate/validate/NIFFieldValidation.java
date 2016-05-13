@@ -1,4 +1,4 @@
-package es.uniovi.asw.dBUpdate.validate;
+package es.uniovi.asw.dbupdate.validate;
 
 import es.uniovi.asw.model.Voter;
 
@@ -26,7 +26,8 @@ public class NIFFieldValidation implements Validate {
 		String num = "";
 		int ind = 0;
 		if (nif.length() == 8) {
-			nif = "0" + nif;
+			String nif2 = "0" + nif; //codacy no le gusta reutilizar la misma var.
+			nif=nif2;
 		}
 		if (!Character.isLetter(nif.charAt(8))) {
 			return false;

@@ -1,8 +1,8 @@
-package es.uniovi.asw.VotingSystem.business.votingSystem.votingManagement.impl;
+package es.uniovi.asw.votingSystem.business.votingSystem.votingManagement.impl;
 
-import es.uniovi.asw.VotingSystem.business.votingSystem.votingManagement.AlreadyVoted;
-import es.uniovi.asw.VotingSystem.persistence.dbManagement.votingDBManagement.impl.PersistenceFactory;
-import es.uniovi.asw.dbManagement.ConfirmedVoteRepository;
+import es.uniovi.asw.votingSystem.business.votingSystem.votingManagement.AlreadyVoted;
+import es.uniovi.asw.votingSystem.persistence.dbManagement.votingDBManagement.impl.PersistenceFactory;
+import es.uniovi.asw.dbmanagement.ConfirmedVoteRepository;
 import es.uniovi.asw.model.Voter;
 
 class AlreadyVotedImpl implements AlreadyVoted {

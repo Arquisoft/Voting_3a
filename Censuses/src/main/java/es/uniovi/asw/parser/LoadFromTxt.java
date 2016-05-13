@@ -9,7 +9,7 @@ import java.util.List;
 
 import es.uniovi.asw.model.ColegioElectoral;
 import es.uniovi.asw.model.Voter;
-import es.uniovi.asw.reportWriter.WreportR;
+import es.uniovi.asw.reportwriter.WreportR;
 
 /**
  * Clase que permite cargar los datos de los votantes de un fichero TXT

@@ -1,4 +1,4 @@
-package es.uniovi.asw.dBUpdate;
+package es.uniovi.asw.dbupdate;
 
 import java.util.List;
 
@@ -8,11 +8,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.orm.jpa.EntityScan;
 import org.springframework.context.annotation.Bean;
 
-import es.uniovi.asw.dBUpdate.validate.Validation;
+import es.uniovi.asw.dbupdate.validate.Validation;
 import es.uniovi.asw.model.Voter;
 import es.uniovi.asw.parser.letter.GenerarateLetter;
 import es.uniovi.asw.parser.password.Encryptation;
-import es.uniovi.asw.reportWriter.WreportR;
+import es.uniovi.asw.reportwriter.WreportR;
 
 /**
  * Clase que verifica los datos y genera el LOG con los datos inconsistentes

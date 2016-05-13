@@ -1,7 +1,7 @@
 /**
  * Un test del models y no trabajo para tripAdvisor ojo... este es otro models. 
  */
-package es.uniovi.asw.VoteCounting.cobertura.modelo;
+package es.uniovi.asw.votecounting.cobertura.modelo;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;

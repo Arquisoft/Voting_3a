@@ -1,4 +1,4 @@
-package es.uniovi.asw.VoteCounting;
+package es.uniovi.asw.votecounting;
 
 // import org.junit.runner.RunWith;
 

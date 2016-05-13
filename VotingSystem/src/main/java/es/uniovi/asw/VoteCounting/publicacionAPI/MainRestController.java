@@ -1,4 +1,4 @@
-package es.uniovi.asw.VoteCounting.publicacion;
+package es.uniovi.asw.VoteCounting.publicacionAPI;
 
 import java.util.ArrayList;
 import java.util.List;

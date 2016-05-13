@@ -1,4 +1,4 @@
-package es.uniovi.asw.VotingSystem;
+package es.uniovi.asw.votingsystem;
 
 import static org.hamcrest.Matchers.containsString;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;

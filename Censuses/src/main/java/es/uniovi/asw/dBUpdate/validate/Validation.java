@@ -1,10 +1,10 @@
-package es.uniovi.asw.dBUpdate.validate;
+package es.uniovi.asw.dbupdate.validate;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import es.uniovi.asw.model.Voter;
-import es.uniovi.asw.reportWriter.WreportR;
+import es.uniovi.asw.reportwriter.WreportR;
 
 /**
  * Clase aplica todas las validaciones necesarias sobre los distintos campos de

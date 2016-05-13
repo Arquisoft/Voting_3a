@@ -1,9 +1,9 @@
-package es.uniovi.asw.VotingSystem.business.systemConfiguration.votingParamsManagement.candidacyManagement;
+package es.uniovi.asw.votingSystem.business.systemConfiguration.votingParamsManagement.candidacyManagement;
 
 import java.util.List;
 
-import es.uniovi.asw.dbManagement.CandidacyRepository;
-import es.uniovi.asw.dbManagement.VotingRepository;
+import es.uniovi.asw.dbmanagement.CandidacyRepository;
+import es.uniovi.asw.dbmanagement.VotingRepository;
 import es.uniovi.asw.model.Candidatura;
 
 public interface CandidacyService {

@@ -1,5 +1,7 @@
 Voting System
 =============
+[![Voting System](https://raw.githubusercontent.com/Arquisoft/Voting_3a/master/VotingSystem/src/main/resources/static/images/logo.gif)](https://github.com/Arquisoft/Voting_3a/)
+
 
 [![Join the chat at https://gitter.im/Arquisoft/Voting_3a](https://badges.gitter.im/Arquisoft/Voting_3a.svg)](https://gitter.im/Arquisoft/Voting_3a?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
@@ -16,14 +18,14 @@ Censuses SubSystem
 
 ![codecov.io](https://codecov.io/gh/Arquisoft/Voting_3a/branch.svg?branch=master)
 
-Actualizar badges:
+Subsistema de VoteCounting desplegado en heroku como prototipo de presentación final del sistema. 
 
 [![ViewOnHeroku](https://img.shields.io/badge/View%20on-Heroku-ff69b4.svg)](https://votecounting3av2.herokuapp.com)
 
 
 ## Censuses3A
 
-Censuses es un subsistema que permite cargar los datos de un determinado censo electoral contenidos en ficheros con extension XSLX o TXT. Además también permite generar las cartas que serán enviadas a los electores
+Censuses es un subsistema que permite cargar los datos de un determinado censo electoral contenidos en ficheros con extensión XSLX o TXT. Además también permite generar las cartas, en diferentes formatos, que serán enviadas a los electores.
 
 ### Forma de ejecución
 Para la ejecución del programa se deben proporcionar tres parámetros:
@@ -60,7 +62,7 @@ Voting System es un sistema de gestión de votaciones de manera on-line. Permiti
 ### Lanzamiento de la aplicación
 La aplicación puede ser lanzada ejecutando mediante línea de comandos la instrucción ```spring-boot:run``` y se accede mediante el navegador en la URI ```http://localhost:8281```
 
-También puedes ver la aplicación desplegada en Heroku presionando el botón inferior
+También puedes ver el subsistema VoteCounting desplegada en Heroku presionando el botón inferior
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://votingsystem3a.herokuapp.com)
 
@@ -80,4 +82,3 @@ Para el tratamiento de los datos se han empleado tres bases de datos diferentes:
 * Darío Rodríguez García
 * Héctor Álvarez Ibáñez
 * Jorge Vila Suárez
-* Jose Labra

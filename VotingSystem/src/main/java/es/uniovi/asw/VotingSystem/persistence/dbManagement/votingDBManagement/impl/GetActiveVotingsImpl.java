@@ -1,4 +1,4 @@
-package es.uniovi.asw.VotingSystem.persistence.dbManagement.votingDBManagement.impl;
+package es.uniovi.asw.votingSystem.persistence.dbManagement.votingDBManagement.impl;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import es.uniovi.asw.VotingSystem.persistence.dbManagement.votingDBManagement.GetActiveVotings;
-import es.uniovi.asw.dbManagement.VotingRepository;
+import es.uniovi.asw.votingSystem.persistence.dbManagement.votingDBManagement.GetActiveVotings;
+import es.uniovi.asw.dbmanagement.VotingRepository;
 import es.uniovi.asw.model.Eleccion;
 
 class GetActiveVotingsImpl implements GetActiveVotings {

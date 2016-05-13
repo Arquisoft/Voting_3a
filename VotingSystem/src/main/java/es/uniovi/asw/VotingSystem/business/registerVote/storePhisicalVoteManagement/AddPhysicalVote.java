@@ -1,8 +1,8 @@
-package es.uniovi.asw.VotingSystem.business.registerVote.storePhisicalVoteManagement;
+package es.uniovi.asw.votingSystem.business.registerVote.storePhisicalVoteManagement;
 
-import es.uniovi.asw.dbManagement.ConfirmedVoteRepository;
-import es.uniovi.asw.dbManagement.VoterRepository;
-import es.uniovi.asw.dbManagement.VotingRepository;
+import es.uniovi.asw.dbmanagement.ConfirmedVoteRepository;
+import es.uniovi.asw.dbmanagement.VoterRepository;
+import es.uniovi.asw.dbmanagement.VotingRepository;
 
 public interface AddPhysicalVote {
 

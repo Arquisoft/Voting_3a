@@ -3,9 +3,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>es.uniovi.asw</groupId>
-	<artifactId>Voting_3a</artifactId>
+	<artifactId>VotingSystem</artifactId>
 
-	<name>Voting_3a</name>
+	<name>VotingSystem</name>
 	<version>1.0.0</version>
 	<description>Voting System</description>
 	
@@ -282,7 +282,7 @@
 		</pluginRepository>
 	</pluginRepositories>
 
-	<url>https://github.com/Arquisoft/Voting_3a/</url>
+	<url>https://github.com/Arquisoft/VotingSystem/</url>
 	<organization>
 		<url>https://github.com/Arquisoft/</url>
 		<name>Arquisoft</name>
