@@ -1,11 +1,11 @@
-package es.uniovi.asw.votingSystem.business.systemConfiguration.votingParamsManagement;
+package es.uniovi.asw.VotingSystem.business.systemConfiguration.votingParamsManagement;
 
-import es.uniovi.asw.votingSystem.business.systemConfiguration.votingParamsManagement.candidacyManagement.CandidacyService;
-import es.uniovi.asw.votingSystem.business.systemConfiguration.votingParamsManagement.candidacyManagement.CandidacyServiceImpl;
-import es.uniovi.asw.votingSystem.business.systemConfiguration.votingParamsManagement.pollingStationManagement.PollingStationService;
-import es.uniovi.asw.votingSystem.business.systemConfiguration.votingParamsManagement.pollingStationManagement.PollingStationServiceImpl;
-import es.uniovi.asw.votingSystem.business.systemConfiguration.votingParamsManagement.voting.VotingTypeService;
-import es.uniovi.asw.votingSystem.business.systemConfiguration.votingParamsManagement.voting.VotingTypeServiceImpl;
+import es.uniovi.asw.VotingSystem.business.systemConfiguration.votingParamsManagement.candidacyManagement.CandidacyService;
+import es.uniovi.asw.VotingSystem.business.systemConfiguration.votingParamsManagement.candidacyManagement.CandidacyServiceImpl;
+import es.uniovi.asw.VotingSystem.business.systemConfiguration.votingParamsManagement.pollingStationManagement.PollingStationService;
+import es.uniovi.asw.VotingSystem.business.systemConfiguration.votingParamsManagement.pollingStationManagement.PollingStationServiceImpl;
+import es.uniovi.asw.VotingSystem.business.systemConfiguration.votingParamsManagement.voting.VotingTypeService;
+import es.uniovi.asw.VotingSystem.business.systemConfiguration.votingParamsManagement.voting.VotingTypeServiceImpl;
 
 public class SysConfigServiceFactory {
 

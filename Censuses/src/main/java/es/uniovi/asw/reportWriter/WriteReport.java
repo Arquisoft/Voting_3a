@@ -1,4 +1,4 @@
-package es.uniovi.asw.reportwriter;
+package es.uniovi.asw.reportWriter;
 
 /**
  * Interfaz que define los servicios de LOG

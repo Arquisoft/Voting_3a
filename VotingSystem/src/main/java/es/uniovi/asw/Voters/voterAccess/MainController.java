@@ -1,4 +1,4 @@
-package es.uniovi.asw.voters.voterAccess;
+package es.uniovi.asw.Voters.voterAccess;
 
 import javax.validation.Valid;
 
@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import es.uniovi.asw.dbmanagement.Persistence;
+import es.uniovi.asw.Voters.types.ChangePass;
+import es.uniovi.asw.Voters.types.UserInfo;
+import es.uniovi.asw.Voters.types.UserPass;
+import es.uniovi.asw.dbManagement.Persistence;
 import es.uniovi.asw.model.Voter;
-import es.uniovi.asw.voters.types.ChangePass;
-import es.uniovi.asw.voters.types.UserInfo;
-import es.uniovi.asw.voters.types.UserPass;
 
 @Controller
 @RestController

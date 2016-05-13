@@ -1,9 +1,6 @@
-package es.uniovi.asw.voters.dbmanagertests;
+package es.uniovi.asw.Voters.dbManagerTests;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import org.junit.After;
 import org.junit.Test;
@@ -15,13 +12,13 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 import es.uniovi.asw.Application;
-import es.uniovi.asw.dbmanagement.Persistence;
-import es.uniovi.asw.dbmanagement.VoterRepository;
-import es.uniovi.asw.dbmanagement.impl.DBManagementImpl;
+import es.uniovi.asw.Voters.types.ChangePass;
+import es.uniovi.asw.Voters.types.Encrypter;
+import es.uniovi.asw.Voters.types.UserPass;
+import es.uniovi.asw.dbManagement.Persistence;
+import es.uniovi.asw.dbManagement.VoterRepository;
+import es.uniovi.asw.dbManagement.impl.DBManagementImpl;
 import es.uniovi.asw.model.Voter;
-import es.uniovi.asw.voters.types.ChangePass;
-import es.uniovi.asw.voters.types.Encrypter;
-import es.uniovi.asw.voters.types.UserPass;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)

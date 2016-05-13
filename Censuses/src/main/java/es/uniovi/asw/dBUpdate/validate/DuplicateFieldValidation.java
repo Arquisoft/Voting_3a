@@ -1,4 +1,4 @@
-package es.uniovi.asw.dbupdate.validate;
+package es.uniovi.asw.dBUpdate.validate;
 
 import java.util.ArrayList;
 import java.util.List;

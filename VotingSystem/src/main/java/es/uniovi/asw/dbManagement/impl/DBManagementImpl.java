@@ -1,10 +1,10 @@
-package es.uniovi.asw.dbmanagement.impl;
+package es.uniovi.asw.dbManagement.impl;
 
-import es.uniovi.asw.dbmanagement.Persistence;
-import es.uniovi.asw.dbmanagement.VoterRepository;
+import es.uniovi.asw.Voters.types.ChangePass;
+import es.uniovi.asw.Voters.types.UserPass;
+import es.uniovi.asw.dbManagement.Persistence;
+import es.uniovi.asw.dbManagement.VoterRepository;
 import es.uniovi.asw.model.Voter;
-import es.uniovi.asw.voters.types.ChangePass;
-import es.uniovi.asw.voters.types.UserPass;
 
 public class DBManagementImpl {
 
