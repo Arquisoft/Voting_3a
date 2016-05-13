@@ -55,6 +55,9 @@ Dispone de un sencillo interfaz html para facilitar la interaccion con el usuari
 
 Realiza un recuento de los votos y publica los resultados para que sean accesibles de forma pública.
 
+Para usarlo accede a [http://localhost:8080/countSystem.html](http://localhost:8080/countSystem.html)
+
+
 ## Voting System
 
 Voting System es un sistema de gestión de votaciones de manera on-line. Permitirá tanto la configuración de los parámetros de gestión de las votaciones como también la funcionalidad de permitir a los votantes emitir su voto de manera electrónica durante el periodo que se estime oportuno.
