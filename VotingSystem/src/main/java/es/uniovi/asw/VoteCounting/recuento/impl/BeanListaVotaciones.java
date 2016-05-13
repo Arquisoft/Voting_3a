@@ -7,7 +7,7 @@ import javax.annotation.PostConstruct;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-import es.uniovi.asw.dbmanagement.Persistence;
+import es.uniovi.asw.dbManagement.Persistence;
 import es.uniovi.asw.model.Eleccion;
 
 @Component

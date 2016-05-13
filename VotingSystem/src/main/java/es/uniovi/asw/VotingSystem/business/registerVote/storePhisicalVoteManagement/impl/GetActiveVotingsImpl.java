@@ -1,4 +1,4 @@
-package es.uniovi.asw.votingSystem.business.registerVote.storePhisicalVoteManagement.impl;
+package es.uniovi.asw.VotingSystem.business.registerVote.storePhisicalVoteManagement.impl;
 
 import java.util.Date;
 
@@ -6,9 +6,9 @@ import java.util.ArrayList;
 
 import java.util.List;
 
-import es.uniovi.asw.votingSystem.business.registerVote.storePhisicalVoteManagement.GetActiveVotings;
-import es.uniovi.asw.votingSystem.persistence.dbManagement.votingDBManagement.impl.PersistenceFactory;
-import es.uniovi.asw.dbmanagement.VotingRepository;
+import es.uniovi.asw.VotingSystem.business.registerVote.storePhisicalVoteManagement.GetActiveVotings;
+import es.uniovi.asw.VotingSystem.persistence.dbManagement.votingDBManagement.impl.PersistenceFactory;
+import es.uniovi.asw.dbManagement.VotingRepository;
 import es.uniovi.asw.model.Eleccion;
 
 public class GetActiveVotingsImpl implements GetActiveVotings {

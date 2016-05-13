@@ -1,4 +1,4 @@
-package es.uniovi.asw.dbmanagement;
+package es.uniovi.asw.dbManagement;
 
 import org.springframework.data.repository.CrudRepository;
 

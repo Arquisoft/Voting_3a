@@ -1,7 +1,7 @@
-package es.uniovi.asw.votingSystem.business.login;
+package es.uniovi.asw.VotingSystem.business.login;
 
-import es.uniovi.asw.dbmanagement.Persistence;
-import es.uniovi.asw.dbmanagement.VoterRepository;
+import es.uniovi.asw.dbManagement.Persistence;
+import es.uniovi.asw.dbManagement.VoterRepository;
 import es.uniovi.asw.model.Voter;
 
 public class Authenticate {

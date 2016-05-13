@@ -1,4 +1,4 @@
-package es.uniovi.asw.votingsystem;
+package es.uniovi.asw.VotingSystem;
 
 import org.junit.runner.RunWith;
 

@@ -1,4 +1,4 @@
-package es.uniovi.asw.voters.typestests;
+package es.uniovi.asw.Voters.typesTests;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
@@ -12,8 +12,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 import es.uniovi.asw.Application;
-import es.uniovi.asw.voters.types.ChangePass;
-import es.uniovi.asw.voters.types.UserInfo;
+import es.uniovi.asw.Voters.types.ChangePass;
+import es.uniovi.asw.Voters.types.UserInfo;
 import es.uniovi.asw.model.ColegioElectoral;
 import es.uniovi.asw.model.Voter;
 

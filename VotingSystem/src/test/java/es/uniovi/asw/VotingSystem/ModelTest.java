@@ -1,4 +1,4 @@
-package es.uniovi.asw.votingsystem;
+package es.uniovi.asw.VotingSystem;
 
 import static org.junit.Assert.assertEquals;
 

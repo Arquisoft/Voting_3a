@@ -1,11 +1,11 @@
-package es.uniovi.asw.votingSystem.business.votingSystem.votingManagement.impl;
+package es.uniovi.asw.VotingSystem.business.votingSystem.votingManagement.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import es.uniovi.asw.votingSystem.business.votingSystem.votingManagement.GetVotingOptions;
-import es.uniovi.asw.votingSystem.persistence.dbManagement.votingDBManagement.impl.PersistenceFactory;
-import es.uniovi.asw.dbmanagement.CandidacyRepository;
+import es.uniovi.asw.VotingSystem.business.votingSystem.votingManagement.GetVotingOptions;
+import es.uniovi.asw.VotingSystem.persistence.dbManagement.votingDBManagement.impl.PersistenceFactory;
+import es.uniovi.asw.dbManagement.CandidacyRepository;
 import es.uniovi.asw.model.Candidatura;
 
 class GetVotingOptionsImpl implements GetVotingOptions {

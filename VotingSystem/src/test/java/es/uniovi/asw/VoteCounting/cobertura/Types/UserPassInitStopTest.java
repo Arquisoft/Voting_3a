@@ -1,7 +1,7 @@
 /**
  * 
  */
-package es.uniovi.asw.votecounting.cobertura.types;
+package es.uniovi.asw.VoteCounting.cobertura.Types;
 
 import static org.junit.Assert.assertEquals;
 
