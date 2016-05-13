@@ -1,13 +1,13 @@
 package es.uniovi.asw;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import es.uniovi.asw.dbupdate.validate.DuplicateFieldValidation;
-import es.uniovi.asw.dbupdate.validate.EmailFieldValidation;
-import es.uniovi.asw.dbupdate.validate.EmptyFieldValidation;
+import es.uniovi.asw.dBUpdate.validate.DuplicateFieldValidation;
+import es.uniovi.asw.dBUpdate.validate.EmailFieldValidation;
+import es.uniovi.asw.dBUpdate.validate.EmptyFieldValidation;
 import es.uniovi.asw.model.Voter;
 
 public class ValidationTest {

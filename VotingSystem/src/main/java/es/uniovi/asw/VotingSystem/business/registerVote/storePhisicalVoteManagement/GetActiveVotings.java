@@ -1,7 +1,7 @@
-package es.uniovi.asw.votingSystem.business.registerVote.storePhisicalVoteManagement;
+package es.uniovi.asw.VotingSystem.business.registerVote.storePhisicalVoteManagement;
 
-import es.uniovi.asw.dbmanagement.VotingRepository;
 import es.uniovi.asw.model.Eleccion;
+import es.uniovi.asw.dbManagement.VotingRepository;
 
 public interface GetActiveVotings {
 

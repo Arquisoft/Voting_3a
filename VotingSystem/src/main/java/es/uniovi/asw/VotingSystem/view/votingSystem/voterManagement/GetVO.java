@@ -1,10 +1,10 @@
-package es.uniovi.asw.votingSystem.view.votingSystem.voterManagement;
+package es.uniovi.asw.VotingSystem.view.votingSystem.voterManagement;
 
 import java.util.List;
 
-import es.uniovi.asw.dbmanagement.CandidacyRepository;
+import es.uniovi.asw.VotingSystem.business.votingSystem.votingManagement.impl.ServicesFactory;
+import es.uniovi.asw.dbManagement.CandidacyRepository;
 import es.uniovi.asw.model.Candidatura;
-import es.uniovi.asw.votingSystem.business.votingSystem.votingManagement.impl.ServicesFactory;
 
 public class GetVO {
 

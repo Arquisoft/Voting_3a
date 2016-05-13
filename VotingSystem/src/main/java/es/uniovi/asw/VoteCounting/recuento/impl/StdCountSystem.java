@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import es.uniovi.asw.VoteCounting.recuento.CountSystem;
-import es.uniovi.asw.dbmanagement.Persistence;
+import es.uniovi.asw.dbManagement.Persistence;
 import es.uniovi.asw.model.Candidatura;
 import es.uniovi.asw.model.ColegioElectoral;
 import es.uniovi.asw.model.ComunidadAutonoma;

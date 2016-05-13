@@ -1,4 +1,4 @@
-package es.uniovi.asw.votingSystem.controller;
+package es.uniovi.asw.VotingSystem.controller;
 
 import java.util.List;
 
@@ -17,36 +17,31 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-//import es.uniovi.asw.votingSystem.view.registerVote.pollingStationPresidentManagement.GetAV;
-//import es.uniovi.asw.votingSystem.view.registerVote.pollingStationPresidentManagement.GetAV;
-
-
-import es.uniovi.asw.dbmanagement.CandidacyRepository;
-import es.uniovi.asw.dbmanagement.CircumscriptionRepository;
-import es.uniovi.asw.dbmanagement.ConfirmedVoteRepository;
-import es.uniovi.asw.dbmanagement.PollingStationRepository;
-import es.uniovi.asw.dbmanagement.VoteRepository;
-import es.uniovi.asw.dbmanagement.VoterRepository;
-import es.uniovi.asw.dbmanagement.VotingRepository;
+import es.uniovi.asw.VotingSystem.business.login.Authenticate;
+import es.uniovi.asw.VotingSystem.view.registerVote.pollingStationPresidentManagement.AddPV;
+import es.uniovi.asw.VotingSystem.view.registerVote.pollingStationPresidentManagement.CheckV;
+import es.uniovi.asw.VotingSystem.view.registerVote.pollingStationPresidentManagement.GetV;
+import es.uniovi.asw.VotingSystem.view.systemConfiguration.administratorManagement.ConfCand;
+import es.uniovi.asw.VotingSystem.view.systemConfiguration.administratorManagement.ConfPS;
+import es.uniovi.asw.VotingSystem.view.systemConfiguration.administratorManagement.ConfVT;
+import es.uniovi.asw.VotingSystem.view.systemConfiguration.administratorManagement.GetCand;
+import es.uniovi.asw.VotingSystem.view.systemConfiguration.administratorManagement.GetPS;
+import es.uniovi.asw.VotingSystem.view.systemConfiguration.administratorManagement.GetVT;
+import es.uniovi.asw.VotingSystem.view.votingSystem.voterManagement.AlreadyV;
+import es.uniovi.asw.VotingSystem.view.votingSystem.voterManagement.GetAV;
+import es.uniovi.asw.VotingSystem.view.votingSystem.voterManagement.GetVO;
+import es.uniovi.asw.VotingSystem.view.votingSystem.voterManagement.VoteV;
+import es.uniovi.asw.dbManagement.CandidacyRepository;
+import es.uniovi.asw.dbManagement.CircumscriptionRepository;
+import es.uniovi.asw.dbManagement.ConfirmedVoteRepository;
+import es.uniovi.asw.dbManagement.PollingStationRepository;
+import es.uniovi.asw.dbManagement.VoteRepository;
+import es.uniovi.asw.dbManagement.VoterRepository;
+import es.uniovi.asw.dbManagement.VotingRepository;
 import es.uniovi.asw.model.Candidatura;
 import es.uniovi.asw.model.ColegioElectoral;
 import es.uniovi.asw.model.Eleccion;
 import es.uniovi.asw.model.Voter;
-import es.uniovi.asw.votingSystem.business.login.Authenticate;
-import es.uniovi.asw.votingSystem.view.registerVote.pollingStationPresidentManagement.AddPV;
-import es.uniovi.asw.votingSystem.view.registerVote.pollingStationPresidentManagement.CheckV;
-import es.uniovi.asw.votingSystem.view.registerVote.pollingStationPresidentManagement.GetV;
-import es.uniovi.asw.votingSystem.view.systemConfiguration.administratorManagement.ConfCand;
-import es.uniovi.asw.votingSystem.view.systemConfiguration.administratorManagement.ConfPS;
-import es.uniovi.asw.votingSystem.view.systemConfiguration.administratorManagement.ConfVT;
-import es.uniovi.asw.votingSystem.view.systemConfiguration.administratorManagement.GetCand;
-import es.uniovi.asw.votingSystem.view.systemConfiguration.administratorManagement.GetPS;
-import es.uniovi.asw.votingSystem.view.systemConfiguration.administratorManagement.GetVT;
-import es.uniovi.asw.votingSystem.view.votingSystem.voterManagement.AlreadyV;
-import es.uniovi.asw.votingSystem.view.votingSystem.voterManagement.GetAV;
-//import es.uniovi.asw.votingSystem.view.votingSystem.voterManagement.GetAV;
-import es.uniovi.asw.votingSystem.view.votingSystem.voterManagement.GetVO;
-import es.uniovi.asw.votingSystem.view.votingSystem.voterManagement.VoteV;
 
 @Controller
 public class Main {
@@ -243,8 +238,8 @@ public class Main {
 			model.addAttribute("mensaje", "El votante no ha votado");
 		}
 		model.addAttribute("elecciones",
-				// import .GetAV;
-				new es.uniovi.asw.votingSystem.view.registerVote.pollingStationPresidentManagement.GetAV(vRep).getAV(vRep));
+				new es.uniovi.asw.VotingSystem.view.registerVote.pollingStationPresidentManagement.GetAV(vRep)
+						.getAV(vRep));
 		model.addAttribute("votantes", new GetV(vtRep).getV(vtRep));
 
 		return new ModelAndView("president_index");

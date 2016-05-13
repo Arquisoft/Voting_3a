@@ -1,4 +1,4 @@
-package es.uniovi.asw.votecounting;
+package es.uniovi.asw.VoteCounting;
 
 import java.net.MalformedURLException;
 import java.net.URL;

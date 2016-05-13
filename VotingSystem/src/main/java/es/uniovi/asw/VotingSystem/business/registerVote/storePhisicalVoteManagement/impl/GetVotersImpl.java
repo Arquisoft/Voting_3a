@@ -1,8 +1,8 @@
-package es.uniovi.asw.votingSystem.business.registerVote.storePhisicalVoteManagement.impl;
+package es.uniovi.asw.VotingSystem.business.registerVote.storePhisicalVoteManagement.impl;
 
-import es.uniovi.asw.votingSystem.business.registerVote.storePhisicalVoteManagement.GetVoters;
-import es.uniovi.asw.votingSystem.persistence.dbManagement.votingDBManagement.impl.PersistenceFactory;
-import es.uniovi.asw.dbmanagement.VoterRepository;
+import es.uniovi.asw.VotingSystem.business.registerVote.storePhisicalVoteManagement.GetVoters;
+import es.uniovi.asw.VotingSystem.persistence.dbManagement.votingDBManagement.impl.PersistenceFactory;
+import es.uniovi.asw.dbManagement.VoterRepository;
 import es.uniovi.asw.model.Voter;
 import java.util.List;
 

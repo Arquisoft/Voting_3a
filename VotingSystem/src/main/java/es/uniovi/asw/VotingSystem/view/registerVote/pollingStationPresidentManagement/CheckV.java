@@ -1,8 +1,8 @@
-package es.uniovi.asw.votingSystem.view.registerVote.pollingStationPresidentManagement;
+package es.uniovi.asw.VotingSystem.view.registerVote.pollingStationPresidentManagement;
 
-import es.uniovi.asw.dbmanagement.ConfirmedVoteRepository;
-import es.uniovi.asw.votingSystem.business.registerVote.storePhisicalVoteManagement.PhysicalVoteService;
-import es.uniovi.asw.votingSystem.business.registerVote.storePhisicalVoteManagement.impl.PhysicalVoteServiceImpl;
+import es.uniovi.asw.VotingSystem.business.registerVote.storePhisicalVoteManagement.PhysicalVoteService;
+import es.uniovi.asw.VotingSystem.business.registerVote.storePhisicalVoteManagement.impl.PhysicalVoteServiceImpl;
+import es.uniovi.asw.dbManagement.ConfirmedVoteRepository;
 
 public class CheckV {
 

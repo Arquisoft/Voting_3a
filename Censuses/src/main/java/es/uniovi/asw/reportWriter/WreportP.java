@@ -1,4 +1,4 @@
-package es.uniovi.asw.reportwriter;
+package es.uniovi.asw.reportWriter;
 
 import java.sql.Date;
 import java.text.DateFormat;

@@ -1,7 +1,7 @@
-package es.uniovi.asw.votingSystem.persistence.dbManagement.adminDBManagement;
+package es.uniovi.asw.VotingSystem.persistence.dbManagement.adminDBManagement;
 
-import es.uniovi.asw.dbmanagement.CandidacyRepository;
-import es.uniovi.asw.dbmanagement.VotingRepository;
+import es.uniovi.asw.dbManagement.CandidacyRepository;
+import es.uniovi.asw.dbManagement.VotingRepository;
 import es.uniovi.asw.model.Eleccion;
 
 public interface AddVotingType {

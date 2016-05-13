@@ -1,8 +1,8 @@
-package es.uniovi.asw.votingSystem.view.votingSystem.voterManagement;
+package es.uniovi.asw.VotingSystem.view.votingSystem.voterManagement;
 
-import es.uniovi.asw.dbmanagement.ConfirmedVoteRepository;
+import es.uniovi.asw.VotingSystem.business.votingSystem.votingManagement.impl.ServicesFactory;
+import es.uniovi.asw.dbManagement.ConfirmedVoteRepository;
 import es.uniovi.asw.model.Voter;
-import es.uniovi.asw.votingSystem.business.votingSystem.votingManagement.impl.ServicesFactory;
 
 public class AlreadyV {
 
